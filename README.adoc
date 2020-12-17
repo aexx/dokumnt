@@ -1,5 +1,7 @@
 dokumnt
--------
+=======
+:Author:    Alex Schilling
+:Email:     aexx at gmx.net
 
 Dokumentation, documentation, Linux, PC Zeugs, PC stuff ...
 
