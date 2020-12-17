@@ -1,2 +1,6 @@
-# dokumnt
+dokumnt
+-------
+
 Dokumentation, documentation, Linux, PC Zeugs, PC stuff ...
+
+
