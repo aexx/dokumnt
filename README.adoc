@@ -6,3 +6,28 @@ dokumnt
 Dokumentation, documentation, Linux, PC Zeugs, PC stuff ...
 
 
+
+
+
+
+
+
+Notizen
+~~~~~~~
+
+TIP: Zum schnell notieren ...
+
+Tools
+^^^^^
+
+
+.CSV data, 15% each column
+[format="csv",width="60%",cols="3"]
+[frame="topbot",grid="none"]
+|======
+1,2,3
+a,b,c
+nnn,Dateimanager/file manager,https://www.heise.de/news/nnn-4-0-Schlanker-und-erweiterbarer-Dateimanager-fuer-den-Terminal-6016839.html?wt_mc=rss.red.ho.ho.rdf.beitrag.beitrag[nnn heise.de]
+|======
+
+
