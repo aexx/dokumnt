@@ -17,11 +17,8 @@ Notizen
 
 TIP: Zum schnell notieren ...
 
-Tools
-^^^^^
 
-
-.CSV data, 15% each column
+.Tools
 [format="csv",width="60%",cols="3"]
 [frame="topbot",grid="none"]
 |======
