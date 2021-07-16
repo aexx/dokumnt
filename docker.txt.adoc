@@ -1,0 +1,36 @@
+
+
+docker
+~~~~~~
+
+
+.docker commands
+----
+
+sudo systemctl stop docker ; sudo systemctl stop docker.socket ; sudo systemctl stop containerd.service
+sudo systemctl start docker ; sudo systemctl start docker.socket ; sudo systemctl start containerd.service
+
+docker version
+docker info
+docker image ls
+docker ps -a ;printf "\n\n";docker ps
+docker run hello-world
+docker container
+docker system df
+vi /etc/init.d/docker 
+docker run -p 8080:80 httpd
+docker search miniflux
+
+vi docker-compose.yml
+docker-compose up -d db
+docker exec -it 07c76ab66ca1 bash
+docker-compose up miniflux
+docker-compose up -d miniflux
+
+docker-compose start miniflux ; docker-compose start db
+docker-compose stop miniflux ; docker-compose stop db
+
+----
+
+
+
