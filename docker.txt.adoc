@@ -7,8 +7,8 @@ docker
 .docker commands
 ----
 
-sudo systemctl stop docker ; sudo systemctl stop docker.socket ; sudo systemctl stop containerd.service
-sudo systemctl start docker ; sudo systemctl start docker.socket ; sudo systemctl start containerd.service
+sudo systemctl stop docker ;sleep 2; sudo systemctl stop docker.socket ;sleep 2; sudo systemctl stop containerd.service
+sudo systemctl start containerd.service ;sleep 2; sudo systemctl start docker.socket ;sleep 2; sudo systemctl start docker
 
 docker version
 docker info
@@ -27,8 +27,8 @@ docker exec -it 07c76ab66ca1 bash
 docker-compose up miniflux
 docker-compose up -d miniflux
 
-docker-compose start miniflux ; docker-compose start db
-docker-compose stop miniflux ; docker-compose stop db
+docker-compose start db ;sleep 5; docker-compose start miniflux 
+docker-compose stop miniflux ;sleep 5; docker-compose stop db
 
 ----
 
