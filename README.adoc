@@ -19,18 +19,20 @@ TIP: Zum schnell notieren ...
 
 
 .Tools
-[format="csv",width="60%",cols="3"]
+[format="csv",width="60%",cols="5"]
 [frame="topbot",grid="none"]
 |======
-1,2,3
-a,b,c
-nnn , Dateimanager/file manager,https://www.heise.de/news/nnn-4-0-Schlanker-und-erweiterbarer-Dateimanager-fuer-den-Terminal-6016839.html?wt_mc=rss.red.ho.ho.rdf.beitrag.beitrag[nnn heise.de]
-Fre:ac , Wandelt Audiodateien um und liest Audio-CDs aus,https://freac.org/de[freac.org] (http://accuraterip.com/[AccurateRip])
-neofetch , , 
-btop , ,
-ncspot , Spotify Kommandozeile , 
-Fre:ac , Wandelt Audiodateien um und liest Audio-CDs aus , 
-mapscii , OpenStreetMap fuer Kommandozeile , 
+*TOOL* , INFO ,, TOOL , INFO
+a , b ,, c , d
+nnn , Dateimanager/file manager https://www.heise.de/news/nnn-4-0-Schlanker-und-erweiterbarer-Dateimanager-fuer-den-Terminal-6016839.html?wt_mc=rss.red.ho.ho.rdf.beitrag.beitrag[nnn heise.de] ,, btop , Wie top
+Fre:ac , Wandelt Audiodateien um und liest Audio-CDs aus https://freac.org/de[freac.org] (http://accuraterip.com/[AccurateRip]) , , , 
+
+
+neofetch , highly customizable system info script , , , 
+btop , Wie top , , , 
+ncspot , Spotify Kommandozeile , , , 
+Fre:ac , Wandelt Audiodateien um und liest Audio-CDs aus , , , 
+mapscii , OpenStreetMap fuer Kommandozeile , , , 
 
 
 
