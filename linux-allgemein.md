@@ -140,10 +140,6 @@ Sa 15. Dez 12:19:27 CET 2018
 Action: Removing ...
 systemctl stop teamviewerd.service
 Removed symlink /etc/systemd/system/multi-user.target.wants/teamviewerd.service.
-​
-329
-_
-330
 
 ```
 
@@ -180,10 +176,6 @@ Lu-2015-10 Systemd und SysVinit | Lu-2016-05 ssdeep _(recursive piecewise hashin
 
 
 **EL**
-​
-329
-_
-330
 
 
 El-2011-03 Hugin: Perfekte Panoramabilder erstellen | EL-2012-01 KDE-Tipps | EL-2012-04 Gnome-Tipps   
