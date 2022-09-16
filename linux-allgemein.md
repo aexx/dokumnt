@@ -1,52 +1,26 @@
-﻿_   
-
-
-###### Textdatei NICHT bearbeiten | gdrive export readonly | Markdown http://markdown.de
-
-
-##### Version 2020-03-24  
-
-
-
 
 # Linux Allgemein
 ## Befehle
 
 
 
-
 ```bash
 
-
 nur-md5-aus-diff () { cat ${1} |grep -v __ > ${1}_nur-md5; }  # nur-md5-aus-diff loeschmi_0427_OptiP_bigaex_DIFF 
-
-
+#
 in .i3/config add line:  # workspace_layout <default|stacking|tabbed> 
-
-
+#
 cat /path/to/your/image_part$n.0* | gzip -dc | partclone.chkimg -s - -L check$n.log  # check redo backup image 
-
-
-AKD=~/.config/autokey/data ; [ -d $AKD ] && cd $AKD && tar -zcvf /home/ok8cp5/bigaex/Aex/Linux/config/autokey/data.$(uname -n).$(date +%F).tgz ../data    
-
-
+#
+AKD=~/.config/autokey/data ; [ -d $AKD ] && cd $AKD && tar -zcvf /home/ok8cp5/bigaex/Aex/Linux/config/autokey/data.$(uname -n).$(date +%F).tgz ../data  
+#
 ssdeep -rp -t94 *  # rekursiv nach aehnlichen Dateien suchen, sie sich zu 94 % aehneln     
 
 
+## lgnas
+ok8cp5@LG-NAS:~$ alias aexmesg='dmesg | perl -ne "BEGIN{\$a= time()- qx!cat /proc/uptime!}; s/\[\s*(\d+)\.\d+\]/localtime(\$1 + \$a)/e; print \$_;"'
+ok8cp5@LG-NAS:~$ echo;aexmesg |egrep -i "initialised|hd|boot"
 
-
-
-
-
-
-lgnas
-ok8cp5@LG-NAS-N1T1TD1:~$ alias aexmesg='dmesg | perl -ne "BEGIN{\$a= time()- qx!cat /proc/uptime!}; s/\[\s*(\d+)\.\d+\]/localtime(\$1 + \$a)/e; print \$_;"'
-ok8cp5@LG-NAS-N1T1TD1:~$ echo;aexmesg |egrep -i "initialised|hd|boot"
-
-
-
-
-diff hilfe :-) 
 
 
 ```
@@ -79,14 +53,11 @@ http://www.heise.de/demobilise-me/?r=/
 -  Beim Acer Aspire One entfernt man "Hard blocked" durch einmaliges Betätigen der Hardwaretaste während sich das Netbook im BIOS-Setup befindet.   
 
 
-
-
     dmesg | egrep 'radio|kill|switch'
     
     lsmod | egrep '_acpi|_bluetooth|intel_oaktrail|_laptop|_rfkill|_wmi'   # Kernelmodul ist nicht geladen  
  
 ### USB-Stick Inhalt
-
 
 **ACHTUNG: Neues Tool:** https://www.ventoy.net/en/index.html   
 
@@ -111,8 +82,6 @@ echo 'deb http://liveusb.info/multisystem/depot all main' | sudo tee /etc/apt/so
 wget -q -O "-" http://liveusb.info/multisystem/depot/multisystem.asc | sudo apt-key add - 
 sudo apt update && sudo apt install multisystem
 ```
-
-
 
 
 ## Tools 
@@ -154,22 +123,16 @@ sudo apt update && sudo apt install multisystem
 * ntop _(display network usage in web browser)_ darkstat _(network traffic analyzer)_ 
 
 
-
-
 ### systemd 
 
 
 **systemd** Dienst **stop und disable** am Beispiel teamviewer:
 
 
-
-
 ```bash
-
 
 ok8cp5@okcp-Lati-E6330:~$ sudo teamviewer daemon stop
 systemctl stop teamviewerd.service
-
 
 ok8cp5@okcp-Lati-E6330:~$ sudo systemctl stop teamviewerd.service
 ok8cp5@okcp-Lati-E6330:~$ sudo teamviewer daemon disable
@@ -177,7 +140,10 @@ Sa 15. Dez 12:19:27 CET 2018
 Action: Removing ...
 systemctl stop teamviewerd.service
 Removed symlink /etc/systemd/system/multi-user.target.wants/teamviewerd.service.
-
+​
+329
+_
+330
 
 ```
 
@@ -213,8 +179,11 @@ Lu-2015-10 Systemd und SysVinit | Lu-2016-05 ssdeep _(recursive piecewise hashin
 
 
 
-
 **EL**
+​
+329
+_
+330
 
 
 El-2011-03 Hugin: Perfekte Panoramabilder erstellen | EL-2012-01 KDE-Tipps | EL-2012-04 Gnome-Tipps   
@@ -247,8 +216,6 @@ ct.2020.05 :  (97) broot (Dateimanager fuer Kommandozeile) , (166) topgrade (Akt
 ct.2020.10 :  (16) Familien Backup PC mit Sync (Resilio Sync) , (76) Mobil-App LateBack (Bahnfahrern,Zug,Verspätung, Papierkram,Fahrtkostenerstattung) , (124) Mobilfunk-Notruf 110 112 Notfall Standort Dienst , (136) USB-C Anschluss Raspberry Pi 4 , (142) Android Apps Firewall 
 
 
-
-
 ### Firefox Chrome add-ons plugins
 
 
@@ -259,10 +226,7 @@ imacro _(Klicks u. Eingaben automatisieren)_ ,
 ---
 
 
-
-
 ## Neues Linux System
-
 
 ### Ubuntu
 
@@ -280,10 +244,6 @@ imacro _(Klicks u. Eingaben automatisieren)_ ,
 * abcdefg   
 
 
-
-
-
-
 ```bash
 
 
@@ -298,20 +258,16 @@ sudo apt install -f
 cp -v .bashrc{,.ori}
 ok8cp5@Opti7010:~$ sdiff .bashrc .bashrc.ori |egrep '<'
 HISTCONTROL=erasedups:ignoredups                              <
-export HISTCONTROL                                              <
-HISTSIZE=9944                                                      <
-HISTFILESIZE=14944                                              <
-HISTTIMEFORMAT='%F %T '                                              <
-# aexx                                                              <
+export HISTCONTROL                                            <
+HISTSIZE=9944                                                 <
+HISTFILESIZE=14944                                            <
+HISTTIMEFORMAT='%F %T '                                       <
+# aexx                                                        <
 #PS1="\[\033[32m\]\j \u@\h\[\033[37m\]:\w/ \D{%Y-%m-%d} \t \n <
 ok8cp5@Opti7010:~$
 
 
-
-
 ```
-
-
 
 
 Bei Sync (unison) evtl.  **”excluden”**  (aus md5_bigaex_DIFF)   
@@ -322,11 +278,7 @@ Bei Sync (unison) evtl.  **”excluden”**  (aus md5_bigaex_DIFF)
     ./Dropbox/Public/.dropbox 7b391a78c4bc82205be8686f6fcbaa2f
 
 
-
-
 Test  →   ⇒  Pfeile :-) 
-
-
 
 
 ---
@@ -342,7 +294,6 @@ Test  →   ⇒  Pfeile :-)
     ./android-sdk-linux_x86/platform-tools/adb push  [Vending.apk / GoogleServicesFramework.apk] /system/app/
     
     multisystem: dd if=/dev/zero of=/media/PLATINUM/android2/data.img bs=1M count=999
-
 
 
 
@@ -365,9 +316,5 @@ FreeOffice Mobile _(SoftMaker, gut bei heise)_ , AppExtract, Internet Security L
 Python-Skript adb-sync _(auf GitHub, Sync zu PC aehnlich rsync)_ , t-ui Linux-CLI-Launcher ,   
 
 
-
-
 ###### Ende       
 
-
-_
