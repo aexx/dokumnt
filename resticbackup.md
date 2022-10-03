@@ -105,25 +105,36 @@ Please note that knowledge of your password is required to access
 the repository. Losing your password means that your data is
 irrecoverably lost.
 $ 
-$ aexrestic.sh rest:http://localhost:8080/ /home/ok8cp5/Aex/TEMP/  ## script: aexrestic.sh
+$ aexrestic.sh rest:http://localhost:8080/ /home/ok8cp5/xxx/TEMP/  ## script: aexrestic.sh
 
 VERSION:         restic 0.9.6 compiled with go1.13.4 on linux/amd64
 REPO:            rest:http://localhost:8080/   
 RESTIC_PASSWORD: ....xxx....   
-SAVEPATH:        /home/ok8cp5/Aex/TEMP/
+SAVEPATH:        /home/ok8cp5/xxx/TEMP/
 
 Snapshots(letzte/last 3): ... restic -r rest:http://localhost:8080/ snapshots 
-Create restic-Backup: ... restic -r rest:http://localhost:8080/ --verbose backup /home/ok8cp5/Aex/TEMP/ --exclude-file=/tmp/restic-exclude.txt 
+Create restic-Backup: ... restic -r rest:http://localhost:8080/ --verbose backup /home/ok8cp5/xxx/TEMP/ --exclude-file=/tmp/restic-exclude.txt 
 open repository
 repository 1d1xxx07 opened successfully, password is correct
 lock repository
 load index files
-start scan on [/home/ok8cp5/Aex/TEMP/]
-start backup on [/home/ok8cp5/Aex/TEMP/]
+start scan on [/home/ok8cp5/xxx/TEMP/]
+start backup on [/home/ok8cp5/xxx/TEMP/]
 scan finished in ...
 [...] 
 snapshot ccxxx5b saved
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$ restic -r rest:http://localhost:8080/ snapshots
+repository 1dxxx07 opened successfully, password is correct
+ID        Time                 Host        Tags        Paths
+----------------------------------------------------------------------------
+cc0bf15b  2022-10-03 18:10:38  aspxxxxx50              /home/ok8cp5/xxx/TEMP
+a947507a  2022-10-03 18:14:27  aspxxxxx50              /home/ok8cp5/xxx/Adr
+----------------------------------------------------------------------------
+2 snapshots
+0 ok8cp5@aspiX3950:~/ 2022-10-03 18:16:37 
+
 
 
 ```
