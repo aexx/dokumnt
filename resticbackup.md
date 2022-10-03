@@ -30,24 +30,16 @@ restic -r /dev/shm/restic-test/ ls 50557402  # List(e) files/Dateien in(m) snaps
 restic -r sftp:ok8cp5@lgnas:/mnt/disk/volume1/restic/ key add
 
 
-
-
 ```
 
 
 ## Beispiele
-
-
-
-
-
 
 ### latitude
 
 
 ``` bash
 restic init -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01/ init
-
 
 aexrestic.sh sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01/
   restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01/ check
@@ -63,7 +55,7 @@ restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 ls a8044c
 # restore
 restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 restore d065e6ac --target /dev/shm/restoreretic/ --include /home/ok8cp5/test-Sync-02/DEBIAN/DebianGNU-LinuxBible.pdf
 
-
+# mount
 restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 mount mnt/1
 ```
 
