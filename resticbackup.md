@@ -1,11 +1,3 @@
-﻿_   
-
-
-###### Textdatei NICHT bearbeiten | gdrive export readonly | Markdown http://markdown.de
-
-
-##### Version 2019-05-16 
-
 
 # ResticBackup
 
@@ -61,15 +53,11 @@ aexrestic.sh sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01/
   restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01/ check
   restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 snapshots
 
-
 aexrestic.sh sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 ~
   restic -r $REPO --verbose backup ${SAVEPATH} --exclude-file=$EXCLUDEFILE
 
-
 restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 stats
 restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 ls a8044cab
-
-
 
 
 # restore
@@ -100,6 +88,3 @@ restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 find sinu
 
 
 ###### Ende       
-
-
-_
