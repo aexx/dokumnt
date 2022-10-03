@@ -60,23 +60,73 @@ restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 mount mnt
 ```
 
 
-#### Suche nach einer Datei in allen Backups:
+## Suche nach einer Datei in allen Backups:
 
 
 ``` bash
 restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 ls d065e6ac |grep alex
 restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 find sinus154.txt
 
-
 ```
 
+## Backup / Sicherung Restic ueber RClone / rclone serve restic
+
+``` bash
+$ rclone serve restic -v durchaux-t-cloud:rr
+2022/10/03 17:26:33 NOTICE: webdav root 'rr': Serving restic REST API on http://127.0.0.1:8080/
+2022/10/03 17:27:33 INFO  : 
+Transferred:             0 / 0 Bytes, -, 0 Bytes/s, ETA -
+Elapsed time:       1m1.6s
+
+2022/10/03 17:28:33 INFO  : 
+Transferred:             0 / 0 Bytes, -, 0 Bytes/s, ETA -
+Elapsed time:       2m1.6s
+
+[...] 
+
+2022/10/03 18:02:03 INFO  : : Creating repository
+2022/10/03 18:02:33 INFO  : 
+Transferred:           608 / 608 Bytes, 100%, 106 Bytes/s, ETA 0s
+Transferred:            1 / 2, 50%
+Elapsed time:      36m1.6s
+Transferring:
+ *                                        config:100% /155, 154/s, 0s
+```
+
+**im anderen Terminal / other Terminal**
+
+``` bash
+$ export RESTIC_PASSWORD=Ganzarggeheim7b
+$
+$ restic -r rest:http://localhost:8080/ init
+created restic repository 1d1xxxx767 at rest:http://localhost:8080/
+
+Please note that knowledge of your password is required to access
+the repository. Losing your password means that your data is
+irrecoverably lost.
+$ 
+$ aexrestic.sh rest:http://localhost:8080/ /home/ok8cp5/Aex/TEMP/  ## script: aexrestic.sh
+
+VERSION:         restic 0.9.6 compiled with go1.13.4 on linux/amd64
+REPO:            rest:http://localhost:8080/   
+RESTIC_PASSWORD: ....xxx....   
+SAVEPATH:        /home/ok8cp5/Aex/TEMP/
+
+Snapshots(letzte/last 3): ... restic -r rest:http://localhost:8080/ snapshots 
+Create restic-Backup: ... restic -r rest:http://localhost:8080/ --verbose backup /home/ok8cp5/Aex/TEMP/ --exclude-file=/tmp/restic-exclude.txt 
+open repository
+repository 1d1xxx07 opened successfully, password is correct
+lock repository
+load index files
+start scan on [/home/ok8cp5/Aex/TEMP/]
+start backup on [/home/ok8cp5/Aex/TEMP/]
+scan finished in ...
+[...] 
+snapshot ccxxx5b saved
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-
-
-
-
-
+```
 
 
 ###### Ende       
