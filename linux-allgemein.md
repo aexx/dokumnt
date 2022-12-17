@@ -104,14 +104,15 @@ sudo apt update && sudo apt install multisystem
 * units , passwordstore , tomb _(Ordner verschluesseln)_ , PAC , Whohas , bagside.com , playonlinux , jripper , conduit 
 * datacrow.net , imgseek , Gnac , EtherApe , jbackpack , CCFE , Sentinella , Droopy _(Dateiaustausch)_  , Hugin _(Panoramabilder)_  
 * Heldenviewer_ClipGrab _(youtube)_  , Termit _(xterm)_  , qtube.de , transcoder _(Video konvert.)_  , XtreemFS _(RaidFS)_  , atunes _(Musik)_   
-* apt-cacher-ng _(apt proxy)_  , mp3diags , duff,rdfind _(doppelte Dateien)_  , debian-goodies _(checkrestart)_  , 
-   HTTrack _(Webseiten herunterladen,Offline-Reader)_  , DeVeDe _(DVD)_  , Movgrab _(youtube-Download)_  , csvdb _(CSV mit SQL)_  
-* sslh _(Port-Wrapper,protocol demultiplexer)_  , bum _(Boot Up Manager,Services,daemons)_  , gsmartcontrol _(smartctl GUI)_  , 
-   pdfcrop , reptyr _(moving running programs between ptys)_  
-* spek _(acoustic spectrum analyser)_  , ncdu _(disk usage cli)_  , bleachbit _(aufraeumen,clean disk)_  , jmtpfs _(Handy mounten)_ , 
-   inxi _(tool hw hardware cpu memory weather wetter)_  , stacer _(ubuntu optimieren, auf github)_ , csplit _(zB aus einer vcard mehrere machen)_,   
-* lsat _(security,sicherheit,check,auditing)_ , mupdf _(grosse,big,pdfs,schnell)_ , broot _(Dateimanager fuer Kommandozeile)_ 
-* devilspie2 _(manipuliert autom. Fenster unter Linux)_
+* apt-cacher-ng _(apt proxy)_  , mp3diags , duff,rdfind _(doppelte Dateien)_  , debian-goodies _(checkrestart)_  
+* HTTrack _(Webseiten herunterladen,Offline-Reader)_  , DeVeDe _(DVD)_  , Movgrab _(youtube-Download)_  , csvdb _(CSV mit SQL)_  
+* sslh _(Port-Wrapper,protocol demultiplexer)_  , bum _(Boot Up Manager,Services,daemons)_  , gsmartcontrol _(smartctl GUI)_  , pdfcrop 
+* reptyr _(moving running programs between ptys)_ , spek _(acoustic spectrum analyser)_  , ncdu _(disk usage cli)_  
+* bleachbit _(aufraeumen,clean disk)_  , jmtpfs _(Handy mounten)_ , inxi _(tool hw hardware cpu memory weather wetter)_  
+* stacer _(ubuntu optimieren, auf github)_ , csplit _(zB aus einer vcard mehrere machen)_ , lsat _(security,sicherheit,check,auditing)_ 
+* mupdf _(grosse,big,pdfs,schnell)_ , broot _(Dateimanager fuer Kommandozeile)_ 
+* devilspie2 _(manipuliert autom. Fenster unter Linux - Position und Groesse festlegen)_ , pywal _(Linux Terminals passend einfaerben)_  
+* TOOL_XY _(Beschreibung Beschreibung Beschreibung)_ , TOOL_XY _(Beschreibung Beschreibung Beschreibung)_
 
 
 ### netztools network tools,packages,pakete,installieren,install 
