@@ -197,12 +197,10 @@ EL-2015-01  Gimp _(Anwendertipps)_ | EL-2016-01 Sigil _(WYSIWYG E-Book Editor)_ 
 * ct.2013.10 :  (146) Linux UEFI Secure Boot , (148) Android Launcher   
 * ct.2018.15 :  (72) Windows absichern 
 * ct.2018.21 :  (80) Fritzbox Monitoring mit Munin , (122) Linux fuer alte Rechner, alte Hardware HW , (138) Android Apps mit Texterkennung, Text Fairy , (158) Tipps zum Arbeiten mit GitHub, GitHub Gist, Git Erweiterung LFS 
-
-* ct.2019.01 :  (87) GSConnect , Linux mit Android verbinden , 
-* ct.2019.14 :  (142) Netzwerkmitschnitte mit tshark geschickter analysieren , 
+* ct.2019.01 :  (87) GSConnect , Linux mit Android verbinden 
+* ct.2019.14 :  (142) Netzwerkmitschnitte mit tshark geschickter analysieren 
 * ct.2019.18 :  (64) userinyerface.com , (148) Windows Leistungsfresser finden und HW-Flaschenhaelse suchen mit Taskmanager, Windows Internet Engpaesse , (156) Docker, Container Orchestrator Kubernetes 
-* ct.2019.26 :  (152) Linux-Tool OCRmyPDF macht aus eingescannten Schriftstücken durchsuchbare PDFDokumente , 
-
+* ct.2019.26 :  (152) Linux-Tool OCRmyPDF macht aus eingescannten Schriftstücken durchsuchbare PDFDokumente 
 * ct.2020.05 :  (97) broot (Dateimanager fuer Kommandozeile) , (166) topgrade (Aktualisiert mehrere Quellen) 
 * ct.2020.10 :  (16) Familien Backup PC mit Sync (Resilio Sync) , (76) Mobil-App LateBack (Bahnfahrern,Zug,Verspätung, Papierkram,Fahrtkostenerstattung) , (124) Mobilfunk-Notruf 110 112 Notfall Standort Dienst , (136) USB-C Anschluss Raspberry Pi 4 , (142) Android Apps Firewall 
 
