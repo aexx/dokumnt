@@ -18,9 +18,8 @@ ssdeep -rp -t94 *  # rekursiv nach aehnlichen Dateien suchen, sie sich zu 94 % a
 
 
 ## lgnas
-ok8cp5@LG-NAS:~$ alias aexmesg='dmesg | perl -ne "BEGIN{\$a= time()- qx!cat /proc/uptime!}; s/\[\s*(\d+)\.\d+\]/localtime(\$1 + \$a)/e; print \$_;"'
-ok8cp5@LG-NAS:~$ echo;aexmesg |egrep -i "initialised|hd|boot"
-
+ok8cp5@LG-NAS:~$ alias aexmesg='dmesg |perl -ne "BEGIN{\$a= time()- qx!cat /proc/uptime!}; s/\[\s*(\d+)\.\d+\]/localtime(\$1 + \$a)/e; print \$_;"'
+ok8cp5@LG-NAS:~$ echo ;aexmesg |egrep -i "initialised|hd|boot"
 
 
 ```
@@ -37,11 +36,10 @@ http://www.heise.de/demobilise-me/?r=/
 
 ## Hardware
 
-
 **Acer Aspire One A110** http://www.aaowiki.de , **Acer Revo RL70** (ct 2012.21)  
 **ThinkPad X121e** https://answers.launchpad.net/ubuntu/+source/gnome-nettool/+question/132667 http://www.heise.de/ct/11/22/links/072.shtml  
-**Shuttle SZ68R5** (ct 2012.11) , ** Fujitsu Esprimo Q510** (ct 2012.15) MegaMount DA-74003 (http://www.digitus.info)
-
+**Shuttle SZ68R5** (ct 2012.11) , ** Fujitsu Esprimo Q510** (ct 2012.15) MegaMount DA-74003 (http://www.digitus.info)  
+Linux PCs: https://www.tuxedocomputers.com  
 
 
 
@@ -50,13 +48,33 @@ http://www.heise.de/demobilise-me/?r=/
 
 **Hardwareschalter oder Taste(nkombination) wirkt nicht**   
 -  Einige Hardwareschalter funktionieren nur während des Systemstarts bevor Ubuntu (Linux) gestartet ist (z.B. beim Acer Aspire 1825PTZ).   
--  Beim Acer Aspire One entfernt man "Hard blocked" durch einmaliges Betätigen der Hardwaretaste während sich das Netbook im BIOS-Setup befindet.   
+-  Beim Acer Aspire One entfernt man "Hard blocked" durch einmaliges Betätigen der Hardwaretaste während sich das Netbook im BIOS-Setup befindet. 
+
+        dmesg | egrep 'radio|kill|switch'
+        lsmod | egrep '_acpi|_bluetooth|intel_oaktrail|_laptop|_rfkill|_wmi'   # Kernelmodul ist nicht geladen  
 
 
-    dmesg | egrep 'radio|kill|switch'
-    
-    lsmod | egrep '_acpi|_bluetooth|intel_oaktrail|_laptop|_rfkill|_wmi'   # Kernelmodul ist nicht geladen  
- 
+#### Android
+
+- **ADB Android Device Unauthorized / USB Debugging aktiviert - Autorisierungs-Dialog erscheint nicht**   
+
+        $ adb shell
+        error: device unauthorized.
+        ## Loesung/Solution: Exist. Keys umbenennen/move
+        $ mv /home/ok8cp5/.android/adbkey /home/ok8cp5/.android/adbkey_Tablee
+        ## Kabel Aus,- Anstecken
+
+- Bli bla blub
+- Bli bla blub
+- Bli bla blub
+
+## dfewdwe
+
+- Bli bla blub
+- Bli bla blub
+- Bli bla blub
+
+
 ### USB-Stick Inhalt
 
 **ACHTUNG: Neues Tool:** https://www.ventoy.net/en/index.html   
