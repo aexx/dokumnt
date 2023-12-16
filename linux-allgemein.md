@@ -89,8 +89,8 @@ Linux PCs: https://www.tuxedocomputers.com
 - **sandisk Rund** 8 GB  VENTOY , clonezilla-live-3.0.2-21 , redorescue-4.0.0 
 - **DataT102**    32 GB  Kein Live-Sys , ISOs (Win7,...), Aufnahmen (2)  **NTFS**  
 - **platinum**    14 GB  Win10 Installations Stick *(stick hat probleme beim schreiben unter linux!)*  
-- **verimatrix**  16 GB  Doku , Kickstart
-- **Paradies**    64 GB  VENTOY , Pixel 3 Backup
+- **verimatrix**  16 GB  Doku , Kickstart  
+- **Paradies**    64 GB  VENTOY , Desinfect-2023  
 
 
 Installation __Multisystem__ auf apt-System
