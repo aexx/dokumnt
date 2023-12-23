@@ -15,6 +15,10 @@ cat /path/to/your/image_part$n.0* | gzip -dc | partclone.chkimg -s - -L check$n.
 AKD=~/.config/autokey/data ; [ -d $AKD ] && cd $AKD && tar -zcvf /home/ok8cp5/bigaex/Aex/Linux/config/autokey/data.$(uname -n).$(date +%F).tgz ../data  
 #
 ssdeep -rp -t94 *  # rekursiv nach aehnlichen Dateien suchen, sie sich zu 94 % aehneln     
+#
+chattr +i /mountpoint  ## Schreibschutz fuer leeren Mountpoint 
+
+
 
 
 ## lgnas
