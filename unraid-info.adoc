@@ -1,0 +1,42 @@
+
+== Unraid-Info
+
+
+=== Aenderungen nach / changes after unraid Installation
+
+.info
+----
+todo
+
+todo
+todo
+
+todo
+----
+
+
+=== Booting USB drive inside Unraid VM
+
+Source: https://forums.unraid.net/topic/82092-solved-create-vm-from-bootable-live-usb-drive/
+
+- Plug in the USB Drive
+- Mount it (I think I mounted it for this......if that doesn't work, try NOT mounting it)
+- Go to create your VM template. Set whatever you want for CPUs, Memory, etc.....
+- For BIOs....try both (I had to use SeaBIOS)
+- For USB Controller, I used the 3.0 one so I would get the faster speed
+- In terminal, run +
+    `ls -lha /dev/disk/by-id/`
+- Find your USB Drive in that list and copy the ENTIRE name. Use that name for your Manual vDisk Location. +
+  For example, I put this in my VM template. It must be the entire USB drive...no part stuff +
+    `/dev/disk/by-id/usb-SanDisk_Extreme_SSD_31393.....3934-0:0`
+- Primary vDisk Type: raw
+- Primary vDisk Bus: USB
+- Graphics Card: VNC
+
+
+=== todo
+
+todo
+
+todo
+
