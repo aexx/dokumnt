@@ -84,8 +84,7 @@ Linux PCs: https://www.tuxedocomputers.com
 |    **t-systems** | 246 MB  | Puppy Linux slacko_5.7                                                                        |
 |        **krenn** |   2 GB  | VENTOY , clonezilla-live-2.7.0 , linuxmint-21 (persistence)                                   |
 |       **apacer** |   2 GB  | VENTOY , Peppermint-10-20191210-i386 (persistence)                                            |
-|     **cruzer** 4 |   4 GB  | Puppy Linux fossapup64 
-|
+|     **cruzer** 4 |   4 GB  | Puppy Linux fossapup64 |
 |      **toshiba** |  32 GB  | VENTOY , ubuntu-20.04 , Desinfect-2018 , linuxmint-21 (persistence) , redorescue-4.0.0         |
 |     **cruzer** 8 |   8 GB  | Unraid OS                                                                                     |
 | **Sandisk Rund** |   8 GB  | VENTOY , clonezilla-live-3.0.2-21 , redorescue-4.0.0                                          |
