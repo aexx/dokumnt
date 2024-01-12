@@ -6,7 +6,9 @@
 
 ```bash
 
+#
 nur-md5-aus-diff () { cat ${1} |grep -v __ > ${1}_nur-md5; }  # nur-md5-aus-diff loeschmi_0427_OptiP_bigaex_DIFF 
+nur-basename-md5-aus-diff () { rm -fv ${1}_nur-basename-md5 ; cat ${1} |while read line; do echo $line|egrep -v " __ "|awk 'BEGIN{FS="/"}{print $NF}' >> ${1}_nur-basename-md5 ;done }  # nur-basename-md5-aus-diff XXXX_ok8cp5_bigaex_DIFF
 #
 in .i3/config add line:  # workspace_layout <default|stacking|tabbed> 
 #
