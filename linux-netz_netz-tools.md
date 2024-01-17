@@ -53,9 +53,8 @@ Windows ueber Netzwerk umziehen - **Linux-Live-System auf beiden PC** booten: Ne
     grep "http" /home/aleschil/aex/Aex/Adr/xmarks/Bookmarks.html.2013-05-08.txt |awk -F"<" '{print $2}'|awk -F">" '{print $1}' |wc  # url bookmark
     grep "http" /home/aleschil/aex/Aex/Adr/xmarks/Bookmarks.html.2013-05-08.txt |awk -F"<" '{print $2}'|awk -F">" '{print $1}' |grep -v "\/\/[0-9][0-9][0-9]\."|grep -v \/localhost  |while read a; do sleep 3; echo -e "\n\n ____________ $a  ____________" ; w3m -dump $a|head -4 |grep -i erro ; done  
 
+    .
     
-
-
 
 ``` bash
 
@@ -69,18 +68,21 @@ iperf -s  # auf einem system als server  ⇒  iperf -c 192.168.0.14  # mit ander
 
 ``` bash
 
+### Clients:
 rdesktop -u aleschil -a 15 [-f/-g 90%] 172.27.xx.yyy &  # TS # zurueck/back fullscreen [Ctrl + Alt + Enter]
 rdesktop -a 16 -g 90% backuppc  # Bestes Ergebnis # Verbindung zu mrw backuppc => xrdp
+#
+Remmina:   remmina-common , remmina_1.4.2+dfsg
 
 
 ### 2024-01-17
 ### xrdp - Server
-# sudo apt install xrdp
-# sudo systemctl status xrdp
-# /etc/xrdp/startwm.sh wurde geaendert, aber wieder verworfen ...
+sudo apt install xrdp
+sudo systemctl status xrdp
+Datei/file: /etc/xrdp/startwm.sh wurde geaendert, aber wieder verworfen ...
 ### xfce4 Session:
-# echo env -u SESSION_MANAGER -u DBUS_SESSION_BUS_ADDRESS xfce4-session>~/.xsession
-# sudo systemctl restart xrdp
+echo env -u SESSION_MANAGER -u DBUS_SESSION_BUS_ADDRESS xfce4-session>~/.xsession
+sudo systemctl restart xrdp
 
 
 
