@@ -1,38 +1,11 @@
-_   
+
+## Netz-Tools
 
 
-###### Textdatei NICHT bearbeiten | gdrive export readonly | Markdown http://markdown.de
+### Daten-Transfer
 
 
-##### Version 2019-02-11 
-
-
-
-
-
-
-
-
-
-
-```bash
-echo Markdown
-echo Code
-```
-
-
-
-
-
-
-# Netz-Tools
-
-
-## Daten-Transfer
-
-
-### netcat
-
+#### netcat
 
 **Einzelne Datei/One file:**   
 Zuerst auf **Ziel/Destination**-Host:  `# netcat -l -p 12344 > Compaq-615.C.ntfsclone.img.gz `   
@@ -45,8 +18,7 @@ Windows ueber Netzwerk umziehen - **Linux-Live-System auf beiden PC** booten: Ne
 **Ziel**-PC: `install-mbr /dev/hda ` #Oder Windows-Reparatur mit Win-Inst-CD   
 
 
-## ip
-
+### ip
 
     ip addr add 192.168.11.44/25 dev eth0
     ip addr del 192.168.11.44 dev eth0
@@ -54,11 +26,11 @@ Windows ueber Netzwerk umziehen - **Linux-Live-System auf beiden PC** booten: Ne
     ip route del default via 10.5.0.1 dev eth1
     ip neigh show 10.0.2.2
 
-
     ss -r  # Socket Show
 
 
-## IPv6 inet6
+
+### IPv6 inet6
 
 
     ping6 fe80::a00:27ff:fee1:7ef2%eth2 -c4
@@ -67,54 +39,56 @@ Windows ueber Netzwerk umziehen - **Linux-Live-System auf beiden PC** booten: Ne
 
 
 
-
-
-
-
-
-
-
-## usw
-
-
-
-
+### usw
 
 
     iptables -vnL
-
-
+    
     tcpdump -l -n -s 0 -X -v -i eth0 -w /DATEN/TCPDUMP.txt host 172.20.251.35
-
-
+    
     unset http_proxy ftp_proxy no_proxy ; set|grep oxy
-
-
+    
     read -p wakeonlan_aexbackpc && wakeonlan 00:30:48:80:C8:64  # wake on lan wol
-
-
-    rdesktop -u aleschil -a 15 [-f/-g 90%] 172.27.xx.yyy &  # TS # zurueck/back fullscreen [Ctrl + Alt + Enter]
-    rdesktop -a 16 -g 90% backuppc  # Bestes Ergebnis # Verbindung zu mrw backuppc => xrdp
-
-
+    
     grep "http" /home/aleschil/aex/Aex/Adr/xmarks/Bookmarks.html.2013-05-08.txt |awk -F"<" '{print $2}'|awk -F">" '{print $1}' |wc  # url bookmark
-    grep "http" /home/aleschil/aex/Aex/Adr/xmarks/Bookmarks.html.2013-05-08.txt |awk -F"<" '{print $2}'|awk -F">" '{print $1}' |grep -v "\/\/[0-9][0-9][0-9]\."|grep -v \/localhost  |while read a; do sleep 3; echo -e "\n\n__________________ $a     ________________________________________" ; w3m -dump $a|head -4 |grep -i erro ; done
+    grep "http" /home/aleschil/aex/Aex/Adr/xmarks/Bookmarks.html.2013-05-08.txt |awk -F"<" '{print $2}'|awk -F">" '{print $1}' |grep -v "\/\/[0-9][0-9][0-9]\."|grep -v \/localhost  |while read a; do sleep 3; echo -e "\n\n ____________ $a  ____________" ; w3m -dump $a|head -4 |grep -i erro ; done  
 
+    
 
 
 
 ``` bash
 
-
 iperf -s  # auf einem system als server  ⇒  iperf -c 192.168.0.14  # mit anderem sys zu server verbinden    
+
+```
+
+
+
+### Remote Desktop rdesktop xrdp
+
+``` bash
+
+rdesktop -u aleschil -a 15 [-f/-g 90%] 172.27.xx.yyy &  # TS # zurueck/back fullscreen [Ctrl + Alt + Enter]
+rdesktop -a 16 -g 90% backuppc  # Bestes Ergebnis # Verbindung zu mrw backuppc => xrdp
+
+
+### 2024-01-17
+### xrdp - Server
+# sudo apt install xrdp
+# sudo systemctl status xrdp
+# /etc/xrdp/startwm.sh wurde geaendert, aber wieder verworfen ...
+### xfce4 Session:
+# echo env -u SESSION_MANAGER -u DBUS_SESSION_BUS_ADDRESS xfce4-session>~/.xsession
+# sudo systemctl restart xrdp
+
 
 
 ```
 
 
 
-
-## nmap
+### nmap
 
 
     nmap -p 80 192.168.71.0/25  #  nmap -sS backup2  #  nmap -sS localhost
@@ -141,6 +115,3 @@ iperf -s  # auf einem system als server  ⇒  iperf -c 192.168.0.14  # mit ander
 
 
 ###### Ende       
-
-
-_
