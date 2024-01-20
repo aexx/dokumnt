@@ -80,23 +80,24 @@ Linux PCs: https://www.tuxedocomputers.com
 **ACHTUNG: Neues Tool:** https://www.ventoy.net/en/index.html   
 
  
-|    **USB Stick** | Groesse | Messung | Inhalt - Beschreibung                                                                              |
-|-----------------:|:-------:|--------:|----------------------------------------------------------------------------------------------------|
-|                  |         |                                                                                                              |
-|    **t-systems** | 246 MB  |  36.70 MB/sec| Puppy Linux slacko_5.7                                                                        |
-|        **krenn** |   2 GB  |  11.11 MB/sec| VENTOY , clonezilla-live-2.7.0 , linuxmint-21 (persistence)                                   |
-|       **apacer** |   2 GB  |  11.11 MB/sec| VENTOY , Peppermint-10-20191210-i386 (persistence)                                            |
-|     **cruzer**4 |   4 GB  |  11.11 MB/sec| Puppy Linux fossapup64                                                                        |
-|      **toshiba** |  32 GB  |  11.11 MB/sec| VENTOY , ubuntu-20.04 , Desinfect-2018 , linuxmint-21 (persistence) , redorescue-4.0.0        |
-|     **cruzer** 8 |   8 GB  |  11.11 MB/sec| Unraid OS                                                                                     |
-| **Sandisk Rund** |   8 GB  |  11.11 MB/sec| VENTOY , clonezilla-live-3.0.2-21 , redorescue-4.0.0                                          |
-|     **DataT102** |  32 GB  |  11.11 MB/sec| Kein Live-Sys , ISOs (Win7,...), Aufnahmen (2),**NTFS**                                       |
-|     **platinum** |  14 GB  |  11.11 MB/sec| Win10 Installations Stick *(stick hat probleme beim schreiben unter linux!)*                  |
-| **Kingston vmx** |  16 GB  |  11.11 MB/sec| Doku , Kickstart                                                                              |
-|     **Paradies** |  64 GB  |  11.11 MB/sec| VENTOY , Desinfect-2023                                                                       |
-|                  |   1 GB  |  11.11 MB/sec| Irgendwas mit Computer und                                                                    |
-|                  |   1 GB  |  11.11 MB/sec|                                                                                               |
-|                  |   1 GB  |  11.11 MB/sec|                                                                                               |
+|     **USB Stick** | Groesse |   MB/sec | Inhalt - Beschreibung                                                                              |
+|------------------:|:-------:|---------:|----------------------------------------------------------------------------------------------------|
+|                   |         |          |                                                                                                    |
+|     **t-systems** | 246 MB  |   11.11  | Puppy Linux slacko_5.7                                                                             |
+|         **krenn** |   2 GB  |   11.11  | VENTOY , clonezilla-live-2.7.0 , linuxmint-21 (persistence)                                        |
+|        **apacer** |   2 GB  |   11.11  | VENTOY , Peppermint-10-20191210-i386 (persistence)                                                 |
+|      **cruzer** 4 |   4 GB  |   11.11  | Puppy Linux fossapup64                                                                             |
+|       **toshiba** |  32 GB  |   11.11  | VENTOY , ubuntu-20.04 , Desinfect-2018 , linuxmint-21 (persistence) , redorescue-4.0.0             |
+|      **cruzer** 8 |   8 GB  |   11.11  | Unraid OS                                                                                          |
+|  **Sandisk Rund** |   8 GB  |   36.70  | VENTOY , clonezilla-live-3.0.2-21 , redorescue-4.0.0                                               |
+|      **DataT102** |  32 GB  |   11.11  | Kein Live-Sys , ISOs (Win7,...), Aufnahmen (2),**NTFS**                                            |
+|      **platinum** |  14 GB  |   11.11  | Win10 Installations Stick *(stick hat probleme beim schreiben unter linux!)*                       |
+|  **Kingston vmx** |  16 GB  |   11.11  | Doku , Kickstart                                                                                   |
+|      **Paradies** |  64 GB  |   11.11  | VENTOY , Desinfect-2023                                                                            |
+|                   |   1 GB  |   11.11  | Irgendwas mit Computer und                                                                         |
+|                   |   1 GB  |   11.11  |                                                                                                    |
+|                   |   1 GB  |   11.11  |                                                                                                    |
+|                   |         |          |                                                                                                    |
 
 
 Installation __Multisystem__ auf apt-System
