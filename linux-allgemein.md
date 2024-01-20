@@ -83,20 +83,20 @@ Linux PCs: https://www.tuxedocomputers.com
 |     **USB Stick** | Groesse |   MB/sec | Inhalt - Beschreibung                                                                              |
 |------------------:|:-------:|---------:|----------------------------------------------------------------------------------------------------|
 |                   |         |          |                                                                                                    |
-|     **t-systems** | 246 MB  |   11.11  | Puppy Linux slacko_5.7                                                                             |
-|         **krenn** |   2 GB  |   11.11  | VENTOY , clonezilla-live-2.7.0 , linuxmint-21 (persistence)                                        |
-|        **apacer** |   2 GB  |   11.11  | VENTOY , Peppermint-10-20191210-i386 (persistence)                                                 |
-|      **cruzer** 4 |   4 GB  |   11.11  | Puppy Linux fossapup64                                                                             |
-|       **toshiba** |  32 GB  |   11.11  | VENTOY , ubuntu-20.04 , Desinfect-2018 , linuxmint-21 (persistence) , redorescue-4.0.0             |
-|      **cruzer** 8 |   8 GB  |   11.11  | Unraid OS                                                                                          |
+|     **t-systems** | 246 MB  |    7.07  | Puppy Linux slacko_5.7                                                                             |
+|         **krenn** |   2 GB  |   --.--  | VENTOY , clonezilla-live-2.7.0 , linuxmint-21 (persistence)                                        |
+|        **apacer** |   2 GB  |   17.57  | Nachbar-Dateien __ VENTOY , Peppermint-10-20191210-i386 (persistence)                              |
+|      **cruzer** 4 |   4 GB  |   --.--  | Puppy Linux fossapup64                                                                             |
+|       **toshiba** |  32 GB  |   30.14  | VENTOY , ubuntu-20.04 , Desinfect-2018 , linuxmint-21 (persistence) , redorescue-4.0.0             |
+|      **cruzer** 8 |   8 GB  |   --.--  | Unraid OS                                                                                          |
 |  **Sandisk Rund** |   8 GB  |   36.70  | VENTOY , clonezilla-live-3.0.2-21 , redorescue-4.0.0                                               |
-|      **DataT102** |  32 GB  |   11.11  | Kein Live-Sys , ISOs (Win7,...), Aufnahmen (2),**NTFS**                                            |
-|      **platinum** |  14 GB  |   11.11  | Win10 Installations Stick *(stick hat probleme beim schreiben unter linux!)*                       |
-|  **Kingston vmx** |  16 GB  |   11.11  | Doku , Kickstart                                                                                   |
-|      **Paradies** |  64 GB  |   11.11  | VENTOY , Desinfect-2023                                                                            |
-|                   |   1 GB  |   11.11  | Irgendwas mit Computer und                                                                         |
-|                   |   1 GB  |   11.11  |                                                                                                    |
-|                   |   1 GB  |   11.11  |                                                                                                    |
+|      **DataT102** |  32 GB  |   --.--  | Kein Live-Sys , ISOs (Win7,...), Aufnahmen (2),**NTFS**                                            |
+|      **platinum** |  14 GB  |   --.--  | Win10 Installations Stick *(stick hat probleme beim schreiben unter linux!)*                       |
+|  **Kingston vmx** |  16 GB  |   --.--  | Doku , Kickstart                                                                                   |
+|      **Paradies** |  64 GB  |   --.--  | VENTOY , Desinfect-2023                                                                            |
+|                   |   1 GB  |   --.--  | Irgendwas mit Computer und                                                                         |
+|                   |   1 GB  |   --.--  |                                                                                                    |
+|                   |   1 GB  |   --.--  |                                                                                                    |
 |                   |         |          |                                                                                                    |
 
 
