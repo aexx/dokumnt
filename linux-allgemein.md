@@ -114,10 +114,12 @@ $ systemctl restart lightdm
 |      **DataT102** |  32 GB  |   --.--  | Kein Live-Sys , ISOs (Win7,...), Aufnahmen (2),**NTFS**                                            |
 |      **platinum** |  14 GB  |   --.--  | Win10 Installations Stick *(stick hat probleme beim schreiben unter linux!)*                       |
 |  **Kingston vmx** |  16 GB  |   --.--  | Doku , Kickstart                                                                                   |
-|      **Paradies** |  64 GB  |   --.--  | VENTOY , Desinfect-2023                                                                            |
-| **sdcard chromi** |  16 GB  |   14.21  | VENTOY , linuxmint-21 (persistence) ,  DATA Partition                                              |
+|      **Paradies** |  64 GB  |   98.22  | VENTOY , Desinfect-2023 , bunsen , fossapup64 , tuxedo ,                                           |
+| **sdcard chromi** |  16 GB  |   14.21  | VENTOY , linuxmint-21 (persist.)    DATA Partition                                                 |
 |                   |   1 GB  |   --.--  |                                                                                                    |
 |                   |   1 GB  |   --.--  |                                                                                                    |
+|                   |         |          |                                                                                                    |
+|                   |         |          |                                                                                                    |
 |                   |         |          |                                                                                                    |
 
 
