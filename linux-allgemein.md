@@ -267,7 +267,7 @@ imacro _(Klicks u. Eingaben automatisieren)_ ,
 
 
 * Aufpassen beim Setup bei der **Verschluesselung, Partition oder HOME**, beides macht keinen Sinn !
-* Firefox:  **``browser.sessionstore.interval``**
+* Firefox:  **``browser.sessionstore.interval = 300000 , browser.cache.disk.enable to false``**
 * Chrome: **``ok8cp5@E6330:~$ sudo grep -i exec /usr/share/applications/google-chrome.desktop``**  #  (Unity Starter)    
    ```bash
    Exec=/usr/bin/google-chrome-stable --disk-cache-dir=/dev/shm/ --disk-cache-size=14000000 %U
