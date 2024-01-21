@@ -70,9 +70,30 @@ Linux PCs: https://www.tuxedocomputers.com
         $ mv /home/ok8cp5/.android/adbkey /home/ok8cp5/.android/adbkey_Tablee
         ## Kabel Aus,- Anstecken
 
-- Bli bla blub
-- Bli bla blub
-- Bli bla blub
+
+#### Chromebook R11
+
+Touchpad config in bunsenlabs linux (Beryllium based on debian)   
+https://wiki.debian.org/SynapticsTouchpad#Enable_tapping_on_touchpad
+
+Enable tapping on touchpad:
+
+```bash
+$ egrep -i 'synap|alps|etps|elan' /proc/bus/input/devices
+
+$ mkdir -p /etc/X11/xorg.conf.d
+$ echo 'Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+        Option "Tapping" "on"
+EndSection' > /etc/X11/xorg.conf.d/40-libinput.conf
+$ systemctl restart lightdm
+
+```
+
+
 
 
 ### USB-Stick Inhalt
