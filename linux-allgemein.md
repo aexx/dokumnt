@@ -96,7 +96,7 @@ $ systemctl restart lightdm
 
 
 
-### USB-Stick Inhalt
+### USB-Stick SD-Card Inhalt
 
 **ACHTUNG: Neues Tool:** https://www.ventoy.net/en/index.html   
 
@@ -115,7 +115,7 @@ $ systemctl restart lightdm
 |      **platinum** |  14 GB  |   --.--  | Win10 Installations Stick *(stick hat probleme beim schreiben unter linux!)*                       |
 |  **Kingston vmx** |  16 GB  |   --.--  | Doku , Kickstart                                                                                   |
 |      **Paradies** |  64 GB  |   --.--  | VENTOY , Desinfect-2023                                                                            |
-|                   |   1 GB  |   --.--  | Irgendwas mit Computer und                                                                         |
+| **sdcard chromi** |  16 GB  |   14.21  | VENTOY , linuxmint-21 (persistence) ,  DATA Partition                                              |
 |                   |   1 GB  |   --.--  |                                                                                                    |
 |                   |   1 GB  |   --.--  |                                                                                                    |
 |                   |         |          |                                                                                                    |
