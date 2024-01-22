@@ -155,7 +155,6 @@ TIP: *Hanging/Haengende ssh session:* Tasten/keys: +
 
 .*Login Problem bei lgnas* wg. zu altem sshd
 ----
-[source,bash]
 cat ~/.ssh/config
 Host LG-NAS-N1T1TD1 lg-nas-n1t1td1 lgnas 192.168.178.51
   KexAlgorithms +diffie-hellman-group1-sha1
