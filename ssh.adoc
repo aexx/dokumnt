@@ -21,16 +21,6 @@ in  /etc/ssh/sshd_config -> AllowTcpForwarding yes
 ----
 
 
-=== Probleme problems  
-
- * ssh -X [-Y] HOST => __Fehler:__  `Error: Can't open display` => in Datei: +
-   `/etc/ssh/sshd_config` muss *`X11Forwarding yes`* gesetzt werden   
- * *ssh login slow/langsam* => Eintragen Quell-PC auf Ziel-PC/ Insert Source-Host at Destination-Host: + 
-   => in /etc/hosts: `echo "192.168.108.208 buechsi-02.bla.net buechsi-02" >> /etc/hosts`   
- * *ssh login*: Evtl. liegt der Key im verschluesselten HOME Ordner, per *AuthorizedKeysFile -Eintrag* in +
-   der sshd_config kann die keys -Datei z.B. nach /var/lib/ssh/%u  gelegt werden    
-
-
 === Host Key Checking  
 
 .Delete Line 42 from **known_hosts** /Zeile 42 loeschen: 
@@ -98,6 +88,193 @@ Host email
    ForwardX11  no
    Compression yes
 ----
+
+
+=== ssh sshd service
+
+* *ssh sshd* (service daemon dienst) => aktivieren/activate ,deaktivieren/deactivate ,disable enable an aus:  
+  `sudo update-rc.d ssh [disable|enable]` funktioniert NICHT MEHR ab Ubuntu 14.04.5 +
+  => `/etc/init/ssh.conf` => `#start on runlevel [2345]` 
+
+
+=== ssh Host Keys
+
+.Nach *Klonen* von Unix/Linux-Systemen mit *Kommando: _ssh-keygen_ neue ssh_host_keys* (host-keys) anlegen: 
+----
+rm /etc/ssh/ssh_host_*
+ssh-keygen -t rsa1 -f /etc/ssh/ssh_host_key -N ""
+ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key -N ""
+ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N "" 
+/etc/init.d/ssh* restart
+----
+
+
+
+=== ssh agent
+
+.Load ssh-key/laden, passphrase nur einmal/only once | load in .bashrc
+----
+$ eval "`ssh-agent`" &&  ssh-add
+Agent pid 4711
+Enter passphrase for /home/tux/.ssh/id_rsa: 
+Identity added: /home/tux/.ssh/id_rsa (/home/tux/.ssh/id_rsa)
+
+
+# .bashrc
+
+#### ADD IN .bashrc  - fuer gnome-keyring wieder auskommentiert
+#if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+#  eval `ssh-agent`
+#  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+#fi
+#export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+#ssh-add -l | grep "The agent has no identities" && ssh-add
+#### ADD IN .bashrc - fuer gnome-keyring wieder auskommentiert
+
+#### gnome-keyring
+ssh-add ~/.ssh/id_rsa ; ssh-add -L # Kontrolle
+/usr/lib/seahorse/seahorse-ssh-askpass /home/ok8cp5/.ssh/id_rsa 
+ACHTUNG: Hat erst funktioniert, als sowohl der SSH-Key als auch der Public-Key den gleichen 
+Namen hatten, also: id_rsa + id_rsa.pub (NICHT id_rsa + identity.pub)
+#### gnome-keyring
+
+----
+
+
+== Probleme/problems fails error/Fehler
+
+ * ssh -X [-Y] HOST => __Fehler:__  `Error: Can't open display` => in Datei: +
+   `/etc/ssh/sshd_config` muss *`X11Forwarding yes`* gesetzt werden   
+ * *ssh login slow/langsam* => Eintragen Quell-PC auf Ziel-PC/ Insert Source-Host at Destination-Host: + 
+   => in /etc/hosts: `echo "192.168.108.208 buechsi-02.bla.net buechsi-02" >> /etc/hosts`   
+ * *ssh login*: Evtl. liegt der Key im verschluesselten HOME Ordner, per *AuthorizedKeysFile -Eintrag* in +
+   der sshd_config kann die keys -Datei z.B. nach /var/lib/ssh/%u  gelegt werden   
+
+TIP: *Hanging/Haengende ssh session:* Tasten/keys: +
+=> *"ENTER" => "~" =>> "."  (Also "Enter/Return" , "Tilde" , "Punkt")
+
+.Login Problem bei lgnas wg. zu altem sshd
+----
+[source,bash]
+cat ~/.ssh/config
+Host LG-NAS-N1T1TD1 lg-nas-n1t1td1 lgnas 192.168.178.51
+  KexAlgorithms +diffie-hellman-group1-sha1
+  HostKeyAlgorithms +ssh-rsa
+  PubkeyAcceptedKeyTypes +ssh-rsa
+  Ciphers 3des-cbc
+----
+
+
+=== ssh login via key - encrypted/verschluesseltes home
+
+.*Login per ssh key funktioniert nicht*. Grund: Verschluesseltes HOME Verzeichnis. Aus www: +
+Is your home dir encrypted? If so, for your first ssh session you will have to provide a password. The second ssh session to the same server is working with auth key. If this is the case, you could move your authorized_keys to an unencrypted dir and change the path in ~/.ssh/config.  What I ended up doing was create a /etc/ssh/username folder, owned by username, with the correct permissions, and placed the authorized_keys file in there. +
+Then changed the AuthorizedKeysFile directive in */etc/ssh/config* to:
+----
+AuthorizedKeysFile    /etc/ssh/%u/authorized_keys  # allows multiple users to have ssh access without compromising permissions.
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ging beim optiplex-760 nicht, da das Login Profil nicht greift, z.B.: kein PS1 Prompt , History usw...
+----
+
+
+
+
+
+=== ssh opensuse-tumbleweed
+
+.Nach Installation opensuse-tumbleweed 20201123 funktioniert trotz aktivem sshd.service - OpenSSH Daemon kein ssh Login von aussen!   
+[source,bash]
+----
+$ sudo systemctl status sshd
+ sshd.service - OpenSSH Daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; vendor preset: disabled)
+     Active: active (running) since ...
+Loesung:
+$ sudo firewall-cmd --permanent --add-service=ssh
+success
+$ sudo firewall-cmd --reload
+success
+
+# ssh agent fuer kde plasma opensuse-tumbleweed
+$ printf '#!/bin/sh
+export SSH_ASKPASS=/usr/libexec/ssh/ksshaskpass
+/usr/bin/ssh-add </dev/null
+' > ~/.config/autostart-scripts/ssh-unlock.sh
+### MINT-Linux: export SSH_ASKPASS=/usr/bin/ksshaskpass
+
+----
+
+
+==== GUI (graphical) programs as root
+
+Running GUI (graphical) programs as root using sudo over SSH connection - GUI (grafische) Programme als root ueber ssh
+
+IMPORTANT: -> SSH connection is established to a remote machine using `ssh -X` +
+-> GUI program is run using sudo such as 'sudo virt-manager' +
+-> error `X11 connection rejected because of wrong authentication.` +
+
+For GUI to work two environment variables are very important: +
+*DISPLAY* +
+Specifies to which X server display should be sent, or where should the graphics be displayed. +
+*XAUTHORITY* +
+Used for authenticating while connecting to a Xserver. In case this environment variable is not set, by default `~/.Xauthority` file is used. Note that this authentication is important else all other users on same system would simply be able to connect to local DISPLAY port and send graphic commands / messages. +
+When `ssh -X` is used SSH sets DISPLAY environment appropriately and also creates a `.Xauthority` file in home folder of the user. +
+This allows users to run GUI programs such as `gedit &`. +
+
+But when same is tried using sudo such as `sudo gedit &` error is encountered as file /root/.Xauthority either does not exists or is incorrect. 
+
+.To solve this problem one can *either* copy .Xauthority file of user to /root using:
+[source,bash]
+----
+cp /home/<user>/.Xauthority /root/
+
+# or simply set XAUTHORITY environment variable as:
+sudo XAUTHORITY=/home/<user>/.Xauthority gedit &  # assuming home folders in /home.
+
+# The same would work if root shell is obtained using 'sudo su -'. After obtaining root shell use
+export XAUTHORITY=/home/<user>/.Xauthority
+----
+
+
+=== Dies und das / this and that
+
+
+TIP: *Variablen, Umgebung* nach dem *Login*: +
+Beim "normalen" Login wird die *`.bash_profile`* gelesen, +
+bei Login ueber ssh wird die *`.bashrc`* gelesen
+
+
+.Check / Kontrolle welcher public key bei github hinterlegt ist:
+[source,bash]
+----
+$ ssh-add -l -E sha256
+2048 SHA256:BI6IfHAXXXXXXXXXXXXXXXXXXXXXXXXXXXXUowshz1E /home/userp5/.ssh/id_rsa (RSA)
+
+# 
+Warning: the ECDSA host key for 'github.com' differs from the key for the IP address 'XXX.YY.121.4'
+Offending key for IP in /home/ok8cp5/.ssh/known_hosts:148
+Matching host key in /home/ok8cp5/.ssh/known_hosts:220
+Are you sure you want to continue connecting (yes/no)? yes
+## Loesung:
+$ ssh-keygen -R XXX.YY.121.4
+
+----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
