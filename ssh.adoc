@@ -1,0 +1,32 @@
+
+== ssh
+
+=== ssh Port Forwarding 
+
+.Zugriff auf Proxy ueber Portforwarding 
+----
+root@buechsi-02:~/ # ssh -R 3128:192.168.40.100:3128 SYS-99.bla.net
+Last login: Mon Feb 16 12:23:40 2009 from 192.168..108.108
+...
+
+### Dann in **wgetrc** auf SYS-99.bla.net eintragen:
+### file wgetrc:
+#...
+http_proxy = http://localhost:3128/
+ftp_proxy = http://localhost:3128/
+#...
+
+Fuer ssh tunnel -> auf tunnel-system 
+in  /etc/ssh/sshd_config -> AllowTcpForwarding yes 
+----
+
+
+=== Probleme problems  
+
+ * ssh -X [-Y] HOST => __Fehler:__  `Error: Can't open display` => in Datei: +
+   `/etc/ssh/sshd_config` muss *`X11Forwarding yes`* gesetzt werden   
+ * *ssh login slow/langsam* => Eintragen Quell-PC auf Ziel-PC/ Insert Source-Host at Destination-Host: + 
+   => in /etc/hosts: `echo "192.168.108.208 buechsi-02.bla.net buechsi-02" >> /etc/hosts`   
+ * *ssh login*: Evtl. liegt der Key im verschluesselten HOME Ordner, per *AuthorizedKeysFile -Eintrag* in +
+   der sshd_config kann die keys -Datei z.B. nach /var/lib/ssh/%u  gelegt werden    
+
