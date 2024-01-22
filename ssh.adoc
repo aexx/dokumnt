@@ -30,3 +30,75 @@ in  /etc/ssh/sshd_config -> AllowTcpForwarding yes
  * *ssh login*: Evtl. liegt der Key im verschluesselten HOME Ordner, per *AuthorizedKeysFile -Eintrag* in +
    der sshd_config kann die keys -Datei z.B. nach /var/lib/ssh/%u  gelegt werden    
 
+
+=== Host Key Checking  
+
+.Delete Line 42 from **known_hosts** /Zeile 42 loeschen: 
+----
+$ sed -i 42d ~/.ssh/known_hosts 
+### OR/ODER in ~/.ssh/config
+   Host 192.168.1.42   # [IP/HOSTNAME] 
+   StrictHostKeyChecking no
+   UserKnownHostsFile=/dev/null 
+### OR/ODER
+   $ ssh -o StrictHostKeyChecking=no root@192.168.1.42  # orsyxenta linux
+
+### Ganze Umgebung neu => loesche aus known_hosts per Listen - Schleife:
+
+ssh-keyscan dats1log1001.eons.ada.t-online.de  # keySCAN
+
+$ for a in `cat stu` ;do sleep 2 ;echo " ---- $a ---- " ;b=$(echo $a|cut -c6-) ;echo $b ;sleep 2 ;ssh-keygen -f "/home/aleschil/.ssh/known_hosts" -R $b ; done
+$ for a in `cat stu` ;do sleep 2 ;echo " ---- $a ---- " ;b=$(echo $a|cut -c6-) ;IP=$(dig $b +short) ;echo $IP ;ssh-keygen -f "/home/aleschil/.ssh/known_hosts" -R $IP ; done 
+$ for a in `cat stu` ;do sleep 2 ;echo " ---- $a ---- " ;b=$(echo $a|cut -c6-) ;echo $b ;IP=$(dig $b +short) ;echo $IP ;sleep 2 ;ssh-keygen -f "/home/aleschil/.ssh/known_hosts" -F $b ;echo $IP ;ssh-keygen -f "/home/aleschil/.ssh/known_hosts" -F $IP ;done  # Name und IP in  known_hosts  Suchen 
+$ for a in `cat stu` ;do sleep 2 ;echo " ---- $a ---- " ;b=$(echo $a|cut -c6-) ;echo $b ;IP=$(dig $b +short) ;echo $IP ;sleep 2 ;echo ssh-keygen -f "/home/aleschil/.ssh/known_hosts" -R $b ;echo $IP ;echo ssh-keygen -f "/home/aleschil/.ssh/known_hosts" -R $IP ;done
+$ for a in `cat stu` ;do sleep 2 ;echo " ---- $a ---- " ;echo ssh -o StrictHostKeyChecking=no  $a 'uname -a '; done
+----
+
+
+=== Beispiel ~/.ssh/config  
+
+----
+# Proxy über http proxy
+# CheckHostIP no für dyndns und nat
+Host 1.2.3.4
+   proxyCommand connect -H 192.168.133.249:8080  1.2.3.4 %p
+   CheckHostIP no
+# no proxy
+# port forward für chat
+Host knoppix
+   HostName 192.168.40.222
+   LocalForward 5222 192.168.42.197:5222
+Host backup1
+   HostName backup1
+   Compression yes
+   ForwardX11 yes
+Host backup2
+   HostName backup2
+   Compression yes
+   ForwardX11 yes
+
+Host  test
+   proxyCommand connect -H 192.168.133.249:8080 test.dyndns.org %p
+   Compression yes
+   CheckHostIP no
+
+# über socs proxy
+# portforward fü myql
+Host test2
+   proxyCommand connect -S 192.168.133.249 host1.bbbb.de %p
+   Compression yes
+   LocalForward 3306 localhost:3306
+
+Host email
+   ProxyCommand connect -H 192.168.133.249:8080 1.2.3.4 %p
+   LocalForward 1993 1.2.3.4:993
+   LocalForward 1110 1.2.3.4:110
+   LocalForward 1025 1.2.3.4:25
+   ForwardAgent no
+   ForwardX11  no
+   Compression yes
+----
+
+
+
+
