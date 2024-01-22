@@ -112,7 +112,7 @@ ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ""
 
 === ssh agent
 
-.Load ssh-key/laden, passphrase nur einmal/only once | load in .bashrc
+.ssh-key / ssh agent | in .bashrc
 ----
 $ eval "`ssh-agent`" &&  ssh-add
 Agent pid 4711
@@ -141,9 +141,9 @@ Namen hatten, also: id_rsa + id_rsa.pub (NICHT id_rsa + identity.pub)
 ----
 
 
-== Probleme/problems fails error/Fehler
+== ssh problems (problem fail error fehler)
 
- * ssh -X [-Y] HOST => __Fehler:__  `Error: Can't open display` => in Datei: +
+ * ssh -X [-Y] HOST => _Fehler:_  `Error: Can't open display` => in Datei: +
    `/etc/ssh/sshd_config` muss *`X11Forwarding yes`* gesetzt werden   
  * *ssh login slow/langsam* => Eintragen Quell-PC auf Ziel-PC/ Insert Source-Host at Destination-Host: + 
    => in /etc/hosts: `echo "192.168.108.208 buechsi-02.bla.net buechsi-02" >> /etc/hosts`   
@@ -151,9 +151,9 @@ Namen hatten, also: id_rsa + id_rsa.pub (NICHT id_rsa + identity.pub)
    der sshd_config kann die keys -Datei z.B. nach /var/lib/ssh/%u  gelegt werden   
 
 TIP: *Hanging/Haengende ssh session:* Tasten/keys: +
-=> *"ENTER" => "~" =>> "."  (Also "Enter/Return" , "Tilde" , "Punkt")
+=> *`[ENTER] => [ ~ ] => [ . ]`*  (Also "Enter/Return" , "Tilde" , "Punkt")
 
-.Login Problem bei lgnas wg. zu altem sshd
+.*Login Problem bei lgnas* wg. zu altem sshd
 ----
 [source,bash]
 cat ~/.ssh/config
@@ -169,15 +169,12 @@ Host LG-NAS-N1T1TD1 lg-nas-n1t1td1 lgnas 192.168.178.51
 
 .*Login per ssh key funktioniert nicht*. Grund: Verschluesseltes HOME Verzeichnis. Aus www: +
 Is your home dir encrypted? If so, for your first ssh session you will have to provide a password. The second ssh session to the same server is working with auth key. If this is the case, you could move your authorized_keys to an unencrypted dir and change the path in ~/.ssh/config.  What I ended up doing was create a /etc/ssh/username folder, owned by username, with the correct permissions, and placed the authorized_keys file in there. +
-Then changed the AuthorizedKeysFile directive in */etc/ssh/config* to:
+Then change the AuthorizedKeysFile directive in */etc/ssh/config* to:
 ----
 AuthorizedKeysFile    /etc/ssh/%u/authorized_keys  # allows multiple users to have ssh access without compromising permissions.
        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Ging beim optiplex-760 nicht, da das Login Profil nicht greift, z.B.: kein PS1 Prompt , History usw...
+!! Ging beim optiplex-760 nicht, da das Login Profil nicht greift, z.B.: kein PS1 Prompt , History usw...
 ----
-
-
-
 
 
 === ssh opensuse-tumbleweed
@@ -201,7 +198,6 @@ export SSH_ASKPASS=/usr/libexec/ssh/ksshaskpass
 /usr/bin/ssh-add </dev/null
 ' > ~/.config/autostart-scripts/ssh-unlock.sh
 ### MINT-Linux: export SSH_ASKPASS=/usr/bin/ksshaskpass
-
 ----
 
 
@@ -214,10 +210,10 @@ IMPORTANT: -> SSH connection is established to a remote machine using `ssh -X` +
 -> error `X11 connection rejected because of wrong authentication.` +
 
 For GUI to work two environment variables are very important: +
-*DISPLAY* +
-Specifies to which X server display should be sent, or where should the graphics be displayed. +
-*XAUTHORITY* +
-Used for authenticating while connecting to a Xserver. In case this environment variable is not set, by default `~/.Xauthority` file is used. Note that this authentication is important else all other users on same system would simply be able to connect to local DISPLAY port and send graphic commands / messages. +
+*DISPLAY* -> Specifies to which X server display should be sent, or where should the graphics be displayed. +
+*XAUTHORITY* -> Used for authenticating while connecting to a Xserver. In case this environment variable is not +
+set, by default `~/.Xauthority` file is used. Note that this authentication is important else all other users on +
+same system would simply be able to connect to local DISPLAY port and send graphic commands / messages. +
 When `ssh -X` is used SSH sets DISPLAY environment appropriately and also creates a `.Xauthority` file in home folder of the user. +
 This allows users to run GUI programs such as `gedit &`. +
 
@@ -238,11 +234,9 @@ export XAUTHORITY=/home/<user>/.Xauthority
 
 === Dies und das / this and that
 
-
 TIP: *Variablen, Umgebung* nach dem *Login*: +
 Beim "normalen" Login wird die *`.bash_profile`* gelesen, +
 bei Login ueber ssh wird die *`.bashrc`* gelesen
-
 
 .Check / Kontrolle welcher public key bei github hinterlegt ist:
 [source,bash]
@@ -257,7 +251,6 @@ Matching host key in /home/ok8cp5/.ssh/known_hosts:220
 Are you sure you want to continue connecting (yes/no)? yes
 ## Loesung:
 $ ssh-keygen -R XXX.YY.121.4
-
 ----
 
 
