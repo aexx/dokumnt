@@ -110,9 +110,9 @@ $ systemctl restart lightdm
 |      **cruzer** 4 |    4 GB |   --.--  | Puppy Linux fossapup64                                                                             |
 |       **toshiba** |   32 GB |   30.14  | VENTOY , ubuntu-20.04 , Desinfect-2018 , linuxmint-21 (persistence) , redorescue-4.0.0             |
 |      **cruzer** 8 |    8 GB |   --.--  | Unraid OS                                                                                          |
-|  **Sandisk Rund** |    8 GB |   36.70  | VENTOY , clonezilla-live-3.0.2-21 , redorescue-4.0.0                                               |
-|      **DataT102** |   32 GB |   --.--  | Kein Live-Sys , ISOs (Win7,...), Aufnahmen (2)                                           **NTFS**  |
-|      **platinum** |   14 GB |   --.--  | VENTOY , bunsen-linux                                       *(stick evtl probleme  unter linux!)*  |
+|  **Sandisk Rund** |    8 GB |   36.70  | ChromeOS Flex 2023                                                                                 |
+|      **DataT102** |   32 GB |   --.--  | Kein Live-Sys , ISOs (Win7,...), Aufnahmen (2) . . .                                     **NTFS**  |
+|      **platinum** |   14 GB |   --.--  | VENTOY , bunsen-linux , Peppermint-10-20191210-i386 . .      *(stick evtl probleme unter linux!)*  |
 |  **Kingston vmx** |   16 GB |   --.--  | Doku , Kickstart                                                                                   |
 |      **Paradies** |   64 GB |   98.22  | VENTOY , Desinfect-2023 , bunsen-linux , fossapup64 , tuxedo ,                                     |
 | **sdcard chromi** |   16 GB |   14.21  | VENTOY , linuxmint-21 (persist.)    DATA Partition                                                 |
