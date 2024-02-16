@@ -10,8 +10,10 @@ Dokumentation, documentation, Linux, PC Zeugs, PC stuff ...
 TODO
 ~~~~
 
-.Muss bei Gelegenheit in die Paket-Doku
+.Muss bei Gelegenheit in die Paket-Doku: Probleme beim Upgrade (sudo apt upgrade)
 ----
+#### Verursacht durch Paket: libsyn123-0 amd64 1.29.3-1build1
+#### Manuelles ReInstallieren hat nicht funktioniert - Dateilisten-Datei "kaputt" - SIEHE UNTEN
 p5@chromi:~$ sudo apt -f reinstall libsyn123-0
 Paketlisten werden gelesen… Fertig
 Abhängigkeitsbaum wird aufgebaut… Fertig
