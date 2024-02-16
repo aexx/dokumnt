@@ -32,6 +32,7 @@ p5@chromi:~$ less /var/lib/dpkg/info/libsyn123-0\:amd64.list
 "/var/lib/dpkg/info/libsyn123-0:amd64.list" may be a binary file.  See it anyway? 
 p5@chromi:~$
 p5@chromi:~$ cp -av /var/cache/apt/archives/libsyn123-0_1.29.3-1build1_amd64.deb /dev/shm ; cd /dev/shm
+#### Datei manuell (per dpkg -c xyz |awk .....) erzeugt:
 p5@chromi:/dev/shm$ dpkg -c libsyn123-0_1.29.3-1build1_amd64.deb  | awk '{if ($6 == "./") { print "/."; } else if (substr($6, length($6), 1) == "/") {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' |sudo tee /var/lib/dpkg/info/libsyn123-0\:amd64.list
 /.
 /usr
