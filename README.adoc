@@ -7,7 +7,39 @@ Dokumentation, documentation, Linux, PC Zeugs, PC stuff ...
 
 
 
+TODO
+~~~~
 
+.Muss bei Gelegenheit in die Paket-Doku
+----
+p5@chromi:~$ sudo apt -f reinstall libsyn123-0
+Paketlisten werden gelesen… Fertig
+Abhängigkeitsbaum wird aufgebaut… Fertig
+Statusinformationen werden eingelesen… Fertig
+0 aktualisiert, 0 neu installiert, 1 erneut installiert, 0 zu entfernen und 337 nicht aktualisiert.
+Es müssen 96,9 kB an Archiven heruntergeladen werden.
+Nach dieser Operation werden 0 B Plattenplatz zusätzlich benutzt.
+Holen:1 https://mirrors.tuxedocomputers.com/ubuntu/mirror/archive.ubuntu.com/ubuntu jammy/main amd64 libsyn123-0 amd64 1.29.3-1build1 [96,9 kB]
+Es wurden 96,9 kB in 0 s geholt (281 kB/s).
+dpkg: nicht behebbarer fataler Fehler, Abbruch:
+Abschließender Zeilenvorschub fehlt in Dateilisten-Datei des Paketes »libsyn123-0:amd64«
+E: Sub-process /usr/bin/dpkg returned an error code (2)
+p5@chromi:~$
+#### Die Datei /var/lib/dpkg/info/vlc-plugin-samba:amd64.list war "kaputt"
+p5@chromi:~$ less /var/lib/dpkg/info/libsyn123-0\:amd64.list 
+"/var/lib/dpkg/info/libsyn123-0:amd64.list" may be a binary file.  See it anyway? 
+p5@chromi:~$
+p5@chromi:~$ cp -av /var/cache/apt/archives/libsyn123-0_1.29.3-1build1_amd64.deb /dev/shm ; cd /dev/shm
+p5@chromi:/dev/shm$ dpkg -c libsyn123-0_1.29.3-1build1_amd64.deb  | awk '{if ($6 == "./") { print "/."; } else if (substr($6, length($6), 1) == "/") {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' |sudo tee /var/lib/dpkg/info/libsyn123-0\:amd64.list
+/.
+/usr
+/usr/lib
+[...]
+/usr/share/doc/libsyn123-0/copyright
+/usr/lib/x86_64-linux-gnu/libsyn123.so.0
+p5@chromi:/dev/shm$ 
+
+----
 
 
 
