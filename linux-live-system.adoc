@@ -17,7 +17,7 @@ sudo $(ls -d ~/bigaex/Tools/ventoy-*/CreatePersistentImg.sh -s 2048)  ## ==> per
 
 .Verzeichnis ventoy auf USB-Stick 
 ----
-$ ls /media/ok8cp5/Ventoy/ventoy/
+$ ls /media/p5/Ventoy/ventoy/
 ventoy_grub.cfg  
 ventoy_grub.cfg.alt  
 ventoy.json
@@ -31,8 +31,10 @@ cat ventoy.json
         }
     ]
 }
+
+#### Ventoy Menu Extension Plugin - Eigenes grub - Menue ==> F6 
 # _________________________________________________
-$ cat /media/ok8cp5/Ventoy/ventoy/ventoy_grub.cfg
+$ cat /media/p5/Ventoy/ventoy/ventoy_grub.cfg
 menuentry 'Changes RO' --id 'changesro' {
  insmod part_msdos
  insmod ext2
