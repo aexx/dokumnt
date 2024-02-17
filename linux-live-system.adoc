@@ -1,0 +1,15 @@
+
+== linux-live-system
+
+
+=== ventoy
+
+.ventoy comands
+----
+todo
+
+todo
+todo
+
+todo
+----
