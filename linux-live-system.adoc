@@ -6,10 +6,10 @@
 
 .ventoy comands
 ----
-todo
+sudo ~/bigaex/Tools/ventoy-1.0.80/Ventoy2Disk.sh -i /dev/sdf
+sudo ~/bigaex/Tools/ventoy-1.0.80/Ventoy2Disk.sh -l /dev/sdf
+sudo ~/bigaex/Tools/ventoy-1.0.80/Ventoy2Disk.sh -u /dev/sdg
+sudo ~/bigaex/Tools/ventoy-1.0.80/CreatePersistentImg.sh -s 256    ## ---->  persistence.dat in 2GB size and ext4 filesystem and casper-rw label
 
-todo
-todo
 
-todo
 ----
