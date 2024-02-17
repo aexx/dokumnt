@@ -18,8 +18,8 @@ $(ls -d ~/bigaex/Tools/ventoy-*/Ventoy2Disk.sh|tail -1)
 sudo $(ls -d ~/bigaex/Tools/ventoy-*/Ventoy2Disk.sh|tail -1) -i /dev/sdf
 sudo $(ls -d ~/bigaex/Tools/ventoy-*/Ventoy2Disk.sh|tail -1) -l /dev/sdf
 sudo $(ls -d ~/bigaex/Tools/ventoy-*/Ventoy2Disk.sh|tail -1) -u /dev/sdg
-#### ==> persistence.dat in 2GB size and ext4 filesystem and casper-rw label
-sudo $(ls -d ~/bigaex/Tools/ventoy-*/CreatePersistentImg.sh -s 2048)  ## ==> persistence.dat 2GB size
+#### => persistence.dat in 2GB size and ext4 filesystem and casper-rw label
+sudo $(ls -d ~/bigaex/Tools/ventoy-*/CreatePersistentImg.sh -s 2048)  ## => persistence.dat 2GB size
 
 ----
 
@@ -40,7 +40,7 @@ cat ventoy.json
     ]
 }
 
-#### Ventoy Menu Extension Plugin - Eigenes grub - Menue ==> F6 
+#### Ventoy Menu Extension Plugin - Eigenes grub - Menue => F6 
 # _________________________________________________
 $ cat /media/p5/Ventoy/ventoy/ventoy_grub.cfg
 menuentry 'Changes RO' --id 'changesro' {
