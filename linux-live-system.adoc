@@ -80,3 +80,24 @@ TIP: Ventoy ignoriert ISOs in Verzeichnissen mit Datei: *`.ventoyignore`*
 
 === Porteus
 
+.Porteus dies und das
+----
+#### porteus-v5.0-x86_64.cfg
+# ____________
+[...] 
+timezone=Europe/Berlin
+kmap=de
+# keine mount
+noauto
+# ____________
+
+
+----
+
+
+
+
+
+
+
+
