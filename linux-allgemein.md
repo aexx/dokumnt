@@ -106,7 +106,7 @@ $ systemctl restart lightdm
 |                   |         |          |                                                                                                    |
 |     **t-systems** |  246 MB |    7.07  | puppy linux slacko_5.7                                                                             |
 |         **krenn** |    2 GB |   --.--  | VENTOY , clonezilla-live-2.7.0 , linuxmint-21 (persistence)                                        |
-|        **apacer** |    2 GB |   17.57  | nachbar-infos __ VENTOY , peppermint-10-i386 (persist.)                                            |
+|        **apacer** |    2 GB |   17.57  | VENTOY , porteus_5, supergrub                                                                      |
 |      **cruzer** 4 |    4 GB |   --.--  | puppy linux fossapup64 (persist.)                                                                  |
 |       **toshiba** |   32 GB |   30.14  | VENTOY, ubuntu-20.04, linuxmint-21 (persist.), redorescue-4.0.0, grml_2022, slax_12.2, porteus_5   |
 |      **cruzer** 8 |    8 GB |   --.--  | unraid OS                                                                                          |
