@@ -106,12 +106,12 @@ $ systemctl restart lightdm
 |                   |         |          |                                                                                                    |
 |     **t-systems** |  246 MB |    7.07  | puppy linux slacko_5.7                                                                             |
 |         **krenn** |    2 GB |   --.--  | VENTOY , clonezilla-live-2.7.0 , linuxmint-21 (persistence)                                        |
-|        **apacer** |    2 GB |   17.57  | VENTOY , porteus_5 (persist.), supergrub                                                           |
+|        **apacer** |    2 GB |   17.57  | nachbar-infos __ VENTOY , peppermint-10-i386 (persist.)                                            |
 |      **cruzer** 4 |    4 GB |   --.--  | puppy linux fossapup64 (persist.)                                                                  |
 |       **toshiba** |   32 GB |   30.14  | VENTOY, ubuntu-20.04, linuxmint-21 (persist.), redorescue-4.0.0, grml_2022, slax_12.2, porteus_5   |
 |      **cruzer** 8 |    8 GB |   --.--  | unraid OS                                                                                          |
 |  **Sandisk Rund** |    8 GB |   36.70  | chromeOS flex 2023                                                                                 |
-|      **DataT102** |   32 GB |   --.--  | puppy linux fossapup64 (persist.), porteus_5 (IN ARBEIT, persist.)                                 |
+|      **DataT102** |   32 GB |   --.--  | puppy linux fossapup64 (persist.)                                                                  |
 |      **platinum** |   14 GB |   --.--  | VENTOY , bunsen-linux , peppermint-10-i386 . .                   *(stick evtl probleme u linux!)*  |
 |  **Kingston vmx** |   16 GB |   --.--  | DEFEKT                                                                                             |
 |      **Paradies** |   64 GB |   98.22  | VENTOY , Desinfect-2023 , bunsen-linux , fossapup64 , tuxedo ,                                     |
