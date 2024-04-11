@@ -48,13 +48,13 @@ $ for a in `cat stu` ;do sleep 2 ;echo " ---- $a ---- " ;echo ssh -o StrictHostK
 === Beispiel ~/.ssh/config  
 
 ----
-# Proxy über http proxy
-# CheckHostIP no für dyndns und nat
+# Proxy ueber http proxy
+# CheckHostIP no fuer dyndns und nat
 Host 1.2.3.4
    proxyCommand connect -H 192.168.133.249:8080  1.2.3.4 %p
    CheckHostIP no
 # no proxy
-# port forward für chat
+# port forward fuer chat
 Host knoppix
    HostName 192.168.40.222
    LocalForward 5222 192.168.42.197:5222
@@ -72,8 +72,8 @@ Host  test
    Compression yes
    CheckHostIP no
 
-# über socs proxy
-# portforward fü myql
+# ueber socs proxy
+# portforward fuer mysql
 Host test2
    proxyCommand connect -S 192.168.133.249 host1.bbbb.de %p
    Compression yes
