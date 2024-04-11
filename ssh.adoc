@@ -228,6 +228,19 @@ sudo XAUTHORITY=/home/<user>/.Xauthority gedit &  # assuming home folders in /ho
 
 # The same would work if root shell is obtained using 'sudo su -'. After obtaining root shell use
 export XAUTHORITY=/home/<user>/.Xauthority
+
+
+## OR / ODER
+
+$ xauth list $DISPLAY
+tine-Inspi-1520/unix:10  MIT-MAGIC-COOKIE-1  b0a67af38e99b6a6382c28189bba9e7c
+$ sudo su
+# xlogo
+X11 connection rejected because of wrong authentication.
+Error: Can't open display: localhost:10.0
+# xauth add tine-Inspi-1520/unix:10  MIT-MAGIC-COOKIE-1  b0a67af38e99b6a6382c28189bba9e7c
+# xlogo
+
 ----
 
 
