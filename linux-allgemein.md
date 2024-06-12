@@ -11,6 +11,7 @@
 nur-md5-aus-diff () { cat ${1} |grep -v __ > ${1}_nur-md5; }  # nur-md5-aus-diff loeschmi_0427_OptiP_bigaex_DIFF 
 nur-basename-md5-aus-diff () { rm -fv ${1}_nur-basename-md5 ; cat ${1} |while read line; do echo $line|egrep -v " __ "|awk 'BEGIN{FS="/"}{print $NF}' >> ${1}_nur-basename-md5 ;done }  # nur-basename-md5-aus-diff XXXX_ok8cp5_bigaex_DIFF
 cat md5list2024-06-12_1147_aspiX3950_home_ok8cp5_bigaex_sort_md5|while read line; do nurmd5=$(echo $line|cut -c-32); grep -q $nurmd5 md5list2024-06-12_1148_aspiX3950_media_ok8cp5_Intenso7B_bigaex_sort_md5 || printf "\n\n $line NICHT GEFUNDEN\n\n"  ; printf ":" ; done
+# ODER,OR: aex-md5-cross-analyse.sh
 #
 in .i3/config add line:  # workspace_layout <default|stacking|tabbed> 
 #
