@@ -103,9 +103,9 @@ $ systemctl restart lightdm
 
 **ACHTUNG: Neues Tool:** https://www.ventoy.net/en/index.html   
 
-   
-| **USB Stick / SD** | Groesse |  USBv  |  MB/sec | Inhalt - Beschreibung                                                                             |
-|-------------------:|:-------:|:------:|-------:|----------------------------------------------------------------------------------------------------|
+  
+| **USB Stick / SD** | Groesse |  USBv  | MB/sec | Inhalt - Beschreibung                                                                             |
+|-------------------:|--------:|:------:|-------:|----------------------------------------------------------------------------------------------------|
 |                    |         |        |        |                                                                                                    |
 |      **t-systems** |  0,3 GB |   2    |     7  | puppy linux slacko_5.7                                                                             |
 |          **krXnn** |    2 GB |   2    |    14  | VENTOY . clonezilla-live-2.7.0. linuxmint-21 persistence                                           |
@@ -123,8 +123,8 @@ $ systemctl restart lightdm
 |                    |   xx GB |        |    --  |                                                                                                    |
 |                    |         |        |        |                                                                                                    |
 |                    |         |        |        |                                                                                                    |
-|     *kingston vmx* | *16 GB* |        |    --  | *DEFEKT*                                                                                           |
 |                    |         |        |        |                                                                                                    |
+|     *kingston vmx* | *16 GB* |        |    --  | *DEFEKT*                                                                                           |
 |                    |         |        |        | **kings. = Kingston . VTY = VENTOY . pers. = persistence                                       .** |
 
 
