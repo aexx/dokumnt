@@ -103,27 +103,29 @@ $ systemctl restart lightdm
 
 **ACHTUNG: Neues Tool:** https://www.ventoy.net/en/index.html   
 
- 
-|     **USB Stick** | Groesse | MB/sec | Inhalt - Beschreibung                                                                              |
-|------------------:|:-------:|-------:|----------------------------------------------------------------------------------------------------|
-|                   |         |        |                                                                                                    |
-|     **t-systems** |  246 MB |     7  | puppy linux slacko_5.7                                                                             |
-|         **krenn** |    2 GB |    --  | VENTOY , clonezilla-live-2.7.0 , linuxmint-21 (persistence)                                        |
-|        **apacer** |    2 GB |    17  | VENTOY , porteus_5 (persist.), supergrub                                                           |
-|      **cruzer** 4 |    4 GB |    --  | puppy linux fossapup64 (persist.)                                                                  |
-|       **toshiba** |   32 GB |    30  | VENTOY, ubuntu-20.04, linuxmint-21 (persist.), redorescue-4.0.0, grml_2022, slax_12.2, porteus_5   |
-|      **cruzer** 8 |    8 GB |    --  | unraid OS                                                                                          |
-|  **Sandisk Rund** |    8 GB |    36  | chromeOS flex 2023                                                                                 |
-|      **DataT102** |   32 GB |    21  | puppy linux fossapup64 (persist.), porteus_5 (IN ARBEIT, persist.)                                 |
-|      **platinum** |   14 GB |    --  | VENTOY , bunsen-linux , peppermint-10-i386 . .                   *(stick evtl probleme u linux!)*  |
-|  **Kingston vmx** |   16 GB |    --  | DEFEKT                                                                                             |
-|      **Paradies** |   64 GB |    98  | VENTOY , Desinfect-2023 , bunsen-linux , fossapup64 , tuxedo ,                                     |
-| **sdcard chromi** |   16 GB |    14  | VENTOY , linuxmint-21 (persist.)    data Partition                                                 |
-|                   |    1 GB |    --  |                                                                                                    |
-|                   |    1 GB |    --  |                                                                                                    |
-|                   |         |        |                                                                                                    |
-|                   |         |        |                                                                                                    |
-|                   |         |        |                                                                                                    |
+   
+|      **USB Stick** | Groesse | MB/sec | Inhalt - Beschreibung                                                                              |
+|-------------------:|:-------:|-------:|----------------------------------------------------------------------------------------------------|
+|                    |         |        |                                                                                                    |
+|      **t-systems** |  0,3 GB |     7  | puppy linux slacko_5.7                                                                             |
+|          **krXnn** |    2 GB |    --  | VENTOY , clonezilla-live-2.7.0 , linuxmint-21 (persistence)                                        |
+|         **apacer** |    2 GB |    17  | VENTOY , porteus_5 (persist.), supergrub                                                           |
+|       **cruzer** 4 |    4 GB |    --  | puppy linux fossapup64 (persist.)                                                                  |
+|       **cruzer** 8 |    8 GB |    --  | unraid OS                                                                                          |
+|   **sandisk Rund** |    8 GB |    36  | chromeOS flex 2023                                                                                 |
+|       **platinum** |   14 GB |    --  | VENTOY , bunsen-linux , peppermint-10-i386 . .                   *(stick evtl probleme u linux!)*  |
+|  **sdcard chromi** |   16 GB |    14  | VENTOY , linuxmint-21 (persist.)    data Partition                                                 |
+|        **toshiba** |   32 GB |    30  | VENTOY, ubuntu-20.04, linuxmint-21 (persist.), redorescue-4.0.0, grml_2022, slax_12.2, porteus_5   |
+| **kings.dataT102** |   32 GB |    21  | puppy linux fossapup64 (persist.), porteus_5 (IN ARBEIT, persist.)                                 |
+| **kingston kyson** |   32 GB |        |                                                                                                    |
+|    **paradies dm** |   64 GB |    98  | VENTOY , Desinfect-2023 , bunsen-linux , fossapup64 , tuxedo ,                                     |
+|                    |   xx GB |    --  |                                                                                                    |
+|                    |   xx GB |    --  |                                                                                                    |
+|                    |         |        |                                                                                                    |
+|                    |         |        |                                                                                                    |
+|     *Kingston vmx* | *16 GB* |    --  | *DEFEKT*                                                                                           |
+|                    |         |        |                                                                                                    |
+|                    |         |        |                                                                                                    |
 
 
 Installation __Multisystem__ auf apt-System
