@@ -108,17 +108,17 @@ $ systemctl restart lightdm
 |-------------------:|:-------:|-------:|----------------------------------------------------------------------------------------------------|
 |                    |         |        |                                                                                                    |
 |      **t-systems** |  0,3 GB |     7  | puppy linux slacko_5.7                                                                             |
-|          **krXnn** |    2 GB |    --  | VENTOY . clonezilla-live-2.7.0 . linuxmint-21 (persistence)                                        |
-|         **apacer** |    2 GB |    17  | VENTOY . porteus_5 (persist.), supergrub                                                           |
-|       **cruzer** 4 |    4 GB |    --  | puppy linux fossapup64 (persist.)                                                                  |
+|          **krXnn** |    2 GB |    --  | VENTOY . clonezilla-live-2.7.0. linuxmint-21 persistence                                           |
+|         **apacer** |    2 GB |    17  | VENTOY . porteus_5 persist. supergrub                                                              |
+|       **cruzer** 4 |    4 GB |    --  | puppy linux fossapup64 persist.                                                                    |
 |       **cruzer** 8 |    8 GB |    --  | unraid OS                                                                                          |
 |   **sandisk rund** |    8 GB |    36  | chromeOS flex 2023                                                                                 |
-|       **platinum** |   14 GB |    --  | VENTOY . bunsen-linux . peppermint-10-i386 . .                   *(stick evtl probleme u linux!)*  |
-|  **sdcard chromi** |   16 GB |    14  | VTY . linuxmint-21 (persist.)    data Partition                                                    |
-|        **toshiba** |   32 GB |    30  | VTY . ubuntu-20.04, linuxmint-21 (pers.), redorescue-4.0, grml_2022, slax_12.2, porteus_5          |
-| **kings.dataT102** |   32 GB |    21  | puppy linux fossapup64 (persist.), porteus_5 (IN ARBEIT, pers.)                                    |
+|       **platinum** |   14 GB |    --  | VENTOY . bunsen-linux. peppermint-10-i386. .                     *(stick evtl probleme u linux!)*  |
+|  **sdcard chromi** |   16 GB |    14  | VTY . linuxmint-21 persist. data Partition                                                         |
+|        **toshiba** |   32 GB |    30  | VTY . ubuntu-20.04. linuxmint-21 pers. redorescue-4.0. grml_2022. slax_12.2. porteus_5             |
+| **kings.dataT102** |   32 GB |    21  | puppy linux fossapup64 persist. porteus_5 in arbeit pers.                                          |
 |   **kings. kyson** |   32 GB |        |                                                                                                    |
-|    **paradies dm** |   64 GB |    98  | VENTOY . Desinfect-2023 . bunsen-linux . fossapup64 . tuxedo                                       |
+|    **paradies dm** |   64 GB |    98  | VENTOY . Desinfect-2023. bunsen-linux. fossapup64. tuxedo                                          |
 |                    |   xx GB |    --  |                                                                                                    |
 |                    |   xx GB |    --  |                                                                                                    |
 |                    |         |        |                                                                                                    |
