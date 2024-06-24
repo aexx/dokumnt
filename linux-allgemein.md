@@ -113,10 +113,10 @@ $ systemctl restart lightdm
 |       **cruzer** 4 |    4 GB |   2    |    24  | puppy linux fossapup64 persist.                                                                            |
 |       **cruzer** 8 |    8 GB |   2    |    --  | unraid OS                                                                                                  |
 |   **sandisk rund** |    8 GB |   2    |    36  | chromeOS flex 2023                                                                                         |
-|       **platinum** |   14 GB |   2    |    19  | VENTOY . bunsen-linux 2x. peppermint-32_2024.  clonezilla-32     *(stick evtl probleme u linux!)*          |
+|       **platinum** |   14 GB |   2    |    19  | VENTOY . bunsen-linux 2x. peppermint-32_2024. clonezilla-32                   *(stick probleme u linux!)*  |
 |  **sdcard chromi** |   16 GB |  SD    |    14  | VTY . linuxmint-21 persist. data Partition                                                                 |
 |        **toshiba** |   32 GB |   2    |    30  | VTY . ubuntu-20.04. linuxmint-21 pers. redorescue-4.0. grml_2022. slax_12.2. porteus_5                     |
-| **kings.dataT102** |   32 GB |   2    |    21  | puppy linux fossapup64 persist. porteus_5 in arbeit pers.                                                  |
+| **kings.dataT102** |   32 GB |   2    |    21  | q4os usb-install                                                                                           |
 |   **kings. kyson** |   32 GB |  3.2   |   200  | *leer*                                                                                                     |
 |    **paradies dm** |   64 GB |  3.x   |    98  | VENTOY . Desinfect-2023. bunsen-linux. fossapup64. tuxedo                                                  |
 |                    |   xx GB |        |    --  |                                                                                                            |
