@@ -104,28 +104,28 @@ $ systemctl restart lightdm
 **ACHTUNG: Neues Tool:** https://www.ventoy.net/en/index.html   
 
   
-| **USB Stick / SD** | Groesse |  USBv  | MB/sec | Inhalt - Beschreibung                                                                             |
-|-------------------:|--------:|:------:|-------:|----------------------------------------------------------------------------------------------------|
-|                    |         |        |        |                                                                                                    |
-|      **t-systems** |  0,3 GB |   2    |     7  | puppy linux slacko_5.7                                                                             |
-|          **krXnn** |    2 GB |   2    |    14  | VENTOY . clonezilla-live-2.7.0. linuxmint-21 persistence                                           |
-|         **apacer** |    2 GB |   2    |    17  | VENTOY . porteus_5 persist. supergrub                                                              |
-|       **cruzer** 4 |    4 GB |   2    |    24  | puppy linux fossapup64 persist.                                                                    |
-|       **cruzer** 8 |    8 GB |   2    |    --  | unraid OS                                                                                          |
-|   **sandisk rund** |    8 GB |   2    |    36  | chromeOS flex 2023                                                                                 |
-|       **platinum** |   14 GB |   2    |    19  | VENTOY . bunsen-linux. peppermint-10-i386. .                     *(stick evtl probleme u linux!)*  |
-|  **sdcard chromi** |   16 GB |  SD    |    14  | VTY . linuxmint-21 persist. data Partition                                                         |
-|        **toshiba** |   32 GB |   2    |    30  | VTY . ubuntu-20.04. linuxmint-21 pers. redorescue-4.0. grml_2022. slax_12.2. porteus_5             |
-| **kings.dataT102** |   32 GB |   2    |    21  | puppy linux fossapup64 persist. porteus_5 in arbeit pers.                                          |
-|   **kings. kyson** |   32 GB |  3.2   |   200  | *leer*                                                                                             |
-|    **paradies dm** |   64 GB |  3.x   |    98  | VENTOY . Desinfect-2023. bunsen-linux. fossapup64. tuxedo                                          |
-|                    |   xx GB |        |    --  |                                                                                                    |
-|                    |   xx GB |        |    --  |                                                                                                    |
-|                    |         |        |        |                                                                                                    |
-|                    |         |        |        |                                                                                                    |
-|                    |         |        |        |                                                                                                    |
-|     *kingston vmx* | *16 GB* |        |    --  | *DEFEKT*                                                                                           |
-|                    |         |        |        | **kings. = Kingston . VTY = VENTOY . pers. = persistence                                       .** |
+| **USB Stick / SD** | Groesse |  USBv  | MB/sec | Inhalt - Beschreibung                                                                                      |
+|-------------------:|--------:|:------:|-------:|------------------------------------------------------------------------------------------------------------|
+|                    |         |        |        |                                                                                                            |
+|      **t-systems** |  0,3 GB |   2    |     7  | puppy linux slacko_5.7                                                                                     |
+|          **krXnn** |    2 GB |   2    |    14  | VENTOY . linuxmint-21 persistence                                                                          |
+|         **apacer** |    2 GB |   2    |    17  | VENTOY . porteus_5 persist. supergrub                                                                      |
+|       **cruzer** 4 |    4 GB |   2    |    24  | puppy linux fossapup64 persist.                                                                            |
+|       **cruzer** 8 |    8 GB |   2    |    --  | unraid OS                                                                                                  |
+|   **sandisk rund** |    8 GB |   2    |    36  | chromeOS flex 2023                                                                                         |
+|       **platinum** |   14 GB |   2    |    19  | VENTOY . bunsen-linux 2x. peppermint-32_2024.  clonezilla-32     *(stick evtl probleme u linux!)*          |
+|  **sdcard chromi** |   16 GB |  SD    |    14  | VTY . linuxmint-21 persist. data Partition                                                                 |
+|        **toshiba** |   32 GB |   2    |    30  | VTY . ubuntu-20.04. linuxmint-21 pers. redorescue-4.0. grml_2022. slax_12.2. porteus_5                     |
+| **kings.dataT102** |   32 GB |   2    |    21  | puppy linux fossapup64 persist. porteus_5 in arbeit pers.                                                  |
+|   **kings. kyson** |   32 GB |  3.2   |   200  | *leer*                                                                                                     |
+|    **paradies dm** |   64 GB |  3.x   |    98  | VENTOY . Desinfect-2023. bunsen-linux. fossapup64. tuxedo                                                  |
+|                    |   xx GB |        |    --  |                                                                                                            |
+|                    |   xx GB |        |    --  |                                                                                                            |
+|                    |         |        |        |                                                                                                            |
+|                    |         |        |        |                                                                                                            |
+|                    |         |        |        |                                                                                                            |
+|     *kingston vmx* | *16 GB* |        |    --  | *DEFEKT*                                                                                                   |
+|                    |         |        |        | **kings. = Kingston . VTY = VENTOY . pers. = persistence                                               .** |
 
 
 Installation __Multisystem__ auf apt-System
