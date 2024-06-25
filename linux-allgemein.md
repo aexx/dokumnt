@@ -145,6 +145,7 @@ sudo apt update && sudo apt install multisystem
     # sudo apt-get install poppler-utils handbrake-cli keepassx gxmessage gnome-tweak-tool nethogs gnome-encfs-manager
     # sudo apt-get install network-manager-kde ksshaskpass krename autokey-qt fonts-droid kcm-gtk kde-config-gtk gtk-theme-switch gtk2-engines-oxygen gtk3-engines-oxygen gtk-chtheme kde-style-qtcurve apper  # kubuntu-desktop oder kde-plasma-desktop plasma-desktop  # kde 
     ## INFO: vim war noetig, da Autokey beim vorinstallierten vi nicht richtig funktioniert hat!! 
+    ## Beim q4os Linux (Debian 12 bookworm) gab es Probleme beim  Paket vim  - einfuegen per X Zwischenablage hat nicht funktioniert - mit vim-tiny ging es dann.
 
 
 ### tools,packages,pakete,installieren,install
