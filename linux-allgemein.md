@@ -112,7 +112,7 @@ $ systemctl restart lightdm
 |         **apacer** |    2 GB |   2    |    17  | VENTOY . porteus_5 persist. supergrub                                                                      |
 |       **cruzer** 4 |    4 GB |   2    |    24  | puppy linux fossapup64 persist.                                                                            |
 |       **cruzer** 8 |    8 GB |   2    |    --  | unraid OS                                                                                                  |
-|   **sandisk rund** |    8 GB |   2    |    36  | chromeOS flex 2023                                                                                         |
+|   **sandisk rund** |    8 GB |   2    |    36  | VENTOY . *leer*                                                                                            |
 |       **platinum** |   14 GB |   2    |    19  | VENTOY . bunsen-linux 2x. peppermint-32_2024. clonezilla-32                   *(stick probleme u linux!)*  |
 |  **sdcard chromi** |   16 GB |  SD    |    14  | VTY . linuxmint-21 persist. data Partition                                                                 |
 |        **toshiba** |   32 GB |   2    |    30  | VTY . ubuntu-20.04. linuxmint-21 pers. redorescue-4.0. grml_2022. slax_12.2. porteus_5                     |
