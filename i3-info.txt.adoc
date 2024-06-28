@@ -1,7 +1,7 @@
 
 === i3-info
 
-Install i3 and tools: +sudo apt install *i3 nitrogen brightnessctl*+
+Install i3 and tools: `# sudo apt install *i3 nitrogen brightnessctl* #`
 
 .Wallpaper/Hintergrund
 ----
