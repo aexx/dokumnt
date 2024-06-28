@@ -1,0 +1,50 @@
+$ cat i3-info.txt 
+___________________________________________________________________________________
+
+sudo apt install i3 nitrogen brightnessctl
+
+# Wallpaper/Hintergrund
+nitrogen /usr/share/wallpapers/Tuxedo_2204_06/
+nitrogen --restore
+# Oder Hintergrund-Farbe
+xsetroot -solid "#333333"
+
+# Bildschirm Helligkeit
+brightnessctl 
+brightnessctl s 200
+
+# Batterie/battery
+upower -i /org/freedesktop/UPower/devices/battery_BAT0
+cat /sys/class/power_supply/BAT0/capacity
+
+# Schnelles "googln" auf der Konsole
+w3m "www.google.de/search?hl=de&source=hp&q=i3+shutdown"
+
+ok8cp5@chromi:~$ sudo cat /etc/default/grub.d/aex.cfg
+GRUB_TIMEOUT=7
+#GRUB_TIMEOUT_STYLE=countdown
+GRUB_TIMEOUT_STYLE=menu
+
+___________________________________________________________________________________
+
+Mod1 ist auf dem Chromi die [alt] - Taste
+
+Mod+Shift+e => Ausloggen/Exit
+
+KEYBINDINGS
+       Here is a short overview of the default keybindings:
+
+       Mod1+Enter
+           Open a new terminal emulator window.
+       Mod1+d
+           Open dmenu for starting any application by typing (part of) its name.
+       Mod1+f
+           Toggle fullscreen mode.
+       Mod1+s
+           Enable stacking layout for the current container.
+       Mod1+e
+           Enable default layout for the current container.
+       Mod1+w
+           Enable tabbed layout for the current container.
+___________________________________________________________________________________
+
