@@ -62,6 +62,10 @@ Linux PCs: https://www.tuxedocomputers.com
         dmesg | egrep 'radio|kill|switch'
         lsmod | egrep '_acpi|_bluetooth|intel_oaktrail|_laptop|_rfkill|_wmi'   # Kernelmodul ist nicht geladen  
 
+**Dell Inspiron 570 bootet nicht - On/Off Taster/Schalter leuchtet Orange/Amber/Bernsteinfarben**   
+-  Die BIOS-Batterie (Pufferbatterie Mainboard) CR2032 hatte nur noch 0,7 V - mit einer "gebrauchten" 2,8 V hat es wieder funktioniert
+
+
 
 #### Android
 
