@@ -22,6 +22,7 @@ RedHat/CentOS: `cat /etc/redhat-release`
     nala show falkon  ; nala list falkon
     sudo nala update ;countdown 4; nala list --upgradable
     psuche () {  nala search "$1" |grep -v "──"|grep -i "$1"; } ; psuche dillo
+    sudo nala update ;countdown 4; nala list --upgradable ;printf "\n│\n│\n└── sudo nala full-upgrade \n\n" 
     
 
 
