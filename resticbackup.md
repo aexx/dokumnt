@@ -16,10 +16,8 @@ $ cd /usr/local/bin/ && sudo chmod +x restic_0.9.6_linux_amd64 && sudo ln -s res
 ``` bash
 export RESTIC_PASSWORD=ganzarggeheim
 
-
 restic init --repo /dev/shm/restic-test  # restic repository initialisieren
 restic -r sftp:ok8cp5@lgnas:/mnt/disk/volume1/restic/ init  # restic repository ueber sftp initialisieren
-
 
 restic -r /dev/shm/restic-test/ backup /home/ok8cp5/Dropbox/ --exclude-file=/tmp/restic-exclude.txt
 restic -r /dev/shm/restic-test/ snapshots
@@ -81,9 +79,7 @@ Elapsed time:       1m1.6s
 2022/10/03 17:28:33 INFO  : 
 Transferred:             0 / 0 Bytes, -, 0 Bytes/s, ETA -
 Elapsed time:       2m1.6s
-
 [...] 
-
 2022/10/03 18:02:03 INFO  : : Creating repository
 2022/10/03 18:02:33 INFO  : 
 Transferred:           608 / 608 Bytes, 100%, 106 Bytes/s, ETA 0s
@@ -91,6 +87,13 @@ Transferred:            1 / 2, 50%
 Elapsed time:      36m1.6s
 Transferring:
  *                                        config:100% /155, 154/s, 0s
+
+## DIREKT
+restic --repo rclone:pcloud:rstc/direkt init
+
+rclone lsd pcloud:rstc/direkt
+[ -z $RESTIC_PASSWORD ] || for i in /aexdisk/bigaex/Aex/ ; do aexrestic.sh rclone:pcloud:rstc/direkt/ $i; done
+
 ```
 
 **im anderen Terminal / other Terminal**
@@ -133,7 +136,6 @@ cc0bf15b  2022-10-03 18:10:38  aspxxxxx50              /home/ok8cp5/xxx/TEMP
 a947507a  2022-10-03 18:14:27  aspxxxxx50              /home/ok8cp5/xxx/Adr
 ----------------------------------------------------------------------------
 2 snapshots
-0 ok8cp5@aspiX3950:~/ 2022-10-03 18:16:37 
 
 
 
