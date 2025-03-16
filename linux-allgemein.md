@@ -142,11 +142,11 @@ sudo apt update && sudo apt install multisystem
 
 
 
-### Linux Mint shutdown statt / instead standby
+### Linux Mint shutdown statt/instead standby
 
-Gefunden auf / found on:  https://forums.linuxmint.com/  https://askubuntu.com/
+Gefunden auf/found on:  https://forums.linuxmint.com/  https://askubuntu.com/
 
-1. Script: **idle_shutdown.sh** ⇒ https://github.com/aexx/skript/blob/main/idle_shutdown.sh - put into autostart - uses xprintidle
+1. Script: **idle_shutdown.sh** ⇒ https://github.com/aexx/skript/blob/main/idle_shutdown.sh - put into autostart - uses `xprintidle`
 2. Edit the file: sudo vi /etc/systemd/logind.conf  
  and add the 2 lines:  
  `IdleAction=poweroff`  
@@ -156,6 +156,7 @@ Gefunden auf / found on:  https://forums.linuxmint.com/  https://askubuntu.com/
  `org => cinnamon => settings-daemon => plugins => power`  
  Find sleep-inactive-ac-type under power option, right click on it and select shutdown option.  
  From now on , the system will be shut down instead of suspend. You can adjust the ide waiting time in the power settings.  
+
 
 
 ## Tools 
