@@ -146,16 +146,16 @@ sudo apt update && sudo apt install multisystem
 
 Gefunden auf / found on:  https://forums.linuxmint.com/  https://askubuntu.com/
 
-1. Script: idle_shutdown.sh  - put into autostart - uses xprintidle
-2. Edit the file: sudo vi /etc/systemd/logind.conf +
-   and add the 2 lines: +
-   `IdleAction=poweroff` +
-   `IdleActionSec=120min` +
-3. Install Dconf editor: `apt install dconf-editor` - start Dconf editor +
-   Open these keys in the interface respectively. +
-   `org => cinnamon => settings-daemon => plugins => power` +
-   Find sleep-inactive-ac-type under power option, right click on it and select shutdown option. +
-   From now on , the system will be shut down instead of suspend. You can adjust the ide waiting time in the power settings. +
+1. Script: **idle_shutdown.sh** ⇒ https://github.com/aexx/skript/blob/main/idle_shutdown.sh - put into autostart - uses xprintidle
+2. Edit the file: sudo vi /etc/systemd/logind.conf  
+ and add the 2 lines:  
+ `IdleAction=poweroff`  
+ `IdleActionSec=120min`  
+3. Install Dconf editor: `apt install dconf-editor` - start Dconf editor  
+ Open these keys in the interface respectively.  
+ `org => cinnamon => settings-daemon => plugins => power`  
+ Find sleep-inactive-ac-type under power option, right click on it and select shutdown option.  
+ From now on , the system will be shut down instead of suspend. You can adjust the ide waiting time in the power settings.  
 
 
 ## Tools 
