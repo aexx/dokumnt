@@ -144,7 +144,7 @@ sudo apt update && sudo apt install multisystem
 
 ### Linux Mint shutdown statt/instead standby
 
-Gefunden auf/found on:  https://forums.linuxmint.com/  https://askubuntu.com/
+Gefunden auf/found on:  https://forums.linuxmint.com/ , https://askubuntu.com/
 
 1. Script: **idle_shutdown.sh** ⇒ https://github.com/aexx/skript/blob/main/idle_shutdown.sh - put into autostart - uses `xprintidle`
 2. Edit the file: sudo vi /etc/systemd/logind.conf  
