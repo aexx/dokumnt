@@ -76,7 +76,19 @@ Linux PCs: https://www.tuxedocomputers.com
         ## Loesung/Solution: Exist. Keys umbenennen/move
         $ mv /home/ok8cp5/.android/adbkey /home/ok8cp5/.android/adbkey_Tablee
         ## Kabel Aus,- Anstecken
+        #
+        # adb devices: Bei Rechteproblemen
+        $ lsusb
+        [...] Bus 001 Device 002: ID 8087:0020 Intel Corp. Integrated Rate Matching Hub
+        Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+                               ^^^^^^^^^
+        $ cat /etc/udev/rules.d/51-android.rules
+        SUBSYSTEM=="usb", ATTR{idVendor}=="1d6b", ATTR{idProduct}=="0002", MODE="0660", 
+        GROUP="plugdev", SYMLINK+="android%n"
+        ## Kabel Aus,- Anstecken 
 
+
+        
 
 #### Chromebook R11
 
