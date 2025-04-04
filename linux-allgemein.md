@@ -126,15 +126,15 @@ $ systemctl restart lightdm
 |      **t-systems** |  0,3 GB |   2    |     7  | puppy linux slacko_5.7                                                                                     |
 |          **krXnn** |    2 GB |   2    |    14  | VENTOY . linuxmint-21 persistence                                                                          |
 |         **apacer** |    2 GB |   2    |    17  | VENTOY . porteus_5 persist. supergrub                                                                      |
-|       **cruzer** 4 |    4 GB |   2    |    24  | puppy linux fossapup64 persist.                                                                            |
+|       **cruzer** 4 |    4 GB |   2    |    24  | puppy linux fossapup64_persist                                                                             |
 |       **cruzer** 8 |    8 GB |   2    |    --  | unraid OS                                                                                                  |
 |   **sandisk rund** |    8 GB |   2    |    36  | VENTOY . *leer*                                                                                            |
-|       **platinum** |   14 GB |   2    |    19  | VENTOY . bunsen-linux 2x. peppermint-32_2024. clonezilla-32                   *(stick probleme u linux!)*  |
-|  **sdcard chromi** |   16 GB |  SD    |    14  | VTY . linuxmint-21 persist. data Partition                                                                 |
-|        **toshiba** |   32 GB |   2    |    30  | VTY . ubuntu-20.04. linuxmint-21 pers. redorescue-4.0. grml_2022. slax_12.2. porteus_5                     |
+|       **platinum** |   14 GB |   2    |    19  | VENTOY . bunsen-linux_2x peppermint-32_2024 clonezilla-live-3.1.2             *(stick probleme u linux!)*  |
+|  **sdcard chromi** |   16 GB |  SD    |    14  | VTY . linuxmint-21_persist data_Partition                                                                  |
+|        **toshiba** |   32 GB |   2    |    30  | VTY . ubuntu-20.04. linuxmint-21_persist redorescue-4.0 grml_2022 slax_12.2 porteus_5                      |
 | **kings.dataT102** |   32 GB |   2    |    21  | q4os usb-install                                                                                           |
 |   **kings. kyson** |   32 GB |  3.2   |   200  | *leer*                                                                                                     |
-|    **paradies dm** |   64 GB |  3.x   |    98  | VENTOY . Desinfect-2023. bunsen-linux. fossapup64. tuxedo                                                  |
+|    **paradies dm** |   64 GB |  3.x   |    98  | VENTOY . Desinfect-2023 bunsen-linux fossapup64 tuxedo redorescue-4.0 clonezilla-live-3.1.2                |
 |                    |   xx GB |        |    --  |                                                                                                            |
 |                    |   xx GB |        |    --  |                                                                                                            |
 |                    |         |        |        |                                                                                                            |
