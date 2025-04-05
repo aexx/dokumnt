@@ -158,6 +158,8 @@ TIP: *Hanging/Haengende ssh session:* Tasten/keys: +
 cat ~/.ssh/config
 Host LG-NAS-N1T1TD1 lg-nas-n1t1td1 lgnas 192.168.178.51
   KexAlgorithms +diffie-hellman-group1-sha1
+  ## Algorithms => +ssh-dss ODER +ssh-rsa => Beide funktionieren
+  # HostKeyAlgorithms +ssh-dss
   HostKeyAlgorithms +ssh-rsa
   PubkeyAcceptedKeyTypes +ssh-rsa
   Ciphers 3des-cbc
