@@ -226,8 +226,7 @@ verhindern eines system shutdown waehrend einer sicherung / prevent the system f
 
 ```bash
 
-ok8cp5@okcp-Lati-E6330:~$ sudo
-TIP: fsfdfsdfdff teamviewer daemon stop
+ok8cp5@okcp-Lati-E6330:~$ sudo teamviewer daemon stop
 systemctl stop teamviewerd.service
 
 ok8cp5@okcp-Lati-E6330:~$ sudo systemctl stop teamviewerd.service
