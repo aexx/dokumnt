@@ -171,6 +171,10 @@ Gefunden auf/found on:  https://forums.linuxmint.com/ , https://askubuntu.com/
  Find sleep-inactive-ac-type under power option, right click on it and select shutdown option.  
  From now on , the system will be shut down instead of suspend. You can adjust the ide waiting time in the power settings.  
 
+**TIP:**  
+verhindern eines system shutdown waehrend einer sicherung / prevent the system from shutting down during a backup  
+`sudo systemd-inhibit --mode=block unison` 
+
 
 
 ## Tools 
@@ -222,7 +226,8 @@ Gefunden auf/found on:  https://forums.linuxmint.com/ , https://askubuntu.com/
 
 ```bash
 
-ok8cp5@okcp-Lati-E6330:~$ sudo teamviewer daemon stop
+ok8cp5@okcp-Lati-E6330:~$ sudo
+TIP: fsfdfsdfdff teamviewer daemon stop
 systemctl stop teamviewerd.service
 
 ok8cp5@okcp-Lati-E6330:~$ sudo systemctl stop teamviewerd.service
