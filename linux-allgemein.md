@@ -206,6 +206,8 @@ verhindern eines system shutdown waehrend einer sicherung / prevent the system f
 * stacer _(ubuntu optimieren, auf github)_ , csplit _(zB aus einer vcard mehrere machen)_ , lsat _(security,sicherheit,check,auditing)_ 
 * mupdf _(grosse,big,pdfs,schnell)_ , broot _(Dateimanager fuer Kommandozeile)_ 
 * devilspie2 _(manipuliert autom. Fenster unter Linux - Position und Groesse festlegen)_ , pywal _(Linux Terminals passend einfaerben)_  
+* duf _(df/Disk Usage/Free Utility)_ , btop _(top-Klon Resource monitor)_ , kmon _(kernel monitor)_
+* TOOL_XY _(Beschreibung Beschreibung Beschreibung)_ , TOOL_XY _(Beschreibung Beschreibung Beschreibung)_
 * TOOL_XY _(Beschreibung Beschreibung Beschreibung)_ , TOOL_XY _(Beschreibung Beschreibung Beschreibung)_
 
 
@@ -216,6 +218,8 @@ verhindern eines system shutdown waehrend einer sicherung / prevent the system f
 * iftop _(Anzeige der genutzten Bandbreite einer Netzwerkschnittstelle)_ nethogs _(Net top tool grouping bandwidth per process)_ 
    nload _(realtime console network usage monitor)_ 
 * ntop _(display network usage in web browser)_ darkstat _(network traffic analyzer)_ 
+* TOOL_XY _(Beschreibung Beschreibung Beschreibung)_ , TOOL_XY _(Beschreibung Beschreibung Beschreibung)_
+* TOOL_XY _(Beschreibung Beschreibung Beschreibung)_ , TOOL_XY _(Beschreibung Beschreibung Beschreibung)_
 
 
 ### systemd 
