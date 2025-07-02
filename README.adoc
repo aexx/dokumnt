@@ -61,7 +61,7 @@ TIP: Zum schnell notieren ...
 *nnn* , Dateimanager/file manager https://www.heise.de/news/nnn-4-0-Schlanker-und-erweiterbarer-Dateimanager-fuer-den-Terminal-6016839.html?wt_mc=rss.red.ho.ho.rdf.beitrag.beitrag[nnn auf heise.de] ,, *ncspot* , Spotify Kommandozeile
 *Fre:ac* , Audiodateien Audio-CDs https://freac.org/de[freac.org] (http://accuraterip.com/[AccurateRip]) ,, *btop* , Wie top
 *neofetch* , highly customizable system info script ,, *mapscii* , OpenStreetMap `telnet mapscii.me`
-*chafa* , Linux: Bildvorschau auf der Kommandozeile ,, *TOOL* , INFO
+*chafa* , Linux: Bildvorschau auf der Kommandozeile ,, *bibbot* , Addon f. Buecherei
 *TOOL* , INFO ,, *TOOL* , INFO
 *TOOL* , INFO ,, *TOOL* , INFO
 *TOOL* , INFO ,, *TOOL* , INFO
