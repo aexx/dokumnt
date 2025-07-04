@@ -62,7 +62,7 @@ TIP: Zum schnell notieren ...
 *Fre:ac* , Audiodateien Audio-CDs https://freac.org/de[freac.org] (http://accuraterip.com/[AccurateRip]) ,, *btop* , Wie top
 *neofetch* , highly customizable system info script ,, *mapscii* , OpenStreetMap `telnet mapscii.me`
 *chafa* , Linux: Bildvorschau auf der Kommandozeile ,, *bibbot* , Addon f. Buecherei
-*TOOL* , INFO ,, *TOOL* , INFO
+*hstr* , Bessere/better command history ,, *TOOL* , INFO
 *TOOL* , INFO ,, *TOOL* , INFO
 *TOOL* , INFO ,, *TOOL* , INFO
 *TOOL* , INFO ,, *TOOL* , INFO
