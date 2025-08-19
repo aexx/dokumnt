@@ -53,6 +53,24 @@ Notizen
 TIP: Zum schnell notieren ...
 
 
+.*Kombination aus tail, grep und sed.* Befehl zeigt das Logfile in Echtzeit an und hebt den String "STRING" farbig hervor (in diesem Fall rot). Dabei bleiben die anderen Zeilen ebenfalls sichtbar.
+----
+tail -f logfile | sed --unbuffered "s/STRING/$(printf '\033[31mSTRING\033[0m')/g"
+Farb-codes anpassen:
+    \033[31m: Rot
+    \033[32m: Grün
+    \033[33m: Gelb
+    \033[34m: Blau
+    \033[35m: Magenta
+    \033[36m: Cyan
+Mit diesem Ansatz sind sowohl der hervorgehobene String als auch der gesamte Log-Output sichtbar.
+----
+
+
+Tools
+~~~~~
+
+
 .Tools
 [format="csv",width="90%",cols="5"]
 [frame="topbot",grid="none"]
