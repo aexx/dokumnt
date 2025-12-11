@@ -10,12 +10,13 @@ sudo apt install openssh-server
 sudo adduser ansible
 sudo vi /etc/sudoers.d/ansible
 ansible@ansible-wattos:~$ nl /etc/sudoers.d/ansible
-     1  #
-     2  ansible ALL=(ALL:ALL) NOPASSWD:ALL
+     1  ansible ALL=(ALL:ALL) NOPASSWD:ALL
+# Login als ansible
 sudo apt install -y software-properties-common
 sudo apt install python -y
 sudo apt install ansible -y
-
+sudo mkdir /etc/ansible
+sudo vi /etc/ansible/hosts
 ----
 
 
