@@ -7,10 +7,8 @@
 .info
 ----
 todo
-
 todo
 todo
-
 todo
 ----
 
@@ -34,9 +32,16 @@ Source: https://forums.unraid.net/topic/82092-solved-create-vm-from-bootable-liv
 - Graphics Card: VNC
 
 
-=== todo
+=== Parity-Check
 
-todo
+.forums.unraid.net => How do I Troubleshoot Parity Errors?
+----
+Complete a correcting parity check, then immediately after run a non-correcting check. 
+Don't reboot during any of this so all of it is recorded in the same syslog and you can post the diagnostics after.
+If the non-correcting check still has sync errors, further investigation is needed.
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^          ^^^^^^^         ^^^^^^^^^^^^^^^^^^^^^^^^
+----
 
-todo
+
+
 
