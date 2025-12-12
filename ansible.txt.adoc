@@ -23,6 +23,26 @@ sudo vi /etc/ansible/hosts
 $ nl /etc/ansible/hosts
      1  [myhosts]
      2  aspix3950
+ssh-keygen
+ssh-copy-id ansible@aspix395
+ssh-copy-id ansible@tuxedo0
+$ ansible all -m ping  ## or $ ansible aspix3950 -m ping
+tuxedo | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.12"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+aspix3950 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.12"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+#
+
 
 
 ----
@@ -33,7 +53,7 @@ $ nl /etc/ansible/hosts
 
 .Changed on Managed Node
 ----
-# aspix3950: 
+# aspix3950 und tuxedo
 dpkg -l|egrep -i python
 sudo adduser ansible
 sudo vi /etc/sudoers.d/ansible
