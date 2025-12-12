@@ -49,7 +49,7 @@ $ nl apt-pakete-installieren.yaml
      3    tasks:
      4    - name : Install multiple packages
      5      apt: name={{ item }} state=latest update_cache=true
-     6      loop: [git, krusader, meld, btop, asciidoc, asciidoc-base, asciidoc-common, vim-asciidoc, asciidoctor, nmap, screen, krename, wakeonlan, x2goclient, pdftk-java, remmina, remmina-plugin-x2go, remmina-plugin-x2go]
+     6      loop: [git, krusader, meld, btop, asciidoc, asciidoc-base, asciidoc-common, asciidoctor, nmap, screen, krename, wakeonlan, x2goclient, pdftk-java, remmina, remmina-plugin-x2go, remmina-plugin-x2go]
 ansible@tine-Inspi-1520:~$
 #
 ansible-playbook apt-pakete-installieren.yaml --syntax-check
