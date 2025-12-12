@@ -45,9 +45,7 @@ aspix3950 | SUCCESS => {
     "ping": "pong"
 }
 #
-#
 vi apt-pakete-installieren.yaml
-#
 ansible-playbook apt-pakete-installieren.yaml --syntax-check
 ansible-playbook apt-pakete-installieren.yaml --check
 ----
