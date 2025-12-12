@@ -73,7 +73,7 @@ $ nl /etc/sudoers.d/ansible
   tasks:
   - name : Install multiple packages
     apt: name={{ item }} state=latest update_cache=true
-    loop: [git, krusader, meld, btop, asciidoc, nmap, screen, krename, wakeonlan, x2goclient, pdftk-java, remmina-plugin-x2go, remmina-plugin-x2go, autokey-qt, autokey-gtk, nala]
+    loop: [git, krusader, meld, btop, asciidoc, nmap, screen, krename, wakeonlan, x2goclient, pdftk-java, remmina-plugin-rdp, remmina-plugin-x2go, autokey-qt, autokey-gtk, nala]
 ----
 
 
