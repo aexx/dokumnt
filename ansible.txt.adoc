@@ -42,8 +42,16 @@ aspix3950 | SUCCESS => {
     "ping": "pong"
 }
 #
-
-
+#
+$ nl apt-pakete-installieren.yaml
+     1  - hosts: aspix3950
+     2    tasks:
+     3    - name : Install multiple packages
+     4      apt: name={{ item }} state=latest update_cache=true
+     5      loop: [git, krusader, meld]
+#
+ansible-playbook apt-pakete-installieren.yaml --syntax-check
+ansible-playbook apt-pakete-installieren.yaml --check
 
 ----
 
