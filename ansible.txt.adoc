@@ -20,9 +20,12 @@ sudo apt install ansible -y
 $ cd ; ansible-config init --disabled -t all > ansible.cfg
 sudo mkdir /etc/ansible/
 sudo vi /etc/ansible/hosts
-$ nl /etc/ansible/hosts
+ansible@tine-Inspi-1520:~$ nl /etc/ansible/hosts
      1  [myhosts]
      2  aspix3950
+     3  tuxedo
+ansible@tine-Inspi-1520:~$ 
+#
 ssh-keygen
 ssh-copy-id ansible@aspix395
 ssh-copy-id ansible@tuxedo0
