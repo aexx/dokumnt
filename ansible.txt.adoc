@@ -45,10 +45,12 @@ aspix3950 | SUCCESS => {
 #
 $ nl apt-pakete-installieren.yaml
      1  - hosts: aspix3950
-     2    tasks:
-     3    - name : Install multiple packages
-     4      apt: name={{ item }} state=latest update_cache=true
-     5      loop: [git, krusader, meld]
+     2    become: true
+     3    tasks:
+     4    - name : Install multiple packages
+     5      apt: name={{ item }} state=latest update_cache=true
+     6      loop: [git, krusader, meld, btop, asciidoc, asciidoc-base, asciidoc-common, vim-asciidoc, asciidoctor, nmap, screen, krename, wakeonlan, x2goclient, pdftk-java, remmina, remmina-plugin-x2go, remmina-plugin-x2go]
+ansible@tine-Inspi-1520:~$
 #
 ansible-playbook apt-pakete-installieren.yaml --syntax-check
 ansible-playbook apt-pakete-installieren.yaml --check
