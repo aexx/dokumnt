@@ -43,20 +43,23 @@ aspix3950 | SUCCESS => {
 }
 #
 #
-$ nl apt-pakete-installieren.yaml
-     1  - hosts: aspix3950
-     2    become: true
-     3    tasks:
-     4    - name : Install multiple packages
-     5      apt: name={{ item }} state=latest update_cache=true
-     6      loop: [git, krusader, meld, btop, asciidoc, asciidoc-base, asciidoc-common, nmap, screen, krename, wakeonlan, x2goclient, pdftk-java, remmina, remmina-plugin-x2go, remmina-plugin-x2go, nala]
-ansible@tine-Inspi-1520:~$
+vi apt-pakete-installieren.yaml
 #
 ansible-playbook apt-pakete-installieren.yaml --syntax-check
 ansible-playbook apt-pakete-installieren.yaml --check
 
 ----
 
+
+.playbook: apt-pakete-installieren.yaml
+----
+- hosts: aspix3950
+  become: true
+  tasks:
+  - name : Install multiple packages
+    apt: name={{ item }} state=latest update_cache=true
+    loop: [git, krusader, meld, btop, asciidoc, nmap, screen, krename, wakeonlan, x2goclient, pdftk-java, remmina-plugin-x2go, remmina-plugin-x2go, autokey-qt, autokey-gtk, nala]
+----
 
 
 === Managed Node
