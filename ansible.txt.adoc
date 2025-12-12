@@ -47,18 +47,6 @@ vi apt-pakete-installieren.yaml
 #
 ansible-playbook apt-pakete-installieren.yaml --syntax-check
 ansible-playbook apt-pakete-installieren.yaml --check
-
-----
-
-
-.playbook: apt-pakete-installieren.yaml
-----
-- hosts: aspix3950
-  become: true
-  tasks:
-  - name : Install multiple packages
-    apt: name={{ item }} state=latest update_cache=true
-    loop: [git, krusader, meld, btop, asciidoc, nmap, screen, krename, wakeonlan, x2goclient, pdftk-java, remmina-plugin-x2go, remmina-plugin-x2go, autokey-qt, autokey-gtk, nala]
 ----
 
 
@@ -72,5 +60,23 @@ sudo adduser ansible
 sudo vi /etc/sudoers.d/ansible
 $ nl /etc/sudoers.d/ansible
      1  ansible ALL=(ALL:ALL) NOPASSWD:ALL
-
+#
 ----
+
+
+=== Playbooks
+
+.playbook: apt-pakete-installieren.yaml
+----
+- hosts: aspix3950
+  become: true
+  tasks:
+  - name : Install multiple packages
+    apt: name={{ item }} state=latest update_cache=true
+    loop: [git, krusader, meld, btop, asciidoc, nmap, screen, krename, wakeonlan, x2goclient, pdftk-java, remmina-plugin-x2go, remmina-plugin-x2go, autokey-qt, autokey-gtk, nala]
+----
+
+
+
+
+
