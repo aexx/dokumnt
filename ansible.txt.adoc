@@ -9,14 +9,22 @@
 sudo apt install openssh-server
 sudo adduser ansible
 sudo vi /etc/sudoers.d/ansible
-ansible@ansible-wattos:~$ nl /etc/sudoers.d/ansible
+$ nl /etc/sudoers.d/ansible
      1  ansible ALL=(ALL:ALL) NOPASSWD:ALL
 # Login als ansible
 sudo apt install -y software-properties-common
 sudo apt install python -y
+sudo apt-add-repository ppa:ansible/ansible
 sudo apt install ansible -y
-sudo mkdir /etc/ansible
+#
+$ cd ; ansible-config init --disabled -t all > ansible.cfg
+sudo mkdir /etc/ansible/
 sudo vi /etc/ansible/hosts
+$ nl /etc/ansible/hosts
+     1  [myhosts]
+     2  aspix3950
+
+
 ----
 
 
@@ -25,7 +33,7 @@ sudo vi /etc/ansible/hosts
 
 .Changed on Managed Node
 ----
-# Mint: 
+# aspix3950: 
 dpkg -l|egrep -i python
 sudo adduser ansible
 sudo vi /etc/sudoers.d/ansible
