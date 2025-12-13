@@ -71,6 +71,8 @@ $ nl /etc/sudoers.d/ansible
 
 === Playbooks
 
+link:https://github.com/aexx/skript/blob/main/ansible/apt-pakete-installieren.yaml[Playbook: apt-pakete-installieren.yaml => https://github.com/aexx/skript/blob/main/ansible/apt-pakete-installieren.yaml]
+
 .playbook: apt-pakete-installieren.yaml
 ----
 - hosts: aspix3950
@@ -80,6 +82,8 @@ $ nl /etc/sudoers.d/ansible
     apt: name={{ item }} state=latest update_cache=true
     loop: [unison-gtk, git, krusader, meld, btop, asciidoc, nmap, screen, krename, wakeonlan, x2goclient, pdftk-java, remmina-plugin-rdp, remmina-plugin-x2go, autokey-qt, autokey-gtk, nala]
 ----
+
+link:https://github.com/aexx/skript/blob/main/ansible/dateien-kopieren.yaml[Playbook: dateien-kopieren.yaml => https://github.com/aexx/skript/blob/main/ansible/dateien-kopieren.yaml]
 
 .playbook: dateien-kopieren.yaml
 ----
@@ -97,7 +101,7 @@ $ nl /etc/sudoers.d/ansible
           dest: /home/ok8cp5/.config/autostart-scripts/autostart-ssh-unlock.sh
         - src: ~/githubaexx/skript/ansible/autostart-ssh-unlock.sh.desktop
           dest: /home/ok8cp5/.config/autostart/autostart-ssh-unlock.sh.desktop
-####
+##
     - name: Ensure scripts are executable
       file:
         path: "{{ item.path }}"
