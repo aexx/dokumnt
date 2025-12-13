@@ -50,7 +50,7 @@ ansible-playbook apt-pakete-installieren.yaml --syntax-check
 ansible-playbook apt-pakete-installieren.yaml --check
 #
 sudo apt install git
-cd && mkdir githubaexx && cd githubaexx && git clone https://github.com/aexx/skript
+cd && mkdir -p githubaexx && cd githubaexx && git clone https://github.com/aexx/skript
 ----
 
 
