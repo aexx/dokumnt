@@ -51,6 +51,8 @@ ansible-playbook apt-pakete-installieren.yaml --check
 #
 sudo apt install git
 cd && mkdir -p githubaexx && cd githubaexx && git clone https://github.com/aexx/skript
+# Fuer update
+cd ~/githubaexx/skript && git pull
 ----
 
 
