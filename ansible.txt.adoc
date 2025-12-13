@@ -48,6 +48,8 @@ aspix3950 | SUCCESS => {
 vi apt-pakete-installieren.yaml
 ansible-playbook apt-pakete-installieren.yaml --syntax-check
 ansible-playbook apt-pakete-installieren.yaml --check
+#
+sudo apt install git
 ----
 
 
