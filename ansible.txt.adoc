@@ -23,7 +23,8 @@ sudo vi /etc/ansible/hosts
 ansible@tine-Inspi-1520:~$ nl /etc/ansible/hosts
      1  [myhosts]
      2  aspix3950
-     3  tuxedo
+     3  latitude
+     4  tuxedo
 ansible@tine-Inspi-1520:~$ 
 #
 ssh-keygen
@@ -77,7 +78,7 @@ link:https://github.com/aexx/skript/blob/main/ansible/apt-pakete-installieren.ya
 
 .playbook: apt-pakete-installieren.yaml
 ----
-
+ansible-playbook githubaexx/skript/ansible/apt-pakete-installieren.yaml -e myhosts=aspix3950 --check
 ----
 
 link:https://github.com/aexx/skript/blob/main/ansible/dateien-kopieren.yaml[Playbook: dateien-kopieren.yaml => https://github.com/aexx/skript/blob/main/ansible/dateien-kopieren.yaml]
