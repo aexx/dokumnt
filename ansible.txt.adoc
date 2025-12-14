@@ -62,6 +62,7 @@ cd ~/githubaexx/skript && git pull
 ----
 # aspix3950 und tuxedo
 dpkg -l|egrep -i python
+sudo apt install python-is-python3 -y
 sudo adduser ansible
 sudo vi /etc/sudoers.d/ansible
 $ nl /etc/sudoers.d/ansible
