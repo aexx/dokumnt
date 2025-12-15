@@ -338,22 +338,6 @@ sudo apt install ssh parcellite autokey-gtk unison-gtk colordiff meld pdftk rpl 
 sudo apt install krusader kate plasma-workspace encfs kdiff3 unity-tweak-tool gnome-tweak-tool vim
 
 
-sudo dpkg -i dropbox_2015.10.28_amd64.deb
-sudo apt install -f
-
-
-cp -v .bashrc{,.ori}
-ok8cp5@Opti7010:~$ sdiff .bashrc .bashrc.ori |egrep '<'
-HISTCONTROL=erasedups:ignoredups                              <
-export HISTCONTROL                                            <
-HISTSIZE=9944                                                 <
-HISTFILESIZE=14944                                            <
-HISTTIMEFORMAT='%F %T '                                       <
-# aexx                                                        <
-#PS1="\[\033[32m\]\j \u@\h\[\033[37m\]:\w/ \D{%Y-%m-%d} \t \n <
-ok8cp5@Opti7010:~$
-
-
 ```
 
 
@@ -404,4 +388,5 @@ Python-Skript adb-sync _(auf GitHub, Sync zu PC aehnlich rsync)_ , t-ui Linux-CL
 
 
 ###### Ende       
+
 
