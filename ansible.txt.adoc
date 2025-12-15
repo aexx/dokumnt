@@ -85,9 +85,11 @@ link:https://github.com/aexx/skript/blob/main/ansible/dateien-kopieren.yaml[Play
 
 .playbook: dateien-kopieren.yaml
 ----
-
+ansible-playbook ~/githubaexx/skript/ansible/dateien-kopieren.yaml -e myhosts=aspix3950 --check -vv
+ansible-playbook ~/githubaexx/skript/ansible/dateien-kopieren.yaml -e myhosts=aspix3950
 ----
 
+link:https://github.com/aexx/skript/blob/main/ansible/[Playbooks]
 
 
 
