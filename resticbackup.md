@@ -50,8 +50,9 @@ restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 stats
 restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 ls a8044cab
 
 
-# restore
-restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 restore d065e6ac --target /dev/shm/restoreretic/ --include /home/ok8cp5/test-Sync-02/DEBIAN/DebianGNU-LinuxBible.pdf
+# restic restore ## vor restore immer mit ls den Pfad checken
+restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 ls d065e6ac |grep vcaex.prf  # restic restore
+restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 restore d065e6ac --target /dev/shm/restorerestic/ --include /aexdisk/bigaex/Aex/Linux/unison/vcaex.prf
 
 # mount
 restic -r sftp:ok8cp5@raspberrypi:/media/INTENSO2/backup/restic/repo01 mount mnt/1
@@ -143,3 +144,4 @@ a947507a  2022-10-03 18:14:27  aspxxxxx50              /home/ok8cp5/xxx/Adr
 
 
 ###### Ende       
+
