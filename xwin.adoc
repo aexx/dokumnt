@@ -116,11 +116,11 @@ sudo vi /etc/xdg/user-dirs.defaults
 
 * *gnome autostart delay / verzoegerung /sleep* => $ grep -i delay .config/autostart/gnome-terminal.desktop => X-GNOME-Autostart-Delay=5
 
-* *Increase time before suspend/Bereitschaft, wenn inaktiv* + 
-  `$ gsettings set org.cinnamon.settings-daemon.plugins.power sleep-inactive-ac-timeout 25200 # gsettings get org.cinnamon.settings-daemon.plugins.power sleep-inactive-ac-timeout` +
-  `sudo grep --color -B2 -iE "Inserted module 'lp'|Reached target suspend.target - Suspend." /var/log/syslog`
-
-
+.*Increase time before suspend/Bereitschaft, wenn inaktiv*
+----
+$ gsettings set org.cinnamon.settings-daemon.plugins.power sleep-inactive-ac-timeout 25200 # gsettings get org.cinnamon.settings-daemon.plugins.power sleep-inactive-ac-timeout
+$ sudo grep --color -B2 -iE "Inserted module 'lp'|Reached target suspend.target - Suspend." /var/log/syslog
+----
 
 
 === elementary OS
@@ -129,7 +129,6 @@ sudo vi /etc/xdg/user-dirs.defaults
 
 
 === X
-
 
 ==== xset
 
@@ -167,23 +166,21 @@ user@linuxbox:~> ps -p 12345 -o cmd=
 ----
 
 
-*Problems Upgrade => 12.04 LST* 
-autokey:  autokey -c   =>   Change X -Settings 
-launcher:  smaller/kleinere Icons  =>  sudo ./script.py 32  =>  logout/login
-
-
-*Config Panel =>* in /usr/share/unity-2d/shell/ (2D-Gui) => Shell.qml  (COPY: /home/aleschil/aex/Aex/Linux/config/unity-2d/)  ODER = sudo /home/aleschil/aex/Aex/Linux/config/unity/script.py 30
-
-
 ==== Ubuntu
 
+* *Problems Upgrade => 12.04 LST* +
+  autokey:  autokey -c   =>   Change X -Settings +
+  launcher:  smaller/kleinere Icons  =>  sudo ./script.py 32  =>  logout/login
+
+* *Config Panel =>* in /usr/share/unity-2d/shell/ (2D-Gui) => Shell.qml  (COPY: /home/aleschil/aex/Aex/Linux/config/unity-2d/)  +
+  ODER = sudo /home/aleschil/aex/Aex/Linux/config/unity/script.py 30
+
 * Fehlerberichte loswerden => `/etc/default/apport => enabled=0`
+
 * System Autostart => `/etc/xdg/autostart/ => cd /etc/xdg/autostart/ ; sudo mv ubuntuone-launch.desktop bluetooth-applet* evolution-alarm-notify.desktop`
 
 
-
 ==== X-Apps
-
 
 ===== Browser, Sicherheit
 
