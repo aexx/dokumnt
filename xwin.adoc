@@ -9,18 +9,16 @@ Jetzt/now asciidoc adoc
 
 ==== Tipps
 
-  * In __konsole__  *`geometry`*  needs/benoetigt  *`nofork`* option: *Achtung: Geht nur auf Kommandozeile*
+* In _konsole_ *`geometry`*  needs/benoetigt *`nofork`* option: *Achtung: Geht nur auf Kommandozeile*
 ----
 konsole --profile Shell --nofork --geometry=1440x900-0-50
 ----
 
-  * Gnome apps (dropbox, meld, ...) schlecht lesbar/hardly readable => KDE Settings => Application Appearance => Colors => Options => Apply colors to non-KDE... => *uncheck* 
-  * *Mehrere Fenster gleichzeitig vergroessern / resize several windows at the same time* (Nur in KDE getestet => __FUNKTIONIERT evtl. AUCH BEI ANDEREN__) \\ *Fenster-Menue* (rechte Maus auf Titelleiste oder linke Maus links oben) => *Advanced* => *Special Window Settings* => REITER *Window Matching* => Hier passende Kriterien finden z.B.: *Window Title:* Substring Match (passend setzen) \\ Evtl. andere eindeutige Werte auf *__Unimported__* setzen => REITER *Size & Position* auf Wert setzen.
-  * *~/.kde/shutdown/kde-shutdown.sh* Skript f. KDE Shutdown / KDE stopp herunterfahren
-  * No / Kein Dropbox Symbol / Icon in Taskbar / Taskleiste: dropbox stop && DBUS_SESSION_BUS_ADDRESS="" dropbox start ;until dropbox status|grep "Up to date";do echo -en . ;sleep 1;done;sleep 3
-  * ...
-  * ...
-
+* Gnome apps (dropbox, meld, ...) schlecht lesbar/hardly readable => KDE Settings => Application Appearance => Colors => Options => Apply colors to non-KDE... => *uncheck* 
+* *Mehrere Fenster gleichzeitig vergroessern / resize several windows at the same time* (Nur in KDE getestet - _FUNKTIONIERT evtl. AUCH BEI ANDEREN_) \\ *Fenster-Menue* (rechte Maus auf Titelleiste oder linke Maus links oben) => *Advanced* 
+  => *Special Window Settings* => REITER *Window Matching* => Hier passende   Kriterien finden z.B.: *Window Title:* Substring Match (passend setzen) \\ Evtl. andere eindeutige Werte auf *_Unimported_* setzen => REITER *Size & Position* auf Wert setzen.
+* *~/.kde/shutdown/kde-shutdown.sh* Skript f. KDE Shutdown / KDE stopp herunterfahren
+* No / Kein Dropbox Symbol / Icon in Taskbar / Taskleiste: dropbox stop && DBUS_SESSION_BUS_ADDRESS="" dropbox start ;until dropbox status|grep "Up to date";do echo -en . ;sleep 1;done;sleep 3
 
 
 ==== KDE Kontext-Menue
@@ -86,11 +84,11 @@ autokey-qt  =>  Einstellung: Paste using "Mouse Selection"
 
 === Gnome
 
-  * Config Command-History, history-gnome-run, Anwendung starten (F2) in Datei/File:  `$ vi ~/.gconf/apps/gnome-settings/gnome-panel/%gconf.xml`
+* Config Command-History, history-gnome-run, Anwendung starten (F2) in Datei/File:  `$ vi ~/.gconf/apps/gnome-settings/gnome-panel/%gconf.xml`
 
-  * `$ gconf-editor  #` sucht den Schlüssel: `/apps/gnome-power-manager/action_button_power` und ändert den Wert auf *shutdown*
+* `$ gconf-editor  #` sucht den Schlüssel: `/apps/gnome-power-manager/action_button_power` und ändert den Wert auf *shutdown*
 
-  * *Nautilus* => klassische Adressleiste mit *Strg+L* oder `$ gsettings set org.gnome.nautilus.preferences always_use_location_entry true` \\ oder *dconf-editor* => Schluessel: org/gnome/nautilus/preferences
+* *Nautilus* => klassische Adressleiste mit *Strg+L* oder `$ gsettings set org.gnome.nautilus.preferences always_use_location_entry true` \\ oder *dconf-editor* => Schluessel: org/gnome/nautilus/preferences
 
 
 .*Standard Ordner loswerden / remove Default Folders*
@@ -102,21 +100,21 @@ sudo vi /etc/xdg/user-dirs.defaults
 ----
 
 
-  * *Mime Typen Programm Zuordnungen*: `~/.local/share/applications/mimeinfo.cache`  :?:
+* *Mime Typen Programm Zuordnungen*: `~/.local/share/applications/mimeinfo.cache`  :?:
 
-  * *Bildschirmschoner/Screensaver*  `$ gsettings set org.gnome.desktop.session idle-delay 14400  #  $ gsettings get org.gnome.desktop.session idle-delay` 
+* *Bildschirmschoner/Screensaver*  `$ gsettings set org.gnome.desktop.session idle-delay 14400  #  $ gsettings get org.gnome.desktop.session idle-delay` 
 
-  * *Increase time before suspend/Bereitschaft, wenn inaktiv*  `$ gsettings set org.cinnamon.settings-daemon.plugins.power sleep-inactive-ac-timeout 25200  #  gsettings get org.cinnamon.settings-daemon.plugins.power sleep-inactive-ac-timeout` 
+* *Increase time before suspend/Bereitschaft, wenn inaktiv*  `$ gsettings set org.cinnamon.settings-daemon.plugins.power sleep-inactive-ac-timeout 25200  #  gsettings get org.cinnamon.settings-daemon.plugins.power sleep-inactive-ac-timeout` 
 
-  * *xyz* abc
+* *xyz* abc
 
-  * *gnome autostart delay / verzoegerung /sleep* => $ grep -i delay .config/autostart/gnome-terminal.desktop => X-GNOME-Autostart-Delay=5
+* *gnome autostart delay / verzoegerung /sleep* => $ grep -i delay .config/autostart/gnome-terminal.desktop => X-GNOME-Autostart-Delay=5
 
 
 
 === elementary OS
 
-  * *DROPBOX_USE_LIBAPPINDICATOR=1 => /etc/profile* dropbox status icon panel indicator symbol
+* *DROPBOX_USE_LIBAPPINDICATOR=1 => /etc/profile* dropbox status icon panel indicator symbol
 
 
 
@@ -170,8 +168,8 @@ launcher:  smaller/kleinere Icons  =>  sudo ./script.py 32  =>  logout/login
 
 ==== Ubuntu
 
-  * Fehlerberichte loswerden => `/etc/default/apport => enabled=0`
-  * System Autostart => `/etc/xdg/autostart/ => cd /etc/xdg/autostart/ ; sudo mv ubuntuone-launch.desktop bluetooth-applet* evolution-alarm-notify.desktop`
+* Fehlerberichte loswerden => `/etc/default/apport => enabled=0`
+* System Autostart => `/etc/xdg/autostart/ => cd /etc/xdg/autostart/ ; sudo mv ubuntuone-launch.desktop bluetooth-applet* evolution-alarm-notify.desktop`
 
 
 
@@ -185,8 +183,8 @@ Veraltete Plug-ins sind tatsächlich das Haupteinfallstor für Malware. Firefox,
 
 ===== Firefox
 
-  * Firefox-Profile => *key3.db, signons.sqlite* => PW Database , kennwort passwort password
-  * *Zoom-Stufen* => about:config => toolkit.zoomManager.zoomValues => `.3,.5,.56,.62,.67,.72,.77,.8,.9,1,1.1,1.2,1.33,1.5,1.7,2,2.4,3`
+* Firefox-Profile => *key3.db, signons.sqlite* => PW Database , kennwort passwort password
+* *Zoom-Stufen* => about:config => toolkit.zoomManager.zoomValues => `.3,.5,.56,.62,.67,.72,.77,.8,.9,1,1.1,1.2,1.33,1.5,1.7,2,2.4,3`
 
 
 ===== Libre Office / Open Office
@@ -201,14 +199,16 @@ Keyboard Shortcuts/Tastaturkuerzel: `xbindkeys-config ; xbindkeys # <- autostart
 
 ===== Scanner
 
-__Scan Photo-Script:__
-  while true 
-  do read -p" Weiter mit RETURN/ENTER. Abbruch mit CTRL+C " 
+.Scan Photo-Script:
+----
+while true 
+ do read -p" Weiter mit RETURN/ENTER. Abbruch mit CTRL+C " 
   echo;IMG="AidaScan07$(date +%m%d-%H%M).pbm" ; CMD="scanimage -x 181 -y 125 --resolution 440dpi " 
   echo "$CMD >$IMG" ; $CMD >$IMG ; gimp $IMG ; done 
+----
 
 
-__Network/Netzwerk-Scan:__
+.Network/Netzwerk-Scan:
 ----
 #### ON SERVER ####
 #
