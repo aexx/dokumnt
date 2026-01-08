@@ -9,7 +9,7 @@ Jetzt/now asciidoc adoc
 
 ==== Tipps
 
-  * In __konsole__  *`geometry`*  needs/benoetigt  *`nofork`* option: *ACHTUNG: Geht nur auf KOMMANDOZEILE*
+  * In __konsole__  *`geometry`*  needs/benoetigt  *`nofork`* option: *Achtung: Geht nur auf Kommandozeile*
 ----
 konsole --profile Shell --nofork --geometry=1440x900-0-50
 ----
