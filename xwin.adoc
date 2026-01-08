@@ -111,9 +111,12 @@ sudo vi /etc/xdg/user-dirs.defaults
 
 * *Mime Typen Programm Zuordnungen*: `~/.local/share/applications/mimeinfo.cache`  :?:
 
-* *Bildschirmschoner/Screensaver*  `$ gsettings set org.gnome.desktop.session idle-delay 14400  #  $ gsettings get org.gnome.desktop.session idle-delay` 
+* *Bildschirmschoner/Screensaver* + 
+  `$ gsettings set org.gnome.desktop.session idle-delay 14400  #  $ gsettings get org.gnome.desktop.session idle-delay` 
 
-* *Increase time before suspend/Bereitschaft, wenn inaktiv*  `$ gsettings set org.cinnamon.settings-daemon.plugins.power sleep-inactive-ac-timeout 25200  #  gsettings get org.cinnamon.settings-daemon.plugins.power sleep-inactive-ac-timeout` 
+* *Increase time before suspend/Bereitschaft, wenn inaktiv* + 
+  `$ gsettings set org.cinnamon.settings-daemon.plugins.power sleep-inactive-ac-timeout 25200  #  gsettings get org.cinnamon.settings-daemon.plugins.power sleep-inactive-ac-timeout` +
+  `sudo grep --color -B2 -iE "Inserted module 'lp'|Reached target suspend.target - Suspend." /var/log/syslog`
 
 * *xyz* abc
 
