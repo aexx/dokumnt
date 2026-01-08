@@ -9,14 +9,15 @@ Jetzt/now asciidoc adoc
 
 ==== Tipps
 
-.In _konsole_ *`geometry`*  needs/benoetigt *`nofork`* option: *Achtung: Geht nur auf Kommandozeile*
+.In _konsole_ `geometry`  needs/benoetigt `nofork` option: _Achtung: Geht nur auf Kommandozeile_
 ----
 konsole --profile Shell --nofork --geometry=1440x900-0-50
 ----
 
 * Gnome apps (dropbox, meld, ...) schlecht lesbar/hardly readable => KDE Settings => Application Appearance => Colors => Options => Apply colors to non-KDE... => *uncheck* 
 
-* *Mehrere Fenster gleichzeitig vergroessern / resize several windows at the same time* (Nur in KDE getestet - _FUNKTIONIERT evtl. AUCH BEI ANDEREN_) +
+* *Mehrere Fenster gleichzeitig vergroessern / resize several windows at the same time* +
+  (Nur in KDE getestet - _FUNKTIONIERT evtl. AUCH BEI ANDEREN_) +
   *Fenster-Menue* (rechte Maus auf Titelleiste oder linke Maus links oben) +
   => *Advanced* => *Special Window Settings* => REITER *Window Matching* +
   => Hier passende Kriterien finden z.B.: *Window Title:* Substring Match (passend setzen) +
@@ -93,12 +94,14 @@ autokey-qt  =>  Einstellung: Paste using "Mouse Selection"
 
 === Gnome
 
-* Config Command-History, history-gnome-run, Anwendung starten (F2) in Datei/File:  `$ vi ~/.gconf/apps/gnome-settings/gnome-panel/%gconf.xml`
+* Config Command-History, history-gnome-run, Anwendung starten (F2) +
+  Datei/File: `$ vi ~/.gconf/apps/gnome-settings/gnome-panel/%gconf.xml`
 
-* `$ gconf-editor  #` sucht den Schlüssel: `/apps/gnome-power-manager/action_button_power` und ändert den Wert auf *shutdown*
+* `$ gconf-editor` Schlüssel: `/apps/gnome-power-manager/action_button_power` Wert z.B. auf *shutdown*
 
-* *Nautilus* => klassische Adressleiste mit *Strg+L* oder `$ gsettings set org.gnome.nautilus.preferences always_use_location_entry true` oder *dconf-editor* => Schluessel: org/gnome/nautilus/preferences
-
+* *Nautilus* => klassische Adressleiste mit *Strg+L* +
+  oder `$ gsettings set org.gnome.nautilus.preferences always_use_location_entry true` +
+  oder *dconf-editor* => Schluessel: org/gnome/nautilus/preferences
 
 .*Standard Ordner loswerden / remove Default Folders*
 ----
@@ -107,7 +110,6 @@ sudo vi /etc/X11/Xsession.d/60xdg-user-dirs-update
 vi .config/user-dirs.dirs
 sudo vi /etc/xdg/user-dirs.defaults
 ----
-
 
 * *Mime Typen Programm Zuordnungen*: `~/.local/share/applications/mimeinfo.cache` *?*
 
@@ -177,7 +179,8 @@ user@linuxbox:~> ps -p 12345 -o cmd=
 
 * Fehlerberichte loswerden => `/etc/default/apport => enabled=0`
 
-* System Autostart => `/etc/xdg/autostart/ => cd /etc/xdg/autostart/ ; sudo mv ubuntuone-launch.desktop bluetooth-applet* evolution-alarm-notify.desktop`
+* System Autostart => /etc/xdg/autostart/ +
+ => `cd /etc/xdg/autostart/;sudo mv ubuntuone-launch.desktop bluetooth-applet* evolution-alarm-notify.desktop /SOMEFOLDER/`
 
 
 ==== X-Apps
