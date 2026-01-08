@@ -1,0 +1,248 @@
+
+Jetzt/now asciidoc adoc
+
+
+== X-Desktops
+
+
+=== KDE
+
+==== Tipps
+
+  * In __konsole__  **''geometry''**  needs/benoetigt  **''nofork''** option: **ACHTUNG: Geht nur auf KOMMANDOZEILE**
+----
+konsole --profile Shell --nofork --geometry=1440x900-0-50
+----
+
+  * Gnome apps (dropbox, meld, ...) schlecht lesbar/hardly readable => KDE Settings => Application Appearance => Colors => Options => Apply colors to non-KDE... => **uncheck** 
+  * **Mehrere Fenster gleichzeitig vergroessern / resize several windows at the same time** (Nur in KDE getestet => __FUNKTIONIERT evtl. AUCH BEI ANDEREN__) \\ **Fenster-Menue** (rechte Maus auf Titelleiste oder linke Maus links oben) => **Advanced** => **Special Window Settings** => REITER **Window Matching** => Hier passende Kriterien finden z.B.: **Window Title:** Substring Match (passend setzen) \\ Evtl. andere eindeutige Werte auf **__Unimported__** setzen => REITER **Size & Position** auf Wert setzen.
+  * ** ~/.kde/shutdown/kde-shutdown.sh ** Skript f. KDE Shutdown / KDE stopp herunterfahren
+  * No / Kein Dropbox Symbol / Icon in Taskbar / Taskleiste: dropbox stop && DBUS_SESSION_BUS_ADDRESS="" dropbox start ;until dropbox status|grep "Up to date";do echo -en . ;sleep 1;done;sleep 3
+  * ...
+  * ...
+
+
+
+==== KDE Kontext-Menue
+
+.KDE **Kontext-Menue => Actions** => In: ~/.kde/share/kde4/services/ServiceMenus => **Datei/ file:**
+----
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=all/all;
+Icon=dialog-ok
+Actions=aexmd5sum;aexmd5sumcheckfile;infovariable;
+X-KDE-Priority=TopLevel
+X-KDE-Submenu=AEX
+
+[Desktop Action aexmd5sum]
+Name=md5sum pruefen
+Icon=dialog-ok
+Exec=xterm -geometry 140x70 -bg white -fg black -fn 6x12 -e 'echo; md5sum %F ; echo -e "\n EINGABE/ ENTER/ RETURN => Exit/ Close \n " ; read '
+
+[Desktop Action aexmd5sumcheckfile]
+Name=md5sum -c datei.md5
+Icon=dialog-ok
+Exec=xterm -geometry 140x70 -bg white -fg black -fn 6x12 -e 'echo; cd %d && md5sum -c %f ; echo -e "\n EINGABE/ ENTER/ RETURN => Exit/ Close \n " ; read '
+
+[Desktop Action infovariable]
+Name=Info zu Variablen %u %U %f %F %d %D %n %N Test => Eine/ Mehrere Dateien markieren
+Icon=dialog-ok
+Exec=xterm -geometry 140x70 -bg white -fg black -fn 6x12 -e 'echo -e "\n Prozent_u: %u \n Prozent_U: %U \n Prozent_f: %f \n Prozent_F: %F \n Prozent_d: %d \n Prozent_D: %D \n Prozent_n: %n \n Prozent_N: %N \n    " ; echo -e "\n EINGABE/ ENTER/ RETURN => Exit/ Close \n " ; read '
+----
+
+
+==== KDE entruempeln
+
+.KDE entruempeln auf **crouton** Chromium OS Universal Chroot Environment
+----
+(trusty)ok8cp5@localhost:~$ ls /usr/share/autostart/
+akonaditray.desktop           klipper.desktop        krunner.desktop            nepomukserver.desktop
+kaddressbookmigrator.desktop  konqy_preload.desktop  nepomukcontroller.desktop  plasma-desktop.desktop
+(trusty)ok8cp5@localhost:~$ 
+
+(trusty)ok8cp5@localhost:~$ sudo mv /usr/share/autostart/akonaditray.desktop /usr/share/NO_autostart/ -v
+`/usr/share/autostart/akonaditray.desktop' -> `/usr/share/NO_autostart/akonaditray.desktop'
+(trusty)ok8cp5@localhost:~$ sudo mv -v /usr/share/autostart/nepomuk*.desktop /usr/share/NO_autostart/
+`/usr/share/autostart/nepomukcontroller.desktop' -> `/usr/share/NO_autostart/nepomukcontroller.desktop'
+`/usr/share/autostart/nepomukserver.desktop' -> `/usr/share/NO_autostart/nepomukserver.desktop'
+(trusty)ok8cp5@localhost:~$ 
+
+http://pclinuxos2007.blogspot.de/2013/01/improve-kde4-performance-disable.html
+
+sudo mv /usr/bin/akonaditray /usr/bin/akonaditray.moved
+sudo mv /usr/bin/nepomukcontroller /usr/bin/nepomukcontroller.moved
+echo "/bin/true" > /usr/bin/akonaditray
+echo "/bin/true" > /usr/bin/nepomukcontroller
+sudo chmod +x /usr/bin/akonaditray /usr/bin/nepomukcontroller
+
+autokey -Probleme:
+autokey-qt  =>  Einstellung: Paste using "Mouse Selection"
+----
+
+
+
+
+=== Gnome
+
+  * Config Command-History, history-gnome-run, Anwendung starten (F2) in Datei/File:  '' $ vi ~/.gconf/apps/gnome-settings/gnome-panel/%gconf.xml''
+
+  * ''$ gconf-editor  #'' sucht den Schlüssel: ''/apps/gnome-power-manager/action_button_power'' und ändert den Wert auf **shutdown**
+
+  * **Nautilus** => klassische Adressleiste mit **Strg+L** oder ''$ gsettings set org.gnome.nautilus.preferences always_use_location_entry true '' \\ oder **dconf-editor** => Schluessel: org/gnome/nautilus/preferences
+
+
+.**Standard Ordner loswerden / remove Default Folders **
+----
+rmdir Bilder/ Dokumente/ Musik/ Öffentlich/ Videos/ Vorlagen/
+sudo vi /etc/X11/Xsession.d/60xdg-user-dirs-update
+vi .config/user-dirs.dirs
+sudo vi /etc/xdg/user-dirs.defaults
+----
+
+
+  * **Mime Typen Programm Zuordnungen**: ''~/.local/share/applications/mimeinfo.cache''  :?:
+
+  * **Bildschirmschoner/Screensaver**  '' $ gsettings set org.gnome.desktop.session idle-delay 14400  #  $ gsettings get org.gnome.desktop.session idle-delay '' 
+
+  * **Increase time before suspend/Bereitschaft, wenn inaktiv**  '' $ gsettings set org.cinnamon.settings-daemon.plugins.power sleep-inactive-ac-timeout 25200  #  gsettings get org.cinnamon.settings-daemon.plugins.power sleep-inactive-ac-timeout '' 
+
+  * **xyz** abc
+
+  * **gnome autostart delay / verzoegerung /sleep** => $ grep -i delay .config/autostart/gnome-terminal.desktop => X-GNOME-Autostart-Delay=5
+
+
+
+=== elementary OS
+
+  * ** DROPBOX_USE_LIBAPPINDICATOR=1 => /etc/profile ** dropbox status icon panel indicator symbol
+
+
+
+=== X
+
+
+==== xset
+
+Bildschirmschoner oder Stromsparmodus Deaktivieren: **'' xset s off '' und '' xset -dpms ''** \\
+
+
+==== xrandr
+
+
+----
+marcus@muse:~$ xrandr
+Screen 0: minimum 320 x 200, current 1280 x 1024, maximum 8192 x 8192
+VGA1 connected 1280x1024+0+0 (normal left inverted right x axis y
+axis) 510mm x 287mm
+    1920x1080      60.0 +
+    1280x1024      75.0     60.0*
+[...] 
+DVI1 connected 1280x1024+0+0 (normal left inverted right x axis y
+axis) 376mm x 301mm
+    1280x1024      60.0*+   75.0
+[...] 
+    720x400        70.1
+marcus@muse:~$ #xrandr --output VGA1 --auto --output DVI1 --auto --right-of VGA1 
+----
+
+
+==== Welcher Prozess hat das Fenster erzeugt? / Which process created the window?
+
+.Aus EasyLinux: xprop - Kommando ohne Argumente aufrufen, Cursors aendert sich, Fenster anklicken. 
+[source,bash]
+----
+esser@prudlup:~> xprop | grep PID
+_NET_WM_PID(CARDINAL) = 12345
+esser@prudlup:~> ps -p 12345 -o cmd=
+/usr/bin/dolphin /home/esser
+----
+
+
+**Problems Upgrade => 12.04 LST** \\
+autokey:  autokey -c   =>   Change X -Settings  \\
+launcher:  smaller/kleinere Icons  =>  sudo ./script.py 32  =>  logout/login
+
+
+**Config Panel => ** in /usr/share/unity-2d/shell/ (2D-Gui) => Shell.qml  (COPY: /home/aleschil/aex/Aex/Linux/config/unity-2d/)  ODER = sudo /home/aleschil/aex/Aex/Linux/config/unity/script.py 30
+
+
+==== Ubuntu
+
+  * Fehlerberichte loswerden => ''/etc/default/apport => enabled=0''
+  * System Autostart => ''/etc/xdg/autostart/ => cd /etc/xdg/autostart/ ; sudo mv ubuntuone-launch.desktop bluetooth-applet* evolution-alarm-notify.desktop ''
+
+
+
+==== X-Apps
+
+
+===== Browser, Sicherheit
+
+Veraltete Plug-ins sind tatsächlich das Haupteinfallstor für Malware. Firefox, Google Chrome und Opera bieten die Möglichkeit, Browser-Erweiterungen erst auszuführen, wenn man ein Platzhaltersymbol anklickt. Beim Internet Explorer gibt es diese Funktion nicht. \\ Wenn Sie Firefox-Nutzer sind, rufen Sie die Konfigurationsseite auf, indem Sie **„about:config“** //in die Adressleiste eintippen//. Anschließend tippen Sie **„click_to_play“** //in die Suchfunktion// ein und klicken doppelt auf den ersten und einzigen Suchtreffer. Der Wert ändert sich dadurch von „false“ auf „true“. Nach einem Neustart von Firefox ist die Option aktiv. \\ Chrome-Nutzer klicken auf den Menüknopf oben rechts „Einstellungen“ und tippen „Click“ in das Feld „In Einstellungen suchen“ ein. Die gelben Markierungen weisen jetzt den Weg zu der Option Click-to-Play. Unter Opera klickt man auf den Opera-Menüknopf, „Einstellungen/Einstellungen…/Erweitert/Inhalte“ und aktiviert anschließend die Option „Plug-ins nur auf Anforderung aktivieren“.
+
+
+===== Firefox
+
+  * Firefox-Profile => **key3.db, signons.sqlite** => PW Database , kennwort passwort password
+  * **Zoom-Stufen** => about:config => toolkit.zoomManager.zoomValues => '' .3,.5,.56,.62,.67,.72,.77,.8,.9,1,1.1,1.2,1.33,1.5,1.7,2,2.4,3 ''
+
+
+===== Libre Office / Open Office
+
+**Anklickbare Checkliste (auch im exportierten PDF) => ** Englisches Menue: => View => Toolbars => Form Controls
+
+
+===== Keyboard
+
+Keyboard Shortcuts/Tastaturkuerzel: '' xbindkeys-config ; xbindkeys # <- autostart ''
+
+
+===== Scanner
+
+__Scan Photo-Script:__
+  while true 
+  do read -p" Weiter mit RETURN/ENTER. Abbruch mit CTRL+C " 
+  echo;IMG="AidaScan07$(date +%m%d-%H%M).pbm" ; CMD="scanimage -x 181 -y 125 --resolution 440dpi " 
+  echo "$CMD >$IMG" ; $CMD >$IMG ; gimp $IMG ; done 
+
+
+__Network/Netzwerk-Scan:__
+----
+#### ON SERVER ####
+#
+# vi /etc/sane.d/saned.conf 
+#
+# cat /etc/services | grep 6566
+sane            6566/tcp   # SANE Control Port
+sane            6566/udp   # SANE Control Port
+#
+# cat /etc/xinetd.d/saned
+service sane
+{
+  port        = 6566
+  socket_type = stream
+  wait        = no
+  user        = root
+  group       = root
+  server      = /usr/sbin/saned
+}
+#
+# rcsane restart
+# rcxinetd restart
+#
+# tail -f /var/log/warn  # DEBUG IF PROBLEMS
+#
+#### ON CLIENT ####
+# vi /etc/sane.d/net.conf 
+connect_timeout = 60
+192.168.174.19 # = Sane-Server
+# vi /etc/sane.d/dll.conf  # Uncomment: #net -> net
+
+
+----
+
+
+
+
