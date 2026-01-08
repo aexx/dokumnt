@@ -9,17 +9,26 @@ Jetzt/now asciidoc adoc
 
 ==== Tipps
 
-* In _konsole_ *`geometry`*  needs/benoetigt *`nofork`* option: *Achtung: Geht nur auf Kommandozeile*
+.In _konsole_ *`geometry`*  needs/benoetigt *`nofork`* option: *Achtung: Geht nur auf Kommandozeile*
 ----
 konsole --profile Shell --nofork --geometry=1440x900-0-50
 ----
 
 * Gnome apps (dropbox, meld, ...) schlecht lesbar/hardly readable => KDE Settings => Application Appearance => Colors => Options => Apply colors to non-KDE... => *uncheck* 
-* *Mehrere Fenster gleichzeitig vergroessern / resize several windows at the same time* (Nur in KDE getestet - _FUNKTIONIERT evtl. AUCH BEI ANDEREN_) \\ *Fenster-Menue* (rechte Maus auf Titelleiste oder linke Maus links oben) => *Advanced* 
-  => *Special Window Settings* => REITER *Window Matching* => Hier passende   Kriterien finden z.B.: *Window Title:* Substring Match (passend setzen) \\ Evtl. andere eindeutige Werte auf *_Unimported_* setzen => REITER *Size & Position* auf Wert setzen.
-* *~/.kde/shutdown/kde-shutdown.sh* Skript f. KDE Shutdown / KDE stopp herunterfahren
-* No / Kein Dropbox Symbol / Icon in Taskbar / Taskleiste: dropbox stop && DBUS_SESSION_BUS_ADDRESS="" dropbox start ;until dropbox status|grep "Up to date";do echo -en . ;sleep 1;done;sleep 3
 
+* *Mehrere Fenster gleichzeitig vergroessern / resize several windows at the same time* (Nur in KDE getestet - _FUNKTIONIERT evtl. AUCH BEI ANDEREN_) +
+  *Fenster-Menue* (rechte Maus auf Titelleiste oder linke Maus links oben) +
+  => *Advanced* => *Special Window Settings* => REITER *Window Matching* +
+  => Hier passende Kriterien finden z.B.: *Window Title:* Substring Match (passend setzen) +
+  evtl. andere eindeutige Werte auf *_Unimported_* setzen => REITER *Size & Position* auf Wert setzen.
+
+* *~/.kde/shutdown/kde-shutdown.sh* Skript f. KDE Shutdown / KDE stopp herunterfahren
+
+.No/Kein Dropbox Symbol/Icon in Taskbar/Taskleiste:
+----
+dropbox stop && DBUS_SESSION_BUS_ADDRESS="" dropbox start 
+until dropbox status|grep "Up to date" ; do echo -en . ; sleep 1 ; done ; sleep 3
+----
 
 ==== KDE Kontext-Menue
 
@@ -130,7 +139,7 @@ Bildschirmschoner oder Stromsparmodus Deaktivieren: *`xset s off` und `xset -dpm
 
 
 ----
-marcus@muse:~$ xrandr
+user@linuxbox:~$ xrandr
 Screen 0: minimum 320 x 200, current 1280 x 1024, maximum 8192 x 8192
 VGA1 connected 1280x1024+0+0 (normal left inverted right x axis y
 axis) 510mm x 287mm
@@ -142,7 +151,7 @@ axis) 376mm x 301mm
     1280x1024      60.0*+   75.0
 [...] 
     720x400        70.1
-marcus@muse:~$ #xrandr --output VGA1 --auto --output DVI1 --auto --right-of VGA1 
+user@linuxbox:~$ #xrandr --output VGA1 --auto --output DVI1 --auto --right-of VGA1 
 ----
 
 
@@ -151,9 +160,9 @@ marcus@muse:~$ #xrandr --output VGA1 --auto --output DVI1 --auto --right-of VGA1
 .Aus EasyLinux: xprop - Kommando ohne Argumente aufrufen, Cursors aendert sich, Fenster anklicken. 
 [source,bash]
 ----
-esser@prudlup:~> xprop | grep PID
+user@linuxbox:~> xprop | grep PID
 _NET_WM_PID(CARDINAL) = 12345
-esser@prudlup:~> ps -p 12345 -o cmd=
+user@linuxbox:~> ps -p 12345 -o cmd=
 /usr/bin/dolphin /home/esser
 ----
 
