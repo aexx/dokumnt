@@ -131,7 +131,7 @@ $ systemctl restart lightdm
 |   **sandisk rund** |    8 GB |   2    |    36  | VENTOY . *leer*                                                                                            |
 |       **platinum** |   14 GB |   2    |    19  | VENTOY . bunsen-linux_2x peppermint-32_2024 clonezilla-live-3.1.2             *(stick probleme u linux!)*  |
 |  **sdcard chromi** |   16 GB |  SD    |    14  | VTY . linuxmint-21_persist data_Partition                                                                  |
-|        **toshiba** |   32 GB |   2    |    30  | VTY . ubuntu-20.04. linuxmint-21_persist redorescue-4.0 grml_2022 slax_12.2 porteus_5                      |
+|        **toshiba** |   32 GB |   2    |    30  | VTY . linuxmint-21_persist redorescue-4.0 grml_2022 linuxmint-22-cinnam elementaryos-8.1                   |
 | **kings.dataT102** |   32 GB |   2    |    21  | q4os usb-install                                                                                           |
 |   **kings. kyson** |   32 GB |  3.2   |   200  | *leer*                                                                                                     |
 |    **paradies dm** |   64 GB |  3.x   |    98  | VENTOY . Desinfect-2023 bunsen-linux fossapup64 tuxedo redorescue-4.0 clonezilla-live-3.1.2                |
@@ -388,5 +388,6 @@ Python-Skript adb-sync _(auf GitHub, Sync zu PC aehnlich rsync)_ , t-ui Linux-CL
 
 
 ###### Ende       
+
 
 
