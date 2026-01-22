@@ -125,7 +125,7 @@ $ systemctl restart lightdm
 |                    |         |        |        |                                                                                                            |
 |      **t-systems** |  0,3 GB |   2    |     7  | puppy linux slacko_5.7                                                                                     |
 |          **krXnn** |    2 GB |   2    |    14  | VENTOY . linuxmint-21 persistence                                                                          |
-|         **apacer** |    2 GB |   2    |    17  | VENTOY . supergrub                                                                                         |
+|         **apacer** |    2 GB |   2    |    17  | VENTOY . supergrub . tiny-core-2022 . noblePup32_2026-01                                                   |
 |       **cruzer** 4 |    4 GB |   2    |    24  | puppy linux fossapup64_persist                                                                             |
 |       **cruzer** 8 |    8 GB |   2    |    --  | unraid OS                                                                                                  |
 |   **sandisk rund** |    8 GB |   2    |    36  | VENTOY . *leer*                                                                                            |
@@ -388,6 +388,7 @@ Python-Skript adb-sync _(auf GitHub, Sync zu PC aehnlich rsync)_ , t-ui Linux-CL
 
 
 ###### Ende       
+
 
 
 
