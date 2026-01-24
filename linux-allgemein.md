@@ -125,16 +125,16 @@ $ systemctl restart lightdm
 |                    |         |        |        |                                                                                                            |
 |      **t-systems** |  0,3 GB |   2    |     7  | puppy linux slacko_5.7                                                                                     |
 |          **krXnn** |    2 GB |   2    |    14  | VENTOY . linuxmint-21 persistence                                                                          |
-|         **apacer** |    2 GB |   2    |    17  | VENTOY . supergrub . tiny-core-2022 . noblePup32_2026-01                                                   |
+|         **apacer** |    2 GB |   2    |    17  | VENTOY . *leer*                                                                                            |
 |       **cruzer** 4 |    4 GB |   2    |    24  | puppy linux fossapup64_persist                                                                             |
 |       **cruzer** 8 |    8 GB |   2    |    --  | unraid OS                                                                                                  |
 |   **sandisk rund** |    8 GB |   2    |    36  | VENTOY . *leer*                                                                                            |
-|       **platinum** |   14 GB |   2    |    19  | VENTOY . bunsen-linux_2x peppermint-32_2024 clonezilla-live-3.1.2             *(stick probleme u linux!)*  |
+|       **platinum** |   14 GB |   2    |    19  | VENTOY . bunsen-linux_2x peppermint-32_2024 clonezilla-live-3.1.2 ubuntu-24   *(stick probleme u linux!)*  |
 |  **sdcard chromi** |   16 GB |  SD    |    14  | VTY . linuxmint-21_persist . backup_Chromi_bookworm-Pup64                                                  |
 |        **toshiba** |   32 GB |   2    |    30  | VTY . linuxmint-21_persist redorescue-4.0 grml_2022 linuxmint-22-cinnam elementaryos-8.1                   |
 | **kings.dataT102** |   32 GB |   2    |    21  | q4os usb-install                                                                                           |
 |   **kings. kyson** |   32 GB |  3.2   |   200  | *leer*                                                                                                     |
-|    **paradies dm** |   64 GB |  3.x   |    98  | VENTOY . Desinfect-2023 bunsen-linux fossapup64 tuxedo redorescue-4.0 clonezilla-live-3.1.2                |
+|    **paradies dm** |   64 GB |  3.x   |    98  | VENTOY . redorescue-4.0 fossapup64 bunsen-linux clonezilla-live-3.1.2 bookworm-Pup64                       |
 |                    |   xx GB |        |    --  |                                                                                                            |
 |                    |   xx GB |        |    --  |                                                                                                            |
 |                    |         |        |        |                                                                                                            |
@@ -388,6 +388,7 @@ Python-Skript adb-sync _(auf GitHub, Sync zu PC aehnlich rsync)_ , t-ui Linux-CL
 
 
 ###### Ende       
+
 
 
 
