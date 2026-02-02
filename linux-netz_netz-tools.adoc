@@ -1,11 +1,11 @@
 
-## Netz-Tools
+== Netz-Tools
 
 
-### Daten-Transfer
+=== Daten-Transfer
 
 
-#### netcat
+==== netcat
 
 **Einzelne Datei/One file:**   
 Zuerst auf **Ziel/Destination**-Host:  `# netcat -l -p 12344 > Compaq-615.C.ntfsclone.img.gz `   
@@ -18,7 +18,7 @@ Windows ueber Netzwerk umziehen - **Linux-Live-System auf beiden PC** booten: Ne
 **Ziel**-PC: `install-mbr /dev/hda ` #Oder Windows-Reparatur mit Win-Inst-CD   
 
 
-### ip
+=== ip
 
     ip addr add 192.168.11.44/25 dev eth0
     ip addr del 192.168.11.44 dev eth0
@@ -30,7 +30,7 @@ Windows ueber Netzwerk umziehen - **Linux-Live-System auf beiden PC** booten: Ne
 
 
 
-### IPv6 inet6
+=== IPv6 inet6
 
 
     ping6 fe80::a00:27ff:fee1:7ef2%eth2 -c4
@@ -39,7 +39,7 @@ Windows ueber Netzwerk umziehen - **Linux-Live-System auf beiden PC** booten: Ne
 
 
 
-### usw
+=== usw
 
 
     iptables -vnL
@@ -64,7 +64,7 @@ iperf -s  # auf einem system als server  ⇒  iperf -c 192.168.0.14  # mit ander
 
 
 
-### Remote Desktop rdesktop xrdp
+=== Remote Desktop rdesktop xrdp
 
 ``` bash
 
@@ -90,7 +90,7 @@ sudo systemctl restart xrdp
 
 
 
-### nmap
+=== nmap
 
 
     nmap -p 80 192.168.71.0/25  #  nmap -sS backup2  #  nmap -sS localhost
