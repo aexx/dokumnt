@@ -97,6 +97,11 @@ ls -ltra /etc/netplan
 systemctl list-unit-files --type=service --state=enabled | grep -i network
 sudo systemctl restart NetworkManager.service
 sudo nmcli c[onnection]
+# bond
+sudo nmcli con add type bond con-name bond ifname bond0 mode active-backup primary myeth0 +bond.options "fail_over_mac=active,miimon=100,primary_reselect=always,updelay=200"
+sudo nmcli con add type ethernet con-name bond-eth slave-type bond master bond0 ifname eth0
+sudo nmcli con add type wifi con-name bond-wlan slave-type bond master bond0 ifname wlan0 ssid 'BliBlaBlub!Box'
+sudo nmcli con modify bond-wlan wifi-sec.key-mgmt wpa-psk wifi-sec.psk 123456789
 ----
 
 
