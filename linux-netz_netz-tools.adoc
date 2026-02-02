@@ -87,21 +87,18 @@ sudo nmap -PR 192.168.111.0/24 -sn  ##Netz scan
 ----
 
 
+=== NetworkManager
+
+.NetworkManager nmcli
+----
+# Dateien/files:
+ls -ltra /etc/netplan
+# permanent[es] loeschen/deletion
+systemctl list-unit-files --type=service --state=enabled | grep -i network
+sudo systemctl restart NetworkManager.service
+sudo nmcli c[onnection]
+----
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-###### Ende       
