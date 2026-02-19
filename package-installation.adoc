@@ -114,6 +114,7 @@ gpg: Schlüssel F1A41D5E: Öffentlicher Schlüssel "SpiderOak Apt Repository <ap
 [...]
 ok8cp5@mint ~ $ gpg --export --armor 5D654504F1A41D5E | sudo apt-key add -
 OK
+----
 
 .Nochmal:
 ----
