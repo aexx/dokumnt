@@ -24,7 +24,13 @@ nala show falkon  ; nala list falkon
 sudo nala update ;countdown 4; nala list --upgradable
 psuche () {  nala search "$1" |grep -v "──"|grep -i "$1"; } ; psuche dillo
 sudo nala update ;countdown 4; nala list --upgradable ;printf "\n│\n│\n└── sudo nala full-upgrade \n\n" 
-----    
+
+$ dpkg -c paket.deb  # list files / Dateien
+$ dpkg -S resolv.conf  # search/suche find/finde Dateien/files 
+
+$ platz () { df -m / ;ls /var/cache/apt/archives/|wc -l ; } ;platz >/dev/shm/platz1 ;sudo apt clean;sudo apt autoremove ;platz >/dev/shm/platz2 ; sdiff /dev/shm/platz1 /dev/shm/platz2 
+$ platz () { df -m / ;df -h / ;ls /var/cache/apt/archives/|wc -l ; } ;platz >/dev/shm/platz1 ;sudo nala clean;sudo nala autoremove ;platz >/dev/shm/platz2 ; sdiff /dev/shm/platz1 /dev/shm/platz2 
+----
 
 
 ==== Pakete nach Groesse sortiert / sort packages by size
@@ -49,18 +55,7 @@ find /var/lib/dpkg/info -name "*.list" -exec stat -c $'%n\t%y' {} \; | sed -e 's
 04 join -1 1 -2 1 -t $'\t' ~/dpkglist.selections ~/dpkglist.recent > ~/dpkglist.recentselections
 ----
 
-.list, search/suche, find
-----
-$ dpkg -c paket.deb  # list files / Dateien
 
-$ export DIR=/var/cache/apt/archives ;ls $DIR ;du -ms $DIR ;psg apt;read -p" ==> WEITER ???? " ; countdown 14; df -am ; export CMD="sudo apt-get" ; $CMD autoclean ; countdown 2 ;$CMD autoremove ; countdown 2 ;df -am ;ls $DIR ;du -ms $DIR ; \
-ODER
-$ platz () { df -m / ;ls /var/cache/apt/archives/|wc -l ; } ;platz ;sudo apt clean;sudo apt autoremove ;platz
-ODER
-$ platz () { df -m / ;ls /var/cache/apt/archives/|wc -l ; } ;platz >/dev/shm/platz1 ;sudo apt clean;sudo apt autoremove ;platz >/dev/shm/platz2 ; sdiff /dev/shm/platz1 /dev/shm/platz2  # neu
-
-$ dpkg -S resolv.conf  # search/suche find/finde Dateien/files 
-----
 
 .**Proxy** - Eintraege in `/etc/apt/apt.conf`  o.  `/etc/apt/apt.conf.d/00proxy`   
 ----
@@ -92,7 +87,7 @@ $ cat zu_entfernende_Kernel | xargs sudo apt-get -y purge
 $ rm zu_entfernende_Kernel 
 ----
 
-==== Problem[e/s]
+=== Problem|e/s|
 
 **Update LMDE** autokey probleme:  `$ sudo apt-get install gir1.2-notif ; sudo dpkg -i autokey-gtk_0.90.1-1.1_all.deb`
 
