@@ -106,17 +106,23 @@ $ apt-key add new_key
 OK
 ----
 
-.AUCH:
+.Fehler|error waehrend|during update
+----
+mintUpdate: chrome repository 
+# W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://dl.google.com/linux/chrome/deb stable Release' no longer has a Release file.
+## NEUER|NEW linux_signing_key
+$ wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo tee /etc/apt/trusted.gpg.d/google.asc >/dev/null
+----
+
+.SpiderOak Apt Repository
 ----
 ok8cp5@mint ~ $ gpg --keyserver keyserver.ubuntu.com --recv 5D654504F1A41D5E
-[...]
 gpg: Schlüssel F1A41D5E: Öffentlicher Schlüssel "SpiderOak Apt Repository <apt@spideroak.com>" importiert
-[...]
 ok8cp5@mint ~ $ gpg --export --armor 5D654504F1A41D5E | sudo apt-key add -
 OK
 ----
 
-.Nochmal:
+.repository.spotify.com
 ----
 W: Während der Überprüfung der Signatur trat ein Fehler auf. Das Repository wurde nicht aktualisiert und die vorherigen Indexdateien werden verwendet. GPG-Fehler: http://repository.spotify.com stable Release: Die folgenden Signaturen konnten nicht überprüft werden, weil ihr öffentlicher Schlüssel nicht verfügbar ist: NO_PUBKEY 13B00F1FD2C19886
 W: Fehlschlag beim Holen von http://repository.spotify.com/dists/stable/Release  
@@ -129,8 +135,7 @@ gpg: Schlüssel D2C19886 von hkp-Server keyserver.ubuntu.com anfordern
 gpg: Schlüssel D2C19886: Öffentlicher Schlüssel "Spotify Public Repository Signing Key <operations@spotify.com>" importiert
 ----
 
-
-.Tages Zaehler **GUI Update Manager** zaehlt nicht hoch    
+.Tages Zaehler **GUI Update Manager** (spideroak) zaehlt nicht hoch    
 ----
 $ sudo apt-get update 
 OK   http://de.archive.ubuntu.com precise Release.gpg
@@ -139,7 +144,7 @@ W: Fehlschlag beim Holen von http://apt.spideroak.com/ubuntu-spideroak-hardy/dis
 [...] 
 
 ## Browser: => http://apt.spideroak.com  
-=>  wget http://apt.spideroak.com/spideroak-apt-pubkey.asc -O new_key  
+=> wget http://apt.spideroak.com/spideroak-apt-pubkey.asc -O new_key  
 => sudo apt-key add new_key  =>  sudo apt-get update
 ----
 
