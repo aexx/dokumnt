@@ -10,7 +10,7 @@ RedHat/CentOS: `cat /etc/redhat-release`
 ----
 
 
-=== apt & dpkg & aptitude    
+=== apt & dpkg & aptitude & nala
 
 ----
 apt-file search ForkManager.pm  # Suchen nach Paketen /search packages
@@ -57,7 +57,7 @@ find /var/lib/dpkg/info -name "*.list" -exec stat -c $'%n\t%y' {} \; | sed -e 's
 
 
 
-.**Proxy** - Eintraege in `/etc/apt/apt.conf`  o.  `/etc/apt/apt.conf.d/00proxy`   
+.**Proxy** - Eintraege in /etc/apt/apt.conf  o.  /etc/apt/apt.conf.d/00proxy
 ----
 Acquire::http::Proxy "http://www-m1.dienste.telxxxx.de:8080";
 Acquire::http::proxy "http://192.168.1.112:3128";
