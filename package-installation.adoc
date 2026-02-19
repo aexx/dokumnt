@@ -1,15 +1,15 @@
 
-# Packages & Install
+== Packages & Install
 
 
-### Linux Version ?
+==== Linux Version ?
 
 Debain/Ubuntu/Mint: `cat /etc/issue ; lsb_release -a  ; cat /etc/lsb-release`     
 RedHat/CentOS: `cat /etc/redhat-release`
 
 ---
 
-## apt & dpkg & aptitude 
+=== apt & dpkg & aptitude 
 
 
     apt-file search ForkManager.pm  # Suchen nach Paketen /search packages
@@ -26,14 +26,14 @@ RedHat/CentOS: `cat /etc/redhat-release`
     
 
 
-### Pakete nach Groesse sortiert / sort packages by size
+==== Pakete nach Groesse sortiert / sort packages by size
 
     time (pkgl=/dev/shm/dpkg-groessen.txt ;dpkg -l|grep "ii"|awk '{print $2}' |while read a;do echo "$(dpkg -s $a|grep Installed-Size|cut -c17-)  $a ";done|tee $pkgl ;sort -n $pkgl )
     # **Besser:** 
     time (pkgl=/dev/shm/dpkg-groessen_2.txt ;dpkg-query -W -f='${Installed-Size} ${Package} \t\t\t\t\t ${Status} \n'|grep -v deinstall|tee $pkgl ; sort -n $pkgl ) # Pakete nach Groesse sortiert /sort packages by size , gross brummer 
     aptitude -O installsize -F'%p %I' search '~i'  #Pakete nach Groesse sortiert / sort packages by size
 
-### Zeitpunkt, dpkg, apt, datum, date, install
+#=== Zeitpunkt, dpkg, apt, datum, date, install
 
     ( PKG="linux-image" ; zegrep -i $PKG /var/log/dpkg.log* ; egrep -Ri $PKG /var/log/dpkg.log* ) # |egrep -i "upgrad|instal"    # dpkg apt zeitpunkt datum date install
 
@@ -68,7 +68,7 @@ export
     $ dpkg --get-selections > Dateiname  #  sudo dpkg --set-selections < Dateiname  #  sudo dpkg --yet-to-unpack  #  sudo apt-get dselect-upgrade   ## Listen / lists - export / import
 
     
-### Alte Kernel , old kernel
+==== Alte Kernel , old kernel
 
     $ dpkg -l|grep ii |grep linux
     $ pliste="" ; for i in 3.2.0-60 3.2.0-61 ; do sleep 0.3 ; pliste="linux-headers-${i} linux-headers-${i}-generic linux-headers-${i}-generic-pae linux-image-${i}-generic linux-image-${i}-generic-pae $pliste " ; echo "_____  $pliste"  ; done ; echo  -e "\n\n\nsudo apt-get remove --purge $pliste \n"
@@ -89,13 +89,13 @@ install
 
 
 
-### Problem[e/s]
+==== Problem[e/s]
 
 
 **Update LMDE** autokey probleme:  `$ sudo apt-get install gir1.2-notif ; sudo dpkg -i autokey-gtk_0.90.1-1.1_all.deb`
 
 
-#### Key Probleme
+==== Key Probleme
 
 GPG error debian.org **=> public key is not available**   
 
@@ -152,7 +152,7 @@ Tages Zaehler **GUI Update Manager** zaehlt nicht hoch
 ---
 
 
-## rpm
+=== rpm
 
 **Beobachten/watch Update (background-process) => **  '' # watch -d -n 4 'df -am ; ps aux |grep rpm |grep -v grep' # '' 
 
@@ -180,9 +180,9 @@ Tages Zaehler **GUI Update Manager** zaehlt nicht hoch
 ---
 
 
-## Andere/Other
+=== Andere/Other
 
-### Gentoo
+=== Gentoo
 
     $ layman -S ; emerge --sync ; emerge --search vim  # gentoo
     
