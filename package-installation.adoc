@@ -135,14 +135,13 @@ gpg: Schlüssel D2C19886 von hkp-Server keyserver.ubuntu.com anfordern
 gpg: Schlüssel D2C19886: Öffentlicher Schlüssel "Spotify Public Repository Signing Key <operations@spotify.com>" importiert
 ----
 
-.Tages Zaehler **GUI Update Manager** (spideroak) zaehlt nicht hoch    
+.Tages Zaehler GUI Update Manager (spideroak) zaehlt nicht hoch    
 ----
 $ sudo apt-get update 
 OK   http://de.archive.ubuntu.com precise Release.gpg
 OK   http://archive. [...] 
 W: Fehlschlag beim Holen von http://apt.spideroak.com/ubuntu-spideroak-hardy/dists/release/Release  
 [...] 
-
 ## Browser: => http://apt.spideroak.com  
 => wget http://apt.spideroak.com/spideroak-apt-pubkey.asc -O new_key  
 => sudo apt-key add new_key  =>  sudo apt-get update
