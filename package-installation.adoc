@@ -119,15 +119,12 @@ OK
 .Nochmal:
 ----
 W: Während der Überprüfung der Signatur trat ein Fehler auf. Das Repository wurde nicht aktualisiert und die vorherigen Indexdateien werden verwendet. GPG-Fehler: http://repository.spotify.com stable Release: Die folgenden Signaturen konnten nicht überprüft werden, weil ihr öffentlicher Schlüssel nicht verfügbar ist: NO_PUBKEY 13B00F1FD2C19886
-
 W: Fehlschlag beim Holen von http://repository.spotify.com/dists/stable/Release  
-
 W: Einige Indexdateien konnten nicht heruntergeladen werden. Sie wurden ignoriert oder alte an ihrer Stelle benutzt.
 [...] 
-----
 
-.Info v. spotify: 
-----
+#### Info v. spotify: 
+
 $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 Executing: gpg --ignore-time-conflict --no-options --no-default-keyring --secret-keyring /tmp/tmp.0Bpg0SmN5P --trustdb-name /etc/apt/trustdb.gpg --keyring /etc/apt/trusted.gpg --primary-keyring /etc/apt/trusted.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 gpg: Schlüssel D2C19886 von hkp-Server keyserver.ubuntu.com anfordern
