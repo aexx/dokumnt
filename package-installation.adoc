@@ -142,18 +142,18 @@ OK   http://de.archive.ubuntu.com precise Release.gpg
 OK   http://archive. [...] 
 W: Fehlschlag beim Holen von http://apt.spideroak.com/ubuntu-spideroak-hardy/dists/release/Release  
 [...] 
+
+**Browser** => http://apt.spideroak.com  
+=>  wget http://apt.spideroak.com/spideroak-apt-pubkey.asc -O new_key  
+=> sudo apt-key add new_key  =>  sudo apt-get update
 ----
-
-**Browser** => http://apt.spideroak.com  =>  `wget http://apt.spideroak.com/spideroak-apt-pubkey.asc -O new_key  => sudo apt-key add new_key  =>  sudo apt-get update`  
-
 
 
 === rpm
 
-
-**Beobachten/watch Update (background-process) => **  '' # watch -d -n 4 'df -am ; ps aux |grep rpm |grep -v grep' # '' 
-
 ----
+watch -d -n 4 'df -am ; ps aux |grep rpm |grep -v grep' # Update Beobachten/watch 
+
 $ sudo zypper in gcc make kernel-source kernel-syms Xalan-c Xerces-c   # SuSE rpm packages pakete kompilieren
 
 $ # 2020-12-26 opensuse-tumbleweed
