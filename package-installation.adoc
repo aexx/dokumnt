@@ -122,9 +122,7 @@ W: Während der Überprüfung der Signatur trat ein Fehler auf. Das Repository w
 W: Fehlschlag beim Holen von http://repository.spotify.com/dists/stable/Release  
 W: Einige Indexdateien konnten nicht heruntergeladen werden. Sie wurden ignoriert oder alte an ihrer Stelle benutzt.
 [...] 
-
-#### Info v. spotify: 
-
+## Info v. spotify: 
 $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 Executing: gpg --ignore-time-conflict --no-options --no-default-keyring --secret-keyring /tmp/tmp.0Bpg0SmN5P --trustdb-name /etc/apt/trustdb.gpg --keyring /etc/apt/trusted.gpg --primary-keyring /etc/apt/trusted.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 gpg: Schlüssel D2C19886 von hkp-Server keyserver.ubuntu.com anfordern
@@ -140,7 +138,7 @@ OK   http://archive. [...]
 W: Fehlschlag beim Holen von http://apt.spideroak.com/ubuntu-spideroak-hardy/dists/release/Release  
 [...] 
 
-**Browser** => http://apt.spideroak.com  
+## Browser: => http://apt.spideroak.com  
 =>  wget http://apt.spideroak.com/spideroak-apt-pubkey.asc -O new_key  
 => sudo apt-key add new_key  =>  sudo apt-get update
 ----
