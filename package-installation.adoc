@@ -55,8 +55,6 @@ find /var/lib/dpkg/info -name "*.list" -exec stat -c $'%n\t%y' {} \; | sed -e 's
 04 join -1 1 -2 1 -t $'\t' ~/dpkglist.selections ~/dpkglist.recent > ~/dpkglist.recentselections
 ----
 
-
-
 .**Proxy** - Eintraege in /etc/apt/apt.conf  o.  /etc/apt/apt.conf.d/00proxy
 ----
 Acquire::http::Proxy "http://www-m1.dienste.telxxxx.de:8080";
@@ -64,12 +62,12 @@ Acquire::http::proxy "http://192.168.1.112:3128";
 Acquire::http::Proxy "http://lgnas01:3128";
 ----
 
-.export ----
+.export import Listen|lists
 ----
 $ dpkg --get-selections > Dateiname  
 sudo dpkg --set-selections < Dateiname  
 sudo dpkg --yet-to-unpack  
-sudo apt-get dselect-upgrade   ## Listen / lists - export / import
+sudo apt-get dselect-upgrade   ## Listen|lists - export / import
 ----
 
 ==== Alte Kernel , old kernel
@@ -87,7 +85,7 @@ $ cat zu_entfernende_Kernel | xargs sudo apt-get -y purge
 $ rm zu_entfernende_Kernel 
 ----
 
-=== Problem|e/s|
+=== Problem(e|s)
 
 **Update LMDE** autokey probleme:  `$ sudo apt-get install gir1.2-notif ; sudo dpkg -i autokey-gtk_0.90.1-1.1_all.deb`
 
