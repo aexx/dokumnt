@@ -52,6 +52,12 @@ Notizen
 
 TIP: Zum schnell notieren ...
 
+.Dies und das ...
+----
+[ $(df /boot | grep / | awk '{print $5}' | sed 's/%//') -gt 50 ] && echo RAUS
+RAUS
+----
+
 
 .*Kombination aus tail, grep und sed.* Befehl zeigt das Logfile in Echtzeit an und hebt den String "STRING" farbig hervor (in diesem Fall rot). Dabei bleiben die anderen Zeilen ebenfalls sichtbar.
 ----
