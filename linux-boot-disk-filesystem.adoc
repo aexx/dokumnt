@@ -40,9 +40,8 @@ ttyS1
 ----
 serial --unit=0 --speed=115200[9600] --word=8 --parity=no --stop=1
 terminal --dumb --timeout=10 serial console
-...
+[...] 
   kernel /boot/vmlinuz-2.6.9-42.0.3.EL ro root=LABEL=/ vga=0x305 console=tty0 console=ttyS0,115200
- ## 
 ----
 
 == Grub
@@ -52,7 +51,7 @@ terminal --dumb --timeout=10 serial console
 
 TIP: */boot/grub/menu.lst:* ...AUTOMAGIC KERNELS LIST +
 DO NOT UNCOMMENT THEM, Just edit them to your needs... +
-Alles innerhalb des "AUTOMAGIC KERNELS LIST" - Blocks wird vom *"update-grub script"* nach Kernel-Updates/Installationen oder per *# sudo update-grub #* neu ge(ueber)schrieben. +
+Alles innerhalb des "AUTOMAGIC KERNELS LIST" - Blocks wird vom *update-grub script* nach Kernel-Updates/Installationen oder per *sudo update-grub* neu ge(ueber)schrieben. +
 Es koennen jedoch ueber die "Default Options" *dauerhafte* Anpassungen gemacht werden (die Kommentarzeichen *# nicht* entfernen) z.B.:
 
 [source,bash]
@@ -127,7 +126,7 @@ menuentry "(hd1,1) sdb1" {
 ----
 
 
-IMPORTANT: Die */boot/grub/grub.cfg* sollte *nicht* editiert werden, sondern wird anhand der Konfig-Dateien unter /etc/grub.d/ per: *# update-grub* erzeugt.
+IMPORTANT: Die */boot/grub/grub.cfg* sollte *nicht* editiert werden, sondern wird anhand der Konfig-Dateien unter /etc/grub.d/ per: *update-grub* erzeugt.
 
 
 === chroot live-system
@@ -138,7 +137,7 @@ sudo mount /dev/sdX2 /mnt/1
 sudo mount /dev/sdX3 /mnt/1/boot
 sudo mount -o bind /dev /mnt/1/dev
 sudo mount -o bind /sys /mnt/1/sys
-sudo # mount -t proc /proc /mnt/1/proc
+sudo mount -t proc /proc /mnt/1/proc
 sudo chroot /mnt/1 /bin/bash
 cp /proc/mounts /etc/mtab
 grub-install /dev/sda
@@ -174,10 +173,10 @@ $ ( for i in a b c; do echo "---- /dev/sd${i} ----" ; sudo smartctl --all /dev/s
 fuser -u / ; fuser -c /var/tmp    # Prozess Zugriff auf Dateisystem - offene Dateien / file system access - open files
 lsof |grep etc                    # offene Dateien / list open files
 
-mkfs.ext3 -i 32768 , 65536 -vL pimage /dev/sdaX  # Dateisystem fuer grosse Dateien, aber wenig inodes
+mkfs.ext3 -i 32768 , 65536 -vL pimage /dev/sdaX   #Dateisystem fuer grosse Dateien, aber wenig inodes
 fdformat /dev/fd0u1600 ; mkfs.msdos /dev/fd0u1600 #Floppy formatieren mit mehr als 1440 Siehe auch devices.txt
 
-split -b 1440k <file>  # auf-,zer-teilen zer-schneiden, Dateien xaa, xab, xac, usw. werden erzeugt, auf Disketten kopieren. 
+split -b 1440k <file>  #Auf-,zer-teilen zer-schneiden, Dateien xaa, xab, xac, usw. werden erzeugt, auf Disketten kopieren. 
 cat xaa xab xac ... > <file> #Auf Zielsystem auf Platte zusammensetzen
 
 dd if=/dev/zero of=/dev/ram bs=1k count=2048 #RAM-Disk
