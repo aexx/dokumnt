@@ -26,7 +26,7 @@ T1:2345:respawn:/sbin/getty -nl /bin/bash ttyS1 115200 vt100      #knoppix,debai
 s1:12345:respawn:/sbin/agetty -nl /bin/bashlogin 9600 ttyS1 vt100 #sysresccd,gentoo ser. con. 
 ----
 
-IMPORTANT: Bei/in UBUNTU: -> /etc/event.d/ 
+IMPORTANT: Bei/in UBUNTU: => /etc/event.d/ 
 
 .in */etc/securetty*
 [source]
@@ -85,7 +85,7 @@ TIP: Welche/which uuid: `sudo vol_id --uuid /dev/sda1`
 
 == Grub2
 
-Bei Grub2 haben sich die Device-Namens-Konventionen geaendert: /dev/sda1 -> (hd0,1) <- _[frueher (hd0,0)]_
+Bei Grub2 haben sich die Device-Namens-Konventionen geaendert: /dev/sda1 => (hd0,1) <- _[frueher (hd0,0)]_
 [cols="1,1",options="header"]
 |===
 |/dev/fd0  | (fd0)
@@ -98,7 +98,7 @@ TIP: *update-grub[2] / grub-mkconfig* binden weitere installierte Linux-Systeme 
 
 === Boot ISO Images
 
-.-> */etc/grub.d/40_custom*
+.=> */etc/grub.d/40_custom*
 [source,bash]
 ----
 #!/bin/sh
@@ -150,7 +150,7 @@ sudo chown -hR user:user /home/user
 
 [source]
 ----
-$ su - -c 'yes=no ; read -p " SHUTDOWN / INIT 0 ??? Type -> YES <- " yes ; [ "$yes" = "YES" ] && { echo init 0 && init 0 && exit ; } || echo NO shutdown' ; exit
+$ su - -c 'yes=no ; read -p " SHUTDOWN / INIT 0 ??? Type => YES <- " yes ; [ "$yes" = "YES" ] && { echo init 0 && init 0 && exit ; } || echo NO shutdown' ; exit
 $ read -p " shutdown / init 0 ??? " && { echo init 0 && su - -c 'init 0 ' && exit ; }
 $ su - -c ' echo "/sbin/init 0 " | at now + 10 hours '
 ----
@@ -190,11 +190,11 @@ su - -c 'mount -o loop /media/t-stick/Aex.dsk /mnt/Aex-t-stick/' ##Mounten des F
 lofiadm ; lofiadm -a `pwd`/alex.iso ; mount -F hsfs /dev/lofi/3 /tmp/1 #loop bei SUN
 umount /tmp/1 ; lofiadm -d /dev/lofi/3 #loop bei SUN
 
-dd if=/dev/zero of=/mnt/CLEAR bs=20M status=progress  ## mit bs schneller #hda1 unter /mnt gemountet # rm /mnt/CLEAR  ##ungenutzte Bloecke loeschen ->Image wird kleiner
-sudo zerofree -v /dev/md1  # nochmal ungenutzte Bloecke loeschen -> kleineres Image
+dd if=/dev/zero of=/mnt/CLEAR bs=20M status=progress  ## mit bs schneller #hda1 unter /mnt gemountet # rm /mnt/CLEAR  ##ungenutzte Bloecke loeschen => Image wird kleiner
+sudo zerofree -v /dev/md1  # nochmal ungenutzte Bloecke loeschen => kleineres Image
 dd if=/dev/hdaX|gzip >/nfs/image.gz #Image einer Partition in einer komprimierten Datei ablegen 
 gunzip -c /nfs/image.gz|dd of=/dev/hdaX #Zuruecksichern der Partition
-#Partition sollte genau so gross sein, NICHT kleiner -> Datenverlust. Ist die Partition groesser bleibt der Rest ungenutzt.
+#Partition sollte genau so gross sein, NICHT kleiner => Datenverlust. Ist die Partition groesser bleibt der Rest ungenutzt.
 dd if=/dev/fd0 | ssh csm-admin210 'dd of=/tmp/floppy.img' # Image uebers Netz
 
 dd if=/dev/sdc1 of=CF-dd.img ; photorec /d photorec_dir CF-dd.img
