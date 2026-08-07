@@ -150,7 +150,7 @@ sudo chown -hR user:user /home/user
 
 [source]
 ----
-$ su - -c 'yes=no ; read -p " SHUTDOWN / INIT 0 ??? Type => YES <- " yes ; [ "$yes" = "YES" ] && { echo init 0 && init 0 && exit ; } || echo NO shutdown' ; exit
+$ su - -c 'yes=no ; read -p " SHUTDOWN / INIT 0 ??? Type => YES <= " yes ; [ "$yes" = "YES" ] && { echo init 0 && init 0 && exit ; } || echo NO shutdown' ; exit
 $ read -p " shutdown / init 0 ??? " && { echo init 0 && su - -c 'init 0 ' && exit ; }
 $ su - -c ' echo "/sbin/init 0 " | at now + 10 hours '
 ----
