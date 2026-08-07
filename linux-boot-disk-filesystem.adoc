@@ -1,1 +1,270 @@
+= Boot und Disk
+:toc:
+:toclevels: 3
+:source-highlighter: highlight.js
+
+= Boot
+
+== Serielle /serial console
+
+*Anpassen /Edit:*
+
+* /etc/inittab 
+
+* /etc/securetty 
+
+* /boot/grub/menu.lst [grub.conf]
+
+
+.in */etc/inittab*
+[source]
+----
+Examples:
+co:12345:respawn:/sbin/agetty ttyS1 9600 vt100      #com2 ilo rhel52 serial console
+co:12345:respawn:/sbin/agetty ttyS0 115200 vt100    #com1 rhel4 serial console
+T1:2345:respawn:/sbin/getty -nl /bin/bash ttyS1 115200 vt100      #knoppix,debain serial console
+s1:12345:respawn:/sbin/agetty -nl /bin/bashlogin 9600 ttyS1 vt100 #sysresccd,gentoo ser. con. 
+----
+
+IMPORTANT: Bei/in UBUNTU: -> /etc/event.d/ 
+
+.in */etc/securetty*
+[source]
+----
+ttyS0 
+ttyS1
+----
+
+.in */boot/grub/grub.conf*
+[source,bash]
+----
+serial --unit=0 --speed=115200[9600] --word=8 --parity=no --stop=1
+terminal --dumb --timeout=10 serial console
+...
+  kernel /boot/vmlinuz-2.6.9-42.0.3.EL ro root=LABEL=/ vga=0x305 console=tty0 console=ttyS0,115200
+ ## 
+----
+
+== Grub
+
+=== grub config (debian update-grub script)
+
+
+TIP: */boot/grub/menu.lst:* ...AUTOMAGIC KERNELS LIST +
+DO NOT UNCOMMENT THEM, Just edit them to your needs... +
+Alles innerhalb des "AUTOMAGIC KERNELS LIST" - Blocks wird vom *"update-grub script"* nach Kernel-Updates/Installationen oder per *# sudo update-grub #* neu ge(ueber)schrieben. +
+Es koennen jedoch ueber die "Default Options" *dauerhafte* Anpassungen gemacht werden (die Kommentarzeichen *# nicht* entfernen) z.B.:
+
+[source,bash]
+----
+# kopt=root=UUID=61e70678-eff8-494f-a085-fadcb1e723ff ro
+# defoptions=vga=794 console=tty0 console=ttyS0,115200
+----
+
+TIP: Welche/which uuid: `sudo vol_id --uuid /dev/sda1`
+
+
+
+==== GRUB4DOS cd chainloaden
+
+.Man kann auch nach dem man GRUB4DOS gestartet hat noch nachtraeglich von CD-ROM booten. Dies ist auch moeglich wenn das BIOS schon aelter ist und eigentlich booten von CD-ROM nicht unterstuetzt. Diese Unterstuetzung ist allerdings experimentell und benoetigt weitere Tests!
+----
+  title Boot From First CDROM
+  cdrom --init
+  map --hook
+  chainloader (cd0)
+  boot
+
+  title Boot From Second CDROM
+  cdrom --init
+  map --hook
+  chainloader (cd1)
+  boot
+----
+
+
+== Grub2
+
+Bei Grub2 haben sich die Device-Namens-Konventionen geaendert: /dev/sda1 -> (hd0,1) <- _[frueher (hd0,0)]_
+[cols="1,1",options="header"]
+|===
+|/dev/fd0  | (fd0)
+|/dev/sda  | (hd0)
+|/dev/sdb2 | (hd1,2)
+|/dev/sda3 | (hd0,3)
+|===
+
+TIP: *update-grub[2] / grub-mkconfig* binden weitere installierte Linux-Systeme ein  =>  Nach Klon/Restore evtl.  *grub.cfg*  loeschen um diese neu zu generieren.
+
+=== Boot ISO Images
+
+.-> */etc/grub.d/40_custom*
+[source,bash]
+----
+#!/bin/sh
+exec tail -n +3 $0
+# This file is an example on how to add custom entries
+
+menuentry "grml-rescue sda1" {
+  loopback loop (hd0,1)/iso/grml-small_2009.05.iso
+  linux    (loop)/boot/grmlsmall/linux26 isofrom=/dev/sda1/iso/grml-small_2009.05.iso boot=live quiet vga=791 noeject noprompt
+  initrd   (loop)/boot/grmlsmall/initrd.gz
+}
+menuentry "grml-rescue sdb1" {
+  loopback loop (hd1,1)/iso/grml-small_2009.05.iso
+  linux    (loop)/boot/grmlsmall/linux26 isofrom=/dev/sdb1/iso/grml-small_2009.05.iso boot=live quiet vga=791 noeject noprompt
+  initrd   (loop)/boot/grmlsmall/initrd.gz
+}
+
+menuentry "(hd0,1) sda1" {
+  set root=(hd0,1)
+  chainloader +1
+}
+menuentry "(hd1,1) sdb1" {
+  set root=(hd1,1)
+  chainloader +1
+}
+----
+
+
+IMPORTANT: Die */boot/grub/grub.cfg* sollte *nicht* editiert werden, sondern wird anhand der Konfig-Dateien unter /etc/grub.d/ per: *# update-grub* erzeugt.
+
+
+=== chroot live-system
+
+[source,bash]
+----
+sudo mount /dev/sdX2 /mnt/1
+sudo mount /dev/sdX3 /mnt/1/boot
+sudo mount -o bind /dev /mnt/1/dev
+sudo mount -o bind /sys /mnt/1/sys
+sudo # mount -t proc /proc /mnt/1/proc
+sudo chroot /mnt/1 /bin/bash
+cp /proc/mounts /etc/mtab
+grub-install /dev/sda
+update-grub
+sudo chown -hR user:user /home/user
+----
+
+== Reboot/Shutdown
+
+[source]
+----
+$ su - -c 'yes=no ; read -p " SHUTDOWN / INIT 0 ??? Type -> YES <- " yes ; [ "$yes" = "YES" ] && { echo init 0 && init 0 && exit ; } || echo NO shutdown' ; exit
+$ read -p " shutdown / init 0 ??? " && { echo init 0 && su - -c 'init 0 ' && exit ; }
+$ su - -c ' echo "/sbin/init 0 " | at now + 10 hours '
+----
+
+CAUTION: _[.line-through]#sudo echo "/usr/sbin/init 5 " | at now + 5 hours#_  => Mit *sudo* funktioniert der Shutdown per *at* NICHT
+
+
+= Disk
+
+== Smartmontools
+
+----
+$ for i in a b c; do echo "---- /dev/sd${i} ----" ; sudo smartctl --all /dev/sd${i} |egrep -i "health|real|recov"; done
+$ ( for i in a b c; do echo "---- /dev/sd${i} ----" ; sudo smartctl --all /dev/sd${i} |egrep -i "health|real|recov"; done ) |tee ~/aexdisk/bigaex/Tools/smartctl/mrw/disk_$(date +%Y-%m-%d)
+----
+
+== Filesystem / Dateisystem
+
+[source,bash]
+----
+fuser -u / ; fuser -c /var/tmp    # Prozess Zugriff auf Dateisystem - offene Dateien / file system access - open files
+lsof |grep etc                    # offene Dateien / list open files
+
+mkfs.ext3 -i 32768 , 65536 -vL pimage /dev/sdaX  # Dateisystem fuer grosse Dateien, aber wenig inodes
+fdformat /dev/fd0u1600 ; mkfs.msdos /dev/fd0u1600 #Floppy formatieren mit mehr als 1440 Siehe auch devices.txt
+
+split -b 1440k <file>  # auf-,zer-teilen zer-schneiden, Dateien xaa, xab, xac, usw. werden erzeugt, auf Disketten kopieren. 
+cat xaa xab xac ... > <file> #Auf Zielsystem auf Platte zusammensetzen
+
+dd if=/dev/zero of=/dev/ram bs=1k count=2048 #RAM-Disk
+mke2fs -vm0 /dev/ram 2048
+
+#Virtuelle Disk
+dd if=/dev/zero of=Aex.dsk bs=1000000 count=144 ##Virt. Disk in Datei mit 144MB
+mkfs[.ext3] -v Aex.dsk   ##Ext2/3-Dateisystem in Virt. Disk erzeugen
+su - -c 'mount -o loop /media/t-stick/Aex.dsk /mnt/Aex-t-stick/' ##Mounten des FS
+lofiadm ; lofiadm -a `pwd`/alex.iso ; mount -F hsfs /dev/lofi/3 /tmp/1 #loop bei SUN
+umount /tmp/1 ; lofiadm -d /dev/lofi/3 #loop bei SUN
+
+dd if=/dev/zero of=/mnt/CLEAR bs=20M status=progress  ## mit bs schneller #hda1 unter /mnt gemountet # rm /mnt/CLEAR  ##ungenutzte Bloecke loeschen ->Image wird kleiner
+sudo zerofree -v /dev/md1  # nochmal ungenutzte Bloecke loeschen -> kleineres Image
+dd if=/dev/hdaX|gzip >/nfs/image.gz #Image einer Partition in einer komprimierten Datei ablegen 
+gunzip -c /nfs/image.gz|dd of=/dev/hdaX #Zuruecksichern der Partition
+#Partition sollte genau so gross sein, NICHT kleiner -> Datenverlust. Ist die Partition groesser bleibt der Rest ungenutzt.
+dd if=/dev/fd0 | ssh csm-admin210 'dd of=/tmp/floppy.img' # Image uebers Netz
+
+dd if=/dev/sdc1 of=CF-dd.img ; photorec /d photorec_dir CF-dd.img
+
+sudo tune2fs -l /dev/sda1 |grep --color -i "check"  # when/wann was/war last/letzter check fsck ??? # ext3 ext4 
+sudo tune2fs -m 1 /dev/vda1  # resevierte Bloecke auf 1 % Prozent setzen 
+sudo tune2fs -l /dev/sda1 | egrep -i "mount count|Check interval|Last|Next"  # last/letzter, next/naechster check fsck
+
+sudo mount -ouid=$(whoami),gid=$(whoami) /dev/sdb1 /media/MULTISYSTEM
+
+sudo dosfsck -w -r -l -a -v -t /dev/sdb1  # check usb-stick fat vfat 
+
+$ sudo blkid  # disk partition platte dateisystem filesystem fs label uuid
+...
+/dev/sda1: LABEL="System-reserviert" UUID="528A3F408A3F2041" TYPE="ntfs" PARTUUID="2c292a44-01"
+/dev/sda6: UUID="c017294b-6b57-4c15-a1a8-aa1a92660ecb" TYPE="ext4" PARTUUID="2c292a44-06"
+...
+$ sudo lsblk -f  # disk partition platte dateisystem filesystem fs label uuid
+NAME           FSTYPE   LABEL             UUID                                 MOUNTPOINT
+...
+sda                                                                            
+├─sda1         ntfs     System-reserviert 528A3F408A3F2041                     
+└─sda6         ext4                       c017294b-6b57-4c15-a1a8-aa1a92660ecb /
+...
+
+----
+
+* Speichernutzung */tmp/ & /var/tmp/* +
+  per *du:* `sudo du -ks /tmp/* /tmp/.???* /var/tmp/* /var/tmp/.???* |sort -n`
+
+* ...
+
+* ...
+
+
+
+== Performance Disk Speed 
+
+[source,bash]
+----
+$ dmesg -T|grep -i "usb [123].0 " # list usb devices , platten , disks 
+
+$ bonnie++ -d .
+$ sudo hdparm -t /dev/sda ; sudo hdparm -t /dev/sdb  # disk speed performance
+$ dd if=/dev/zero of=/mnt/testdatei bs=2G count=3 oflag=direct #Dabei schreiben wir drei mal 2 GByte auf die Platte (der Parameter oflag=direct verhindert caching 
+
+----
+
+== Disk Layout Backup
+
+[source,bash]
+----
+$  DISKS=$(cat /etc/mtab|egrep -v "/dev/fd|/cdr|drbd|mapper|sys|none|proc|gvfs"  |awk '{print $1}' |grep /dev/|sed 's/[0-9]$_g' |sed 's/p$_g' |sort -u) ; echo $DISKS
+$  for DISK in $DISKS ; do DISK_NAME=`echo $DISK |awk -F/ '{print \$3\$4}'`; echo $DISK_NAME; sudo /sbin/sfdisk -d $DISK > sfdisk.${DISK_NAME}_$(date +%Y-%m-%d) ;
+$  sudo /sbin/fdisk -l > fdisk-l.${DISK_NAME}_$(date +%Y-%m-%d) ; done
+
+----
+
+
+== MBR
+
+[source,bash]
+----
+#MBR sichern:
+dd if=/dev/sdX of=/MBR-Sicherung bs=512 count=1
+#zurückspielen:
+dd if=/MBR-Sicherung of=/dev/sdX bs=446 count=1
+#die 446 Bytes enthalten den Loader, dann folgen 64 Byte Partitiontable und 2 Byte X'AA55' als Kennung für einen gültigen MBR
+----
+
+
+
 
